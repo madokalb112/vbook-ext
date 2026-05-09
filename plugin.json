@@ -107,6 +107,17 @@
       "locale": "vi_VN"
     },
     {
+      "name": "Foxaholic",
+      "author": "madokalb112",
+      "version": 3,
+      "source": "https://www.foxaholic.com/",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/foxaholic/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/foxaholic/icon.png",
+      "description": "Read novels on Foxaholic",
+      "type": "novel",
+      "locale": "en_US"
+    },
+    {
       "name": "LoppyToon",
       "author": "madokalb112",
       "version": 2,
