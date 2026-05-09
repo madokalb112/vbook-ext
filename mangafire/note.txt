@@ -1,0 +1,4 @@
+#1: cần reverse thuật toán vrf để bỏ WebView ẩn, gọi API trực tiếp
+#2: update sau, lười vlz
+
+

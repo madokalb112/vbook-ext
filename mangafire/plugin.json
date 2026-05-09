@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "MangaFire",
+    "author": "madokalb112",
+    "version": 3,
+    "source": "https://mangafire.to",
+    "regexp": "(www\\.)?mangafire\\.to/(?:home|manga/[^/?#]+|read/[^/?#]+/[^/?#]+/(?:chapter|volume)-[^/?#]+)/?(?:[?#].*)?$",
+    "description": "Doc truyen tranh tren MangaFire",
+    "locale": "en_US",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

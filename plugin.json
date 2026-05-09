@@ -5,6 +5,41 @@
   },
   "data": [
     {
+      "name": "MangaFire",
+      "author": "madokalb112",
+      "version": 3,
+      "source": "https://mangafire.to",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/icon.png",
+      "description": "Doc truyen tranh tren MangaFire",
+      "type": "comic",
+      "locale": "en_US"
+    },
+    {
+      "name": "ThienThaiTruyen",
+      "author": "madokalb112",
+      "version": 4,
+      "source": "https://thienthaitruyen8.com/official",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/icon.png",
+      "description": "Doc truyen tranh tren ThienThaiTruyen",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
+      "name": "KhoManhwa",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://khomanhwa.com/",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/icon.png",
+      "description": "Doc truyen tranh tren KhoManhwa",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
       "name": "Hong Tra Team",
       "author": "madokalb112",
       "version": 2,
