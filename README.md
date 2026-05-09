@@ -4,6 +4,6 @@
 https://raw.githubusercontent.com/madokalb112/vbook-ext/main/plugin.json
 ```
 
-## Nuoi em
+## Nuoi toi
 
-![Nuoi em](nuoi_toi.png)
+![Nuoi toi](nuoi_toi.png)
