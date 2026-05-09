@@ -5,6 +5,29 @@
   },
   "data": [
     {
+      "name": "Hong Tra Team",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://hongtrateam.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hongtrateam/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hongtrateam/icon.png",
+      "description": "Doc truyen tren Hong Tra Team",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
+      "name": "TruyenYY",
+      "author": "madokalb112",
+      "version": 2,
+      "source": "https://truyenyy.co",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenyy/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenyy/icon.png",
+      "description": "Doc truyen chu tren TruyenYY",
+      "type": "novel",
+      "locale": "vi_VN"
+    },
+    {
       "name": "LoppyToon",
       "author": "madokalb112",
       "version": 1,
