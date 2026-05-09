@@ -65,10 +65,10 @@
     {
       "name": "TopTruyenZone",
       "author": "madokalb112",
-      "version": 3,
+      "version": 4,
       "source": "https://www.toptruyenzone2.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/toptruyenzone/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/toptruyenzone/icon.png",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/toptruyenzone/icon.png?v=4",
       "description": "Doc truyen tren TopTruyenZone",
       "type": "comic",
       "locale": "vi_VN"
