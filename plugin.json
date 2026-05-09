@@ -17,6 +17,17 @@
       "tag": "nsfw"
     },
     {
+      "name": "LuvEvaLands2",
+      "author": "madokalb112",
+      "version": 2,
+      "source": "https://luvevalands2.co",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luvevalands2/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luvevalands2/icon.png",
+      "description": "Doc truyen tranh tren LuvEvaLands2",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
       "name": "TruyenYY",
       "author": "madokalb112",
       "version": 2,
