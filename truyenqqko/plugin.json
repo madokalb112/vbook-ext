@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "TruyenQQKo",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 2,
     "source": "https://truyenqqko.com",
     "regexp": "(www\\.)?truyenqqko\\.com/truyen-tranh/(?![^/?#]*-chap-)[0-9a-z-]+-\\d+/?(?:[?#].*)?$",

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Lướt Truyện",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 1,
     "source": "https://luottruyen5.com",
     "regexp": "(www\\.)?luottruyen[0-9]*\\.com/truyen-tranh/[^/]+-\\d+/?$",

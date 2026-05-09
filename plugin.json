@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "author": "vBook",
+    "author": "madokalb112",
     "description": "Local vBook extensions built based on https://github.com/Darkrai9x/vbook-extensions"
   },
   "data": [
     {
       "name": "LoppyToon",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://loppytoon.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/loppytoon/plugin.zip",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Lướt Truyện",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://luottruyen5.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin.zip",
@@ -29,7 +29,7 @@
     },
     {
       "name": "MimiMoe",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://mimimoe.moe",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mimimoe/plugin.zip",
@@ -41,7 +41,7 @@
     },
     {
       "name": "SayHentai",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://sayhentai.sh",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sayhentai/plugin.zip",
@@ -53,7 +53,7 @@
     },
     {
       "name": "SuicaoDex",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://suicaodex.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/suicaodex/plugin.zip",
@@ -64,7 +64,7 @@
     },
     {
       "name": "TopTruyenZone",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 3,
       "source": "https://www.toptruyenzone2.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/toptruyenzone/plugin.zip",
@@ -75,7 +75,7 @@
     },
     {
       "name": "TruyenQQKo",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 2,
       "source": "https://truyenqqko.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenqqko/plugin.zip",
@@ -86,7 +86,7 @@
     },
     {
       "name": "TruyenQQ.com.vn",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://truyenqq.com.vn",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenqq_com_vn/plugin.zip",
@@ -97,7 +97,7 @@
     },
     {
       "name": "Yurineko",
-      "author": "vBook",
+      "author": "madokalb112",
       "version": 1,
       "source": "https://yurineko.org",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",

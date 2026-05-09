@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "TopTruyenZone",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 3,
     "source": "https://www.toptruyenzone2.com",
     "regexp": "(www\\.)?toptruyenzone2\\.com/truyen-tranh/[0-9a-z-]+/\\d+/?(?:[?#].*)?$",

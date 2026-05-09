@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "SayHentai",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 1,
     "source": "https://sayhentai.sh",
     "regexp": "(www\\.)?sayhentai\\.sh/truyen-[^/?#]+\\.html/?$",

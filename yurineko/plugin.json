@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Yurineko",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 1,
     "source": "https://yurineko.org",
     "regexp": "(www\\.)?yurineko\\.org/(?!danh-sach|the-loai|tim-kiem-nang-cao|random|dang-nhap|dang-ky)[^/?#]+/?$",

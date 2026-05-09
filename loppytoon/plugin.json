@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "LoppyToon",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 1,
     "source": "https://loppytoon.com",
     "regexp": "(www\\.)?loppytoon\\.com/truyen/[^/?#]+/?$",

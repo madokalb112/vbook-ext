@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "MimiMoe",
-    "author": "vBook",
+    "author": "madokalb112",
     "version": 1,
     "source": "https://mimimoe.moe",
     "regexp": "(www\\.)?mimimoe\\.moe/manga/\\d+/?$",
