@@ -28,6 +28,17 @@
       "locale": "vi_VN"
     },
     {
+      "name": "Stellar Stories",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://stellarstory.net",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/stellarstory/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/stellarstory/icon.png",
+      "description": "Doc truyen chu tren Stellar Stories",
+      "type": "novel",
+      "locale": "vi_VN"
+    },
+    {
       "name": "TruyenYY",
       "author": "madokalb112",
       "version": 2,

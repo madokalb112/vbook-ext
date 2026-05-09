@@ -1,4 +1,4 @@
-# vbook-ext
+# vbook-ext Plugin URL
 
 Plugin URL:
 
