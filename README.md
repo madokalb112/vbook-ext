@@ -1,3 +1,5 @@
+> Xây dựng dựa trên [Darkrai9x/vbook-extensions](https://github.com/Darkrai9x/vbook-extensions).
+
 # Cấu trúc của extension
 
 ## Thông tin extension
@@ -280,8 +282,8 @@ sleep(10000); // Delay 10 giây
 # Cách test extension với VSCode:
 
 - Bản mới (dùng được cả vbook cũ và vbook beta):
-  - Cài extension local: [vbook-vscode-tester-0.0.4.vsix](vbook-vscode-tester-0.0.4.vsix)
-    ![Vbook vscode tester](vbook-vscode-tester\media\vbooktester.png)
+  - Cài extension local: [vbook-vscode-tester-0.0.5.vsix](vbook-vscode-tester-0.0.5.vsix)
+    ![Vbook vscode tester](vbook-vscode-tester/media/vbooktester.png)
 - Bản cũ:
   - Cài extension từ: [https://github.com/faea726/vbook-extension-maker/releases/latest](https://github.com/faea726/vbook-extension-maker/releases/latest)
 - Mở một script bất kỳ.
