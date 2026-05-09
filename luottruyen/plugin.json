@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "Lướt Truyện",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://luottruyen5.com",
+    "regexp": "(www\\.)?luottruyen[0-9]*\\.com/truyen-tranh/[^/]+-\\d+/?$",
+    "description": "Đọc truyện trên trang Lướt Truyện",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

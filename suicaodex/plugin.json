@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "SuicaoDex",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://suicaodex.com",
+    "regexp": "(www\\.)?suicaodex\\.com/manga/[^/?#]+(?:/[^/?#]+)?/?$",
+    "description": "Doc truyen tren SuicaoDex",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

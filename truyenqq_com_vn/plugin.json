@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "TruyenQQ.com.vn",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://truyenqq.com.vn",
+    "regexp": "(www\\.)?(truyenqq\\.com\\.vn/[0-9a-z-]+|truyenqq(no|ko)?\\.com/truyen-tranh/[0-9a-z-]+-\\d+)/?$",
+    "description": "Doc truyen tren trang TruyenQQ.com.vn",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

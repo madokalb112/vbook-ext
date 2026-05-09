@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "SayHentai",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://sayhentai.sh",
+    "regexp": "(www\\.)?sayhentai\\.sh/truyen-[^/?#]+\\.html/?$",
+    "description": "Doc truyen tren SayHentai",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "tag": "nsfw",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

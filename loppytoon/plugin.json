@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "LoppyToon",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://loppytoon.com",
+    "regexp": "(www\\.)?loppytoon\\.com/truyen/[^/?#]+/?$",
+    "description": "Doc truyen tren LoppyToon",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "tag": "nsfw",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

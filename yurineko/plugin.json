@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "Yurineko",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://yurineko.org",
+    "regexp": "(www\\.)?yurineko\\.org/(?!danh-sach|the-loai|tim-kiem-nang-cao|random|dang-nhap|dang-ky)[^/?#]+/?$",
+    "description": "Đọc truyện trên trang Yurineko",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

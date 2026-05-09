@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "TopTruyenZone",
+    "author": "vBook",
+    "version": 3,
+    "source": "https://www.toptruyenzone2.com",
+    "regexp": "(www\\.)?toptruyenzone2\\.com/truyen-tranh/[0-9a-z-]+/\\d+/?(?:[?#].*)?$",
+    "description": "Doc truyen tren TopTruyenZone",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

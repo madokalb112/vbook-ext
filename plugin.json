@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "author": "vBook",
+    "description": "Local vBook extensions built based on https://github.com/Darkrai9x/vbook-extensions"
+  },
+  "data": [
+    {
+      "name": "LoppyToon",
+      "author": "vBook",
+      "path": "loppytoon/plugin.zip",
+      "version": 1,
+      "source": "https://loppytoon.com",
+      "icon": "loppytoon/icon.png",
+      "description": "Doc truyen tren LoppyToon",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
+      "name": "Lướt Truyện",
+      "author": "vBook",
+      "path": "luottruyen/plugin.zip",
+      "version": 1,
+      "source": "https://luottruyen5.com",
+      "icon": "luottruyen/icon.png",
+      "description": "Đọc truyện trên trang Lướt Truyện",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "MimiMoe",
+      "author": "vBook",
+      "path": "mimimoe/plugin.zip",
+      "version": 1,
+      "source": "https://mimimoe.moe",
+      "icon": "mimimoe/icon.png",
+      "description": "Doc truyen tren MimiMoe",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
+      "name": "SayHentai",
+      "author": "vBook",
+      "path": "sayhentai/plugin.zip",
+      "version": 1,
+      "source": "https://sayhentai.sh",
+      "icon": "sayhentai/icon.png",
+      "description": "Doc truyen tren SayHentai",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
+      "name": "SuicaoDex",
+      "author": "vBook",
+      "path": "suicaodex/plugin.zip",
+      "version": 1,
+      "source": "https://suicaodex.com",
+      "icon": "suicaodex/icon.png",
+      "description": "Doc truyen tren SuicaoDex",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "TopTruyenZone",
+      "author": "vBook",
+      "path": "toptruyenzone/plugin.zip",
+      "version": 3,
+      "source": "https://www.toptruyenzone2.com",
+      "icon": "toptruyenzone/icon.png",
+      "description": "Doc truyen tren TopTruyenZone",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "TruyenQQKo",
+      "author": "vBook",
+      "path": "truyenqqko/plugin.zip",
+      "version": 2,
+      "source": "https://truyenqqko.com",
+      "icon": "truyenqqko/icon.png",
+      "description": "Doc truyen tren trang TruyenQQKo",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "TruyenQQ.com.vn",
+      "author": "vBook",
+      "path": "truyenqq_com_vn/plugin.zip",
+      "version": 1,
+      "source": "https://truyenqq.com.vn",
+      "icon": "truyenqq_com_vn/icon.png",
+      "description": "Doc truyen tren trang TruyenQQ.com.vn",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "Yurineko",
+      "author": "vBook",
+      "path": "yurineko/plugin.zip",
+      "version": 1,
+      "source": "https://yurineko.org",
+      "icon": "yurineko/icon.png",
+      "description": "Đọc truyện trên trang Yurineko",
+      "type": "comic",
+      "locale": "vi_VN"
+    }
+  ]
+}

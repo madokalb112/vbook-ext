@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "TruyenQQKo",
+    "author": "vBook",
+    "version": 2,
+    "source": "https://truyenqqko.com",
+    "regexp": "(www\\.)?truyenqqko\\.com/truyen-tranh/(?![^/?#]*-chap-)[0-9a-z-]+-\\d+/?(?:[?#].*)?$",
+    "description": "Doc truyen tren trang TruyenQQKo",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}
