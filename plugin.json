@@ -7,10 +7,10 @@
     {
       "name": "LoppyToon",
       "author": "vBook",
-      "path": "loppytoon/plugin.zip",
       "version": 1,
       "source": "https://loppytoon.com",
-      "icon": "loppytoon/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/loppytoon/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/loppytoon/icon.png",
       "description": "Doc truyen tren LoppyToon",
       "type": "comic",
       "locale": "vi_VN",
@@ -19,10 +19,10 @@
     {
       "name": "Lướt Truyện",
       "author": "vBook",
-      "path": "luottruyen/plugin.zip",
       "version": 1,
       "source": "https://luottruyen5.com",
-      "icon": "luottruyen/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png",
       "description": "Đọc truyện trên trang Lướt Truyện",
       "type": "comic",
       "locale": "vi_VN"
@@ -30,10 +30,10 @@
     {
       "name": "MimiMoe",
       "author": "vBook",
-      "path": "mimimoe/plugin.zip",
       "version": 1,
       "source": "https://mimimoe.moe",
-      "icon": "mimimoe/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mimimoe/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mimimoe/icon.png",
       "description": "Doc truyen tren MimiMoe",
       "type": "comic",
       "locale": "vi_VN",
@@ -42,10 +42,10 @@
     {
       "name": "SayHentai",
       "author": "vBook",
-      "path": "sayhentai/plugin.zip",
       "version": 1,
       "source": "https://sayhentai.sh",
-      "icon": "sayhentai/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sayhentai/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sayhentai/icon.png",
       "description": "Doc truyen tren SayHentai",
       "type": "comic",
       "locale": "vi_VN",
@@ -54,10 +54,10 @@
     {
       "name": "SuicaoDex",
       "author": "vBook",
-      "path": "suicaodex/plugin.zip",
       "version": 1,
       "source": "https://suicaodex.com",
-      "icon": "suicaodex/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/suicaodex/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/suicaodex/icon.png",
       "description": "Doc truyen tren SuicaoDex",
       "type": "comic",
       "locale": "vi_VN"
@@ -65,10 +65,10 @@
     {
       "name": "TopTruyenZone",
       "author": "vBook",
-      "path": "toptruyenzone/plugin.zip",
       "version": 3,
       "source": "https://www.toptruyenzone2.com",
-      "icon": "toptruyenzone/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/toptruyenzone/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/toptruyenzone/icon.png",
       "description": "Doc truyen tren TopTruyenZone",
       "type": "comic",
       "locale": "vi_VN"
@@ -76,10 +76,10 @@
     {
       "name": "TruyenQQKo",
       "author": "vBook",
-      "path": "truyenqqko/plugin.zip",
       "version": 2,
       "source": "https://truyenqqko.com",
-      "icon": "truyenqqko/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenqqko/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenqqko/icon.png",
       "description": "Doc truyen tren trang TruyenQQKo",
       "type": "comic",
       "locale": "vi_VN"
@@ -87,10 +87,10 @@
     {
       "name": "TruyenQQ.com.vn",
       "author": "vBook",
-      "path": "truyenqq_com_vn/plugin.zip",
       "version": 1,
       "source": "https://truyenqq.com.vn",
-      "icon": "truyenqq_com_vn/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenqq_com_vn/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/truyenqq_com_vn/icon.png",
       "description": "Doc truyen tren trang TruyenQQ.com.vn",
       "type": "comic",
       "locale": "vi_VN"
@@ -98,10 +98,10 @@
     {
       "name": "Yurineko",
       "author": "vBook",
-      "path": "yurineko/plugin.zip",
       "version": 1,
       "source": "https://yurineko.org",
-      "icon": "yurineko/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png",
       "description": "Đọc truyện trên trang Yurineko",
       "type": "comic",
       "locale": "vi_VN"
