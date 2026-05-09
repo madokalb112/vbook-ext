@@ -1,3 +1,5 @@
+Plugin URL: `https://raw.githubusercontent.com/madokalb112/vbook-ext/main/plugin.json`
+
 > Xây dựng dựa trên [Darkrai9x/vbook-extensions](https://github.com/Darkrai9x/vbook-extensions).
 
 # Cấu trúc của extension
