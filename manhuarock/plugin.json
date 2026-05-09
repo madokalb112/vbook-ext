@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "ManhuaRock",
+    "author": "madokalb112",
+    "version": 1,
+    "source": "https://manhuarock4.site/",
+    "regexp": "(www\\.)?manhuarock\\d+\\.site(?:/(?:tat-ca-truyen(?:/\\d+)?|hoan-thanh(?:/\\d+)?|xem-nhieu(?:/\\d+)?|search|the-loai/[^/?#]+(?:/\\d+)?|truyen-tranh/[^/?#]+(?:\\.html|/(?:chap|chapter)-[^/?#]+\\.html)?))?/?(?:[?#].*)?$",
+    "description": "Doc truyen tranh tren ManhuaRock",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

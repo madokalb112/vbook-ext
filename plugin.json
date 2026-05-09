@@ -40,6 +40,17 @@
       "tag": "nsfw"
     },
     {
+      "name": "ManhuaRock",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://manhuarock4.site/",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/manhuarock/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/manhuarock/icon.png",
+      "description": "Doc truyen tranh tren ManhuaRock",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
       "name": "Hong Tra Team",
       "author": "madokalb112",
       "version": 2,
