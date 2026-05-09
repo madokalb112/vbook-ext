@@ -2,9 +2,9 @@
   "metadata": {
     "name": "Hong Tra Team",
     "author": "madokalb112",
-    "version": 1,
+    "version": 2,
     "source": "https://hongtrateam.com",
-    "regexp": "(www\\.)?hongtrateam\\.com/truyen/[^/?#]+/?(?:[?#].*)?$",
+    "regexp": "(www\\.)?hongtrateam\\.com/truyen/[^/?#]+(?:/[^/?#]+)?/?(?:[?#].*)?$",
     "description": "Doc truyen tren Hong Tra Team",
     "locale": "vi_VN",
     "language": "javascript",

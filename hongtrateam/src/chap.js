@@ -36,23 +36,85 @@ function textContent(doc) {
     return parts.join("\n");
 }
 
-function execute(url) {
-    let doc = getDoc(url);
-    if (!doc) return null;
+function isProtected(doc) {
+    return doc && doc.select(".post-password-form").size() > 0;
+}
 
+function storySlugFromChapterUrl(url) {
+    let path = pathOf(url).replace(/\/+$/, "");
+    let match = /^\/truyen\/([^/]+)\//i.exec(path);
+    return match ? match[1] : "";
+}
+
+function passwordFromChapterUrl(url) {
+    let slug = storySlugFromChapterUrl(url);
+    if (!slug) return "";
+    let words = foldText(slug.replace(/[-_]+/g, " ")).replace(/[^a-z0-9\s]+/g, " ").split(/\s+/);
+    let pass = "";
+    for (let i = 0; i < words.length; i++) {
+        if (words[i]) pass += words[i].charAt(0);
+    }
+    return pass;
+}
+
+function passwordFormAction(doc) {
+    let form = doc.select(".post-password-form").first();
+    let action = form ? form.attr("action") : "";
+    return action ? normalizeUrl(action) : BASE_URL + "/wp-login.php?action=postpass";
+}
+
+function submitPassword(url, doc) {
+    let password = passwordFromChapterUrl(url);
+    if (!password) return false;
+    let body = "post_password=" + encodeURIComponent(password) +
+        "&Submit=" + encodeURIComponent("Nhap") +
+        "&redirect_to=" + encodeURIComponent(normalizeUrl(url));
+    try {
+        request(passwordFormAction(doc), {
+            method: "POST",
+            headers: {
+                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Origin": BASE_URL,
+                "Referer": normalizeUrl(url)
+            },
+            body: body
+        }).text();
+        return true;
+    } catch (error) {
+    }
+    return false;
+}
+
+function unlockedDoc(url, doc) {
+    if (!isProtected(doc)) return doc;
+    if (!submitPassword(url, doc)) return doc;
+    let unlocked = getDoc(url);
+    return unlocked || doc;
+}
+
+function collectImages(doc, url) {
     let data = [];
     let seen = {};
     doc.select(".reading-content img, .page-break img, .chapter-content img, .entry-content img, .text-left img").forEach(function(e) {
         addImage(data, seen, imageAttr(e), url);
     });
+    return data;
+}
 
+function execute(url) {
+    let doc = getDoc(url);
+    if (!doc) return null;
+    doc = unlockedDoc(url, doc);
+
+    let data = collectImages(doc, url);
     if (data.length > 0) return Response.success(data);
 
     let content = textContent(doc);
     if (cleanText(content).length > 80) return Response.success(content);
 
-    if (doc.select(".post-password-form").size() > 0 || isPasswordText(doc.text())) {
-        return Response.error("Chuong can mat khau tren web.");
+    if (isProtected(doc)) {
+        return Response.error("Chuong can mat khau, auto pass: " + passwordFromChapterUrl(url));
     }
     return Response.error("Khong tim thay noi dung chapter.");
 }
