@@ -2,14 +2,14 @@
   "metadata": {
     "name": "Hong Tra Team",
     "author": "madokalb112",
-    "version": 2,
+    "version": 5,
     "source": "https://hongtrateam.com",
     "regexp": "(www\\.)?hongtrateam\\.com/truyen/[^/?#]+(?:/[^/?#]+)?/?(?:[?#].*)?$",
     "description": "Doc truyen tren Hong Tra Team",
     "locale": "vi_VN",
     "language": "javascript",
     "tag": "nsfw",
-    "type": "comic"
+    "type": "novel"
   },
   "script": {
     "home": "home.js",

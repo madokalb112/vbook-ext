@@ -26,18 +26,44 @@ function isPasswordText(text) {
         folded.indexOf("protected") >= 0;
 }
 
-function textContent(doc) {
+function escapeHtml(text) {
+    return ("" + text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function contentFromNode(node) {
     let parts = [];
-    doc.select(".reading-content p, .reading-content h2, .reading-content h3, .entry-content p, .entry-content h2, .entry-content h3").forEach(function(e) {
+    node.select("p, h1, h2, h3, h4, h5, h6").forEach(function(e) {
         let text = cleanText(e.text());
         if (!text || isPasswordText(text)) return;
-        parts.push("<p>" + e.html() + "</p>");
+        parts.push("<p>" + escapeHtml(text) + "</p>");
     });
     return parts.join("\n");
 }
 
+function textContent(doc) {
+    let containers = [
+        ".reading-content .text-left",
+        ".reading-content",
+        ".entry-content .read-container"
+    ];
+    for (let i = 0; i < containers.length; i++) {
+        let node = doc.select(containers[i]).first();
+        if (!node) continue;
+        let content = contentFromNode(node);
+        if (cleanText(content).length > 20) return content;
+    }
+    return "";
+}
+
 function isProtected(doc) {
-    return doc && doc.select(".post-password-form").size() > 0;
+    return doc && doc.select(".reading-content form.post-password-form, form.post-password-form[action*='postpass']").size() > 0;
+}
+
+function isTextChapter(doc) {
+    if (!doc) return false;
+    if (doc.select(".chapter-type-text, body.chapter-type-text, .reading-content .text-left").size() > 0) return true;
+    let bodyClass = foldText(doc.select("body").attr("class"));
+    return bodyClass.indexOf("chapter-type-text") >= 0;
 }
 
 function storySlugFromChapterUrl(url) {
@@ -58,7 +84,7 @@ function passwordFromChapterUrl(url) {
 }
 
 function passwordFormAction(doc) {
-    let form = doc.select(".post-password-form").first();
+    let form = doc.select(".reading-content form.post-password-form, form.post-password-form[action*='postpass']").first();
     let action = form ? form.attr("action") : "";
     return action ? normalizeUrl(action) : BASE_URL + "/wp-login.php?action=postpass";
 }
@@ -96,10 +122,23 @@ function unlockedDoc(url, doc) {
 function collectImages(doc, url) {
     let data = [];
     let seen = {};
-    doc.select(".reading-content img, .page-break img, .chapter-content img, .entry-content img, .text-left img").forEach(function(e) {
+    doc.select(".reading-content .page-break img, .reading-content .chapter-content img, .reading-content .text-left img, .reading-content > img").forEach(function(e) {
         addImage(data, seen, imageAttr(e), url);
     });
     return data;
+}
+
+function escapeAttr(text) {
+    return ("" + text).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+}
+
+function imagesContent(data) {
+    let parts = [];
+    for (let i = 0; i < data.length; i++) {
+        let link = data[i].link || data[i];
+        if (link) parts.push('<p><img src="' + escapeAttr(link) + '" /></p>');
+    }
+    return parts.join("\n");
 }
 
 function execute(url) {
@@ -107,10 +146,12 @@ function execute(url) {
     if (!doc) return null;
     doc = unlockedDoc(url, doc);
 
-    let data = collectImages(doc, url);
-    if (data.length > 0) return Response.success(data);
-
     let content = textContent(doc);
+    if (isTextChapter(doc) && cleanText(content).length > 20) return Response.success(content);
+
+    let data = collectImages(doc, url);
+    if (data.length > 0) return Response.success(imagesContent(data));
+
     if (cleanText(content).length > 80) return Response.success(content);
 
     if (isProtected(doc)) {

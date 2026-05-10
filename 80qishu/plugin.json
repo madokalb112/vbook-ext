@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "80QiShu",
+    "author": "madokalb112",
+    "version": 2,
+    "source": "https://www.80qishu.com/",
+    "regexp": "(?:www\\.|d\\.|t\\.)?80qishu\\.com(?:/.*)?",
+    "description": "Read TXT novels on 80QiShu",
+    "locale": "zh_CN",
+    "language": "javascript",
+    "type": "novel"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}
