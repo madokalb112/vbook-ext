@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "TuSachXinhXinh",
+    "author": "madokalb112",
+    "version": 1,
+    "source": "https://tusachxinhxinh12.online/",
+    "regexp": "(www\\.)?tusachxinhxinh\\d+\\.online(?:/(?:danh-sach-truyen(?:/page/\\d+)?|truyen-hot-nhat(?:/page/\\d+)?|nhieu-xem-nhat(?:/page/\\d+)?|tron-bo(?:/page/\\d+)?|the-loai/[^/?#]+(?:/page/\\d+)?|truyen-tranh/[^/?#]+|[^/?#]*chap(?:ter)?-[^/?#]+))?/?(?:[?#].*)?$",
+    "description": "Doc truyen tranh tren Tu Sach Xinh Xinh",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}
