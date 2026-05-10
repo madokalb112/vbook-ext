@@ -7,6 +7,7 @@
 /1backup/
 
 # Local repo helpers, keep local only
+/.gitignore
 /.gitattributes
 /7zr.exe
 /push_project.py
