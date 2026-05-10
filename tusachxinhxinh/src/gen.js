@@ -8,7 +8,7 @@ function comicFromItem(item) {
 
     let slug = storySlug(link);
     let image = imageFromElement(item);
-    let name = cleanTitle(a.attr("title") ||
+    let name = stripTitleSuffix(a.attr("title") ||
         textOfFirst(item, ".comic-title") ||
         image.alt ||
         a.text());
@@ -31,7 +31,7 @@ function comicFromLink(doc, a) {
 
     let slug = storySlug(link);
     let image = imageFromElement(a);
-    let name = cleanTitle(a.attr("title") ||
+    let name = stripTitleSuffix(a.attr("title") ||
         textOfFirst(a, ".comic-title") ||
         image.alt ||
         a.text());

@@ -19,8 +19,8 @@ function storyFromSearchItem(item) {
 
 function nameFromSearchItem(item) {
     let category = stripTags(item.category || "");
-    if (category) return cleanTitle(category);
-    return cleanTitle(stripTags(item.title || ""));
+    if (category) return stripTitleSuffix(category);
+    return stripTitleSuffix(stripTags(item.title || ""));
 }
 
 function parseSearchJson(text) {

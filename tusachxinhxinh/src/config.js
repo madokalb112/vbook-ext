@@ -6,6 +6,8 @@ try {
 
 let HOME_URL = BASE_URL + "/";
 let DESKTOP_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36";
+let SOURCE_HOST_RE = /^https?:\/\/(?:www\.)?(?:tusachxinhxinh(?:\d+)?\.online|tusachxinhxinh(?:\d+)?\.com|tusachxinh\.online)/i;
+let ACTIVE_HOST_RE = /^https?:\/\/(?:www\.)?tusachxinhxinh\d+\.online/i;
 
 function stripTrailingSlash(url) {
     if (!url) return "";
@@ -42,7 +44,7 @@ function foldText(text) {
         text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     } catch (error) {
     }
-    return text.replace(/\u0111/g, "d").replace(/\u0110/g, "d");
+    return text.replace(/\u0111/g, "d").replace(/\u0110/g, "d").replace(/[\u2013\u2014]/g, "-");
 }
 
 function absoluteUrl(url) {
@@ -57,13 +59,13 @@ function absoluteUrl(url) {
 
 function normalizeUrl(url) {
     url = absoluteUrl(url);
-    return url.replace(/^https?:\/\/(?:www\.)?tusachxinhxinh\d+\.online/i, stripTrailingSlash(BASE_URL));
+    return url.replace(SOURCE_HOST_RE, stripTrailingSlash(BASE_URL));
 }
 
 function normalizeImage(url) {
     if (!url) return "";
     url = absoluteUrl(url);
-    return url.replace(/^https?:\/\/(?:www\.)?tusachxinhxinh\d+\.online/i, stripTrailingSlash(BASE_URL));
+    return url.replace(SOURCE_HOST_RE, stripTrailingSlash(BASE_URL));
 }
 
 function hostBase(url) {
@@ -85,7 +87,7 @@ function setBaseUrl(baseUrl) {
 function candidateUrls(url) {
     let normalized = normalizeUrl(url);
     let urls = [normalized];
-    if (!/^https?:\/\/(?:www\.)?tusachxinhxinh\d+\.online/i.test(normalized)) return urls;
+    if (!ACTIVE_HOST_RE.test(normalized)) return urls;
     let start = sourceNumber();
     for (let i = start; i <= 99; i++) {
         let next = normalized.replace(/^https?:\/\/(?:www\.)?tusachxinhxinh\d+\.online/i, "https://tusachxinhxinh" + i + ".online");
@@ -154,7 +156,7 @@ function pathOf(url) {
 }
 
 function isTusachUrl(url) {
-    return /^https?:\/\/(?:www\.)?tusachxinhxinh\d+\.online/i.test(absoluteUrl(url));
+    return SOURCE_HOST_RE.test(absoluteUrl(url));
 }
 
 function isStoryUrl(url) {
@@ -213,6 +215,7 @@ function imageAttr(e) {
         e.attr("data-original") ||
         e.attr("data-thumb") ||
         e.attr("data-cfsrc") ||
+        cleanText((e.attr("data-lazy-srcset") || e.attr("srcset") || "").split(/\s+/)[0]) ||
         src ||
         "";
 }
@@ -283,6 +286,22 @@ function cleanTitle(text) {
     return cleanText(text);
 }
 
+function stripTitleSuffix(text) {
+    text = cleanTitle(text);
+    let folded = foldText(text);
+    let suffixes = [
+        " - truyen tranh - tu sach xinh xinh",
+        " - tu sach xinh xinh",
+        " tai tu sach xinh xinh",
+        " - truyen dich nha lam"
+    ];
+    for (let i = 0; i < suffixes.length; i++) {
+        let index = folded.indexOf(suffixes[i]);
+        if (index > 0) return cleanText(text.substring(0, index));
+    }
+    return text;
+}
+
 function titleLooksBad(text) {
     let folded = foldText(text || "");
     return !text ||
@@ -290,6 +309,8 @@ function titleLooksBad(text) {
         folded === "trang chu" ||
         folded === "danh sach truyen" ||
         folded === "the loai" ||
+        folded === "tu sach xinh xinh" ||
+        folded.indexOf("tu sach xinh xinh - truyen dich nha lam") >= 0 ||
         folded.indexOf("doc tu dau") >= 0 ||
         folded.indexOf("doc moi nhat") >= 0 ||
         folded.indexOf("chapter ") === 0;
@@ -318,6 +339,15 @@ function textOfFirst(element, selector) {
     if (!element) return "";
     let node = element.select(selector).first();
     return node ? cleanText(node.text()) : "";
+}
+
+function textBySelectors(element, selectors) {
+    if (!element) return "";
+    for (let i = 0; i < selectors.length; i++) {
+        let text = textOfFirst(element, selectors[i]);
+        if (text) return text;
+    }
+    return "";
 }
 
 function pageNumberFromUrl(url) {
@@ -364,7 +394,9 @@ function nextPage(doc, currentUrl) {
 function imageHeaders(referer) {
     return {
         "Referer": normalizeUrl(referer || HOME_URL),
+        "Origin": stripTrailingSlash(BASE_URL),
         "User-Agent": DESKTOP_UA,
+        "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
         "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
     };
 }

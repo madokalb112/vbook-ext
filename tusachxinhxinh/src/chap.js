@@ -17,7 +17,8 @@ function addImage(data, seen, link, referer) {
     link = normalizeImage(link);
     if (!validImage(link) || seen[link]) return;
     seen[link] = true;
-    data.push({link: link, headers: imageHeaders(referer)});
+    let headers = imageHeaders(referer);
+    data.push({link: link, headers: headers, header: headers});
 }
 
 function collectImagesFromHtml(html, data, seen, referer) {

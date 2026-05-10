@@ -53,7 +53,12 @@ function execute(url) {
     if (!doc) return Response.error("Khong tai duoc thong tin truyen.");
 
     let slug = storySlug(url);
-    let name = cleanTitle(textOfFirst(doc, ".info-title, .post-title h1, h1"));
+    let name = stripTitleSuffix(textBySelectors(doc, [".info-title", "#category-link span", ".breadcrumb .active span", ".post-title h1", "h1"]));
+    if (titleLooksBad(name)) name = "";
+    if (!name) name = stripTitleSuffix(metaContent(doc, "meta[property=og:title], meta[name=twitter:title]"));
+    if (titleLooksBad(name)) name = "";
+    if (!name) name = stripTitleSuffix(cleanText(doc.select("title").text()));
+    if (titleLooksBad(name)) name = "";
     if (!name) name = cleanTitle(metaContent(doc, "meta[property=og:title]").replace(/\s*[-–]\s*Truyen Tranh.*$/i, ""));
     if (!name) name = titleFromSlug(slug);
 
