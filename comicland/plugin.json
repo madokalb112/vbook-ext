@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "Comicland",
+    "author": "madokalb112",
+    "version": 4,
+    "source": "https://comicland.org",
+    "regexp": "(www\\.)?comicland\\.org(?:/(?:comic/[^/?#]+(?:/[^/?#]+)*|search|genres?|category/[^/?#]+))?/?(?:[?#].*)?$",
+    "description": "Doc truyen tranh tren Comicland",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "gen": "gen.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

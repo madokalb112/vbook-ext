@@ -16,6 +16,40 @@
       "locale": "vi_VN"
     },
     {
+      "name": "MyReadingManga",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://myreadingmanga.info",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/MyReadingManga/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/MyReadingManga/icon.png",
+      "description": "Read comics on MyReadingManga",
+      "type": "comic",
+      "locale": "en_US",
+      "tag": "nsfw"
+    },
+    {
+      "name": "ChickenManga",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://www.chickenmanga.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/chickenmanga/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/chickenmanga/icon.png",
+      "description": "Doc truyen tranh tren ChickenManga",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "Comicland",
+      "author": "madokalb112",
+      "version": 4,
+      "source": "https://comicland.org",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/comicland/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/comicland/icon.png?v=4",
+      "description": "Doc truyen tranh tren Comicland",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
       "name": "MangaFire",
       "author": "madokalb112",
       "version": 3,
