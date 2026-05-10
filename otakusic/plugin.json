@@ -2,7 +2,7 @@
   "metadata": {
     "name": "Otakusic",
     "author": "madokalb112",
-    "version": 9,
+    "version": 10,
     "source": "https://otakusic.com",
     "regexp": "(www\\.)?otakusic\\.com/(?:chi-tiet/[^/?#]+|doc-truyen/[^/?#]+/[^/?#]+)/?(?:[?#].*)?$",
     "description": "Doc truyen tranh tren Otakusic",
