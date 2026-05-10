@@ -1,119 +1,153 @@
-load("config.js");
+load('config.js');
 
-function infoValue(doc, labels) {
-    let rows = doc.select(".grid p, p.text-white");
-    for (let i = 0; i < rows.size(); i++) {
-        let row = rows.get(i);
-        let labelNode = row.select("span.text-gray-300").first();
-        let label = foldText(labelNode ? labelNode.text() : "");
+function getGenres(doc) {
+    let genres = [];
+    let seen = {};
+    var selectors = [
+        "main a[href*='/the-loai/']",
+        "article a[href*='/the-loai/']",
+        "#content a[href*='/the-loai/']",
+        ".detail a[href*='/the-loai/']",
+        ".manga-detail a[href*='/the-loai/']",
+        ".comic-detail a[href*='/the-loai/']"
+    ];
+    for (var s = 0; s < selectors.length; s++) {
+        var n = doc.select(selectors[s]);
+        if (n.size() > 0 && n.size() < 40) {
+            n.forEach(function(e) {
+                var title = cleanText(e.text());
+                var link = normalizeUrl(e.attr("href"));
+                if (!title || seen[link]) return;
+                seen[link] = true;
+                genres.push({title: title, input: link, script: "gen.js"});
+            });
+            return genres;
+        }
+    }
+
+    var all = doc.select("a[href*='/the-loai/']");
+    var total = all.size();
+    if (total === 0) return genres;
+
+    var navSize = doc.select("nav a[href*='/the-loai/']").size();
+    var headerSize = doc.select("header a[href*='/the-loai/']").size();
+    var footerSize = doc.select("footer a[href*='/the-loai/']").size();
+    var skipStart = Math.max(navSize, headerSize);
+    var skipEnd = footerSize;
+
+    if (skipStart === 0 && total > 40) {
+        skipStart = total - skipEnd - 30;
+        if (skipStart < 0) skipStart = 0;
+    }
+
+    var endIdx = total - skipEnd;
+    for (var i = skipStart; i < endIdx; i++) {
+        var e = all.get(i);
+        var title = cleanText(e.text());
+        var link = normalizeUrl(e.attr("href"));
+        if (!title || seen[link]) continue;
+        seen[link] = true;
+        genres.push({title: title, input: link, script: "gen.js"});
+    }
+
+    if (genres.length > 30) genres = genres.slice(0, 30);
+    return genres;
+}
+
+function getInfoValue(doc, labels) {
+    let nodes = doc.select(".info-item, .manga-info li, .comic-info li, li, p, div");
+    for (let i = 0; i < nodes.size(); i++) {
+        let node = nodes.get(i);
+        let text = foldText(node.text());
         for (let j = 0; j < labels.length; j++) {
-            if (label.indexOf(labels[j]) >= 0) {
-                let text = cleanText(row.text());
-                let rawLabel = cleanText(labelNode ? labelNode.text() : "");
-                if (rawLabel && text.indexOf(rawLabel) === 0) {
-                    text = cleanText(text.substring(rawLabel.length));
-                }
-                return text.replace(/^:\s*/, "");
+            if (text.indexOf(labels[j]) === 0 || text.indexOf(labels[j] + ":") >= 0) {
+                let raw = cleanText(node.text());
+                let idx = raw.indexOf(":");
+                if (idx >= 0) return cleanText(raw.substring(idx + 1));
             }
         }
     }
     return "";
 }
 
-function buildDetail(doc, status) {
+function buildDetail(doc) {
     let lines = [];
-    let rows = doc.select(".grid p, p.text-white");
-    let seen = {};
-    for (let i = 0; i < rows.size(); i++) {
-        let row = rows.get(i);
-        let labelNode = row.select("span.text-gray-300").first();
-        if (!labelNode) continue;
-        let label = cleanText(labelNode.text()).replace(/:$/, "");
-        let value = cleanText(row.text());
-        let rawLabel = cleanText(labelNode.text());
-        if (rawLabel && value.indexOf(rawLabel) === 0) {
-            value = cleanText(value.substring(rawLabel.length));
-        }
-        value = value.replace(/^:\s*/, "");
-        if (label && value && !seen[label]) {
-            seen[label] = true;
-            lines.push("<b>" + label + ":</b> " + value);
-        }
-    }
-    if (status) lines.push("<b>Trang thai:</b> " + status);
+    let author = getInfoValue(doc, ["tac gia", "author"]);
+    let group = getInfoValue(doc, ["nhom dich", "group"]);
+    let year = getInfoValue(doc, ["nam phat hanh", "year"]);
+    let updated = getInfoValue(doc, ["cap nhat lan cuoi", "cap nhat", "update"]);
+    let total = getInfoValue(doc, ["tong chuong", "total chapter"]);
+
+    if (author && author !== "Dang cap nhat" && foldText(author) !== "dang cap nhat") lines.push("<b>Tac gia:</b> " + author);
+    if (group && foldText(group) !== "dang cap nhat") lines.push("<b>Nhom dich:</b> " + group);
+    if (year && foldText(year) !== "dang cap nhat") lines.push("<b>Nam phat hanh:</b> " + year);
+    if (total) lines.push("<b>Tong chuong:</b> " + total);
+    if (updated) lines.push("<b>Cap nhat:</b> " + updated);
+
     return lines.join("<br>");
 }
 
-function heroHtml(doc) {
-    let html = doc.html();
-    let start = html.indexOf('id="id-manga"');
-    if (start < 0) start = html.indexOf("id='id-manga'");
-    if (start < 0) return "";
-    let end = html.indexOf('id="manga_view"', start);
-    if (end < 0) end = html.indexOf("id='manga_view'", start);
-    if (end >= 0) end = end + 1200;
-    let nextBlock = html.indexOf("<div x-data", start + 1);
-    if (nextBlock > start && nextBlock < end) end = nextBlock;
-    if (end < 0) end = html.indexOf('<h2 class="text-xl', start);
-    if (end < 0) end = start + 6000;
-    return html.substring(start, end);
-}
-
-function collectGenres(doc) {
-    let data = [];
-    let seen = {};
-    let html = heroHtml(doc);
-    let regex = /<a\b[^>]*href=["']([^"']*\/the-loai\/[^"']+)["'][^>]*>([\s\S]*?)<\/a>/ig;
-    let match;
-    while ((match = regex.exec(html)) !== null) {
-        let href = normalizeUrl(match[1]);
-        let title = cleanText(match[2].replace(/<[^>]+>/g, " "));
-        if (!title || !href || seen[href]) continue;
-        seen[href] = true;
-        data.push({title: title, input: href, script: "gen.js"});
-    }
-    return data;
-}
-
-function statusText(doc) {
-    let html = heroHtml(doc);
-    let match = /<a\b[^>]*href=["'][^"']*status=[^"']+["'][^>]*>([\s\S]*?)<\/a>/i.exec(html);
-    return match ? cleanText(match[1].replace(/<[^>]+>/g, " ")) : "";
-}
-
 function execute(url) {
-    url = storyUrlFromAny(url);
-    let doc = getDoc(url);
+    let slug = extractSlug(url);
+    if (!slug) return Response.error("Khong tim thay slug truyen.");
+
+    let detailUrl = BASE_URL + "/chi-tiet/" + slug;
+    let doc = getDoc(detailUrl);
     if (!doc) return null;
 
-    let name = firstText(doc, ["h1", "meta[property=og:title]"]);
+    let name = firstText(doc, [
+        "h1",
+        ".manga-name",
+        ".comic-name",
+        ".story-name",
+        "meta[property=og:title]"
+    ]);
     if (!name) {
-        let metaTitle = doc.select("meta[property=og:title]").attr("content");
-        name = cleanText(metaTitle).replace(/\s*\|\s*Otakusic\s*$/i, "");
+        name = cleanText(doc.select("meta[property=og:title]").attr("content"));
+        if (name) name = name.replace(/\s*\|\s*Otakusic\s*$/i, "");
     }
     if (!name) return Response.error("Khong tim thay thong tin truyen.");
 
-    let coverNode = doc.select("img[src*='/manga/uploads/manga/']").first();
-    let cover = coverNode ? (coverNode.attr("data-src") || coverNode.attr("src")) : "";
-    if (!cover) {
-        let style = doc.select("[style*=background-image]").attr("style");
-        let match = /url\(['"]?([^'")]+)['"]?\)/i.exec(style || "");
-        cover = match ? match[1] : "";
+    let cover = "";
+    let coverNode = doc.select("img[src*='manga/uploads/manga/" + slug + "']").first();
+    if (!coverNode) coverNode = doc.select("img[data-src*='manga/uploads/manga/" + slug + "']").first();
+    if (!coverNode) coverNode = doc.select(".manga-cover img, .comic-cover img, .story-cover img, .thumb img, .book_avatar img, img[itemprop=image]").first();
+    if (coverNode) cover = imageFromNode(coverNode);
+    if (!cover || isBadImage(cover)) {
+        cover = normalizeImage(
+            doc.select("meta[property=og:image]").attr("content") ||
+            doc.select("meta[itemprop=image]").attr("content") ||
+            doc.select("meta[name=twitter:image]").attr("content")
+        );
     }
+    if (isBadImage(cover)) cover = "";
 
-    let status = statusText(doc);
-    let author = infoValue(doc, ["tac gia"]);
-    let description = firstHtml(doc, ["#description"]);
-    if (!cleanText(description)) description = doc.select("meta[name=description]").attr("content");
+    let author = getInfoValue(doc, ["tac gia", "author"]);
+    if (foldText(author) === "dang cap nhat") author = "";
+
+    let statusText = "";
+    let statusNode = doc.select("a[href*='status=']").first();
+    if (statusNode) statusText = cleanText(statusNode.text());
+
+    let description = cleanText(doc.select("meta[property=og:description]").attr("content"));
+    if (!description) {
+        description = firstHtml(doc, [
+            ".manga-description",
+            ".comic-description",
+            ".story-description",
+            ".summary",
+            "#summary"
+        ]);
+    }
 
     return Response.success({
         name: name,
-        cover: normalizeImage(cover),
+        cover: cover,
+        host: BASE_URL,
         author: author,
         description: description,
-        detail: buildDetail(doc, status),
-        ongoing: foldText(status).indexOf("hoan thanh") < 0,
-        genres: collectGenres(doc),
-        host: BASE_URL
+        detail: buildDetail(doc),
+        ongoing: foldText(statusText).indexOf("hoan thanh") < 0 && foldText(statusText).indexOf("completed") < 0,
+        genres: getGenres(doc)
     });
 }

@@ -11,6 +11,8 @@
 /.gitattributes
 /7zr.exe
 /push_project.py
+/package_extension.py
+/package_extension_gui.py
 
 # Local temp
 /temp/
@@ -24,3 +26,5 @@ _push_otakusic*/
 
 # Local site cookie
 luottruyen/cookie.txt
+otakusic/Cookie header string.txt
+otakusic/src/cookie.js

@@ -1,16 +1,16 @@
 {
   "metadata": {
     "author": "madokalb112",
-    "description": "bruhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+    "description": "https://www.facebook.com/hunghoang.lb"
   },
   "data": [
     {
       "name": "Otakusic",
       "author": "madokalb112",
-      "version": 10,
+      "version": 13,
       "source": "https://otakusic.com",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/plugin-v10.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/icon.png?v=10",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/icon.png?v=13",
       "description": "Doc truyen tranh tren Otakusic",
       "type": "comic",
       "locale": "vi_VN"

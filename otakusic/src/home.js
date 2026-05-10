@@ -1,12 +1,11 @@
-load("config.js");
+load('config.js');
 
 function execute() {
     return Response.success([
-        {title: "Moi cap nhat", input: BASE_URL + "/tim-kiem", script: "gen.js"},
-        {title: "Dang tien hanh", input: BASE_URL + "/tim-kiem?status=ongoing", script: "gen.js"},
-        {title: "Da hoan thanh", input: BASE_URL + "/tim-kiem?status=completed", script: "gen.js"},
-        {title: "Top ngay", input: API_URL + "/manga/ranking?type=day", script: "gen.js"},
-        {title: "Top tuan", input: API_URL + "/manga/ranking?type=week", script: "gen.js"},
-        {title: "Top thang", input: API_URL + "/manga/ranking?type=month", script: "gen.js"}
+        {title: "Moi cap nhat", input: "/tim-kiem?sort=updated", script: "gen.js"},
+        {title: "Top thinh hanh", input: "/tim-kiem?sort=views", script: "gen.js"},
+        {title: "Danh gia cao", input: "/tim-kiem?sort=rating", script: "gen.js"},
+        {title: "Dang tien hanh", input: "/tim-kiem?status=ongoing&sort=updated", script: "gen.js"},
+        {title: "Hoan thanh", input: "/tim-kiem?status=completed&sort=updated", script: "gen.js"}
     ]);
 }
