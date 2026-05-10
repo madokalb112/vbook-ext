@@ -62,12 +62,12 @@
       "locale": "vi_VN"
     },
     {
-      "name": "TuSachXinhXinh",
+      "name": "tusachxinhxinh",
       "author": "madokalb112",
-      "version": 1,
+      "version": 2,
       "source": "https://tusachxinhxinh12.online/",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/plugin.zip?v=2",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/icon.png?v=2",
       "description": "Doc truyen tranh tren Tu Sach Xinh Xinh",
       "type": "comic",
       "locale": "vi_VN"
