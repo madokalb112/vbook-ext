@@ -6,6 +6,11 @@
 # Backup, keep local only
 /1backup/
 
+# Local repo helpers, keep local only
+/.gitattributes
+/7zr.exe
+/push_project.py
+
 # Local temp
 /temp/
 *test.json

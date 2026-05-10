@@ -39,11 +39,6 @@ def main():
     parser.add_argument("--remote", default="origin", help="Git remote name.")
     parser.add_argument("--branch", default="main", help="Branch to push.")
     parser.add_argument("--dry-run", action="store_true", help="Show status without committing or pushing.")
-    parser.add_argument(
-        "--overwrite",
-        action="store_true",
-        help="Overwrite the remote branch with this local branch using git push --force-with-lease.",
-    )
     args = parser.parse_args()
 
     ensure_repo()
@@ -52,28 +47,17 @@ def main():
         print(f"Current branch is {branch!r}; pushing to {args.branch!r}.")
 
     run(["git", "status", "--short"])
-    changes = has_changes()
-    push_cmd = ["git", "push"]
-    if args.overwrite:
-        push_cmd.append("--force-with-lease")
-    push_cmd += [args.remote, args.branch]
-
-    if not changes and not args.overwrite:
+    if not has_changes():
         print("No changes to commit.")
         return 0
 
     if args.dry_run:
-        if changes:
-            print("Dry run: would run git add -A, git commit, then " + " ".join(push_cmd) + ".")
-        else:
-            print("Dry run: would run " + " ".join(push_cmd) + ".")
+        print("Dry run: would run git add -A, git commit, then git push.")
         return 0
 
-    if changes:
-        run(["git", "add", "-A"])
-        run(["git", "commit", "-m", args.message])
-
-    run(push_cmd)
+    run(["git", "add", "-A"])
+    run(["git", "commit", "-m", args.message])
+    run(["git", "push", args.remote, args.branch])
     print("Push complete.")
     return 0
 
