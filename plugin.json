@@ -33,7 +33,7 @@
       "source": "https://thienthaitruyen8.com/official",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/icon.png?v=5",
-      "description": "Doc truyen tranh tren ThienThaiTruyen",
+      "description": "Doc truyen seg ThienThaiTruyen",
       "type": "comic",
       "locale": "vi_VN",
       "tag": "nsfw"
@@ -45,7 +45,7 @@
       "source": "https://khomanhwa.com/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/icon.png",
-      "description": "Doc truyen tranh tren KhoManhwa",
+      "description": "Doc truyen seg KhoManhwa",
       "type": "comic",
       "locale": "vi_VN",
       "tag": "nsfw"
@@ -79,7 +79,7 @@
       "source": "https://hongtrateam.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hongtrateam/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hongtrateam/icon.png",
-      "description": "Doc truyen tren Hong Tra Team",
+      "description": "Doc truyen seg Tra Team",
       "type": "novel",
       "locale": "vi_VN",
       "tag": "nsfw"
@@ -180,7 +180,7 @@
       "source": "https://mimimoe.moe",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mimimoe/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mimimoe/icon.png",
-      "description": "Doc truyen tren MimiMoe",
+      "description": "Doc truyen seg tren MimiMoe",
       "type": "comic",
       "locale": "vi_VN",
       "tag": "nsfw"
@@ -192,7 +192,7 @@
       "source": "https://sayhentai.sh",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sayhentai/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sayhentai/icon.png",
-      "description": "Doc truyen tren SayHentai",
+      "description": "Doc truyen seg tren SayHentai",
       "type": "comic",
       "locale": "vi_VN",
       "tag": "nsfw"
