@@ -2,9 +2,9 @@
   "metadata": {
     "name": "Otakusic",
     "author": "madokalb112",
-    "version": 8,
+    "version": 9,
     "source": "https://otakusic.com",
-    "regexp": "(www\\.)?otakusic\\.com(?:/?|/(?:chi-tiet/[^/?#]+|doc-truyen/[^/?#]+/[^/?#]+|the-loai/[^/?#]+|tim-kiem/?)(?:[?#].*)?)$",
+    "regexp": "(www\\.)?otakusic\\.com/(?:chi-tiet/[^/?#]+|doc-truyen/[^/?#]+/[^/?#]+)/?(?:[?#].*)?$",
     "description": "Doc truyen tranh tren Otakusic",
     "locale": "vi_VN",
     "language": "javascript",
