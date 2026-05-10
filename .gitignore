@@ -10,6 +10,9 @@
 /temp/
 *test.json
 data.json
+.chrome-*/
+_git_otakusic*
+_push_otakusic*/
 
 # Local site cookie
 luottruyen/cookie.txt
