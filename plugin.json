@@ -5,6 +5,17 @@
   },
   "data": [
     {
+      "name": "Otakusic",
+      "author": "madokalb112",
+      "version": 6,
+      "source": "https://otakusic.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/icon.png",
+      "description": "Doc truyen tranh tren Otakusic",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
       "name": "MangaFire",
       "author": "madokalb112",
       "version": 3,
