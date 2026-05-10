@@ -64,10 +64,10 @@
     {
       "name": "tusachxinhxinh",
       "author": "madokalb112",
-      "version": 2,
+      "version": 3,
       "source": "https://tusachxinhxinh12.online/",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/icon.png?v=2",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/plugin-v3.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/tusachxinhxinh/icon.png?v=3",
       "description": "Doc truyen tranh tren Tu Sach Xinh Xinh",
       "type": "comic",
       "locale": "vi_VN"
