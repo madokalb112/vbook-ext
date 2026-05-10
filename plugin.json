@@ -16,18 +16,6 @@
       "locale": "vi_VN"
     },
     {
-      "name": "MyReadingManga",
-      "author": "madokalb112",
-      "version": 1,
-      "source": "https://myreadingmanga.info",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/MyReadingManga/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/MyReadingManga/icon.png",
-      "description": "Read comics on MyReadingManga",
-      "type": "comic",
-      "locale": "en_US",
-      "tag": "nsfw"
-    },
-    {
       "name": "ChickenManga",
       "author": "madokalb112",
       "version": 1,
