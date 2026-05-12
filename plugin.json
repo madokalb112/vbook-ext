@@ -273,6 +273,17 @@
       "description": "Đọc truyện trên trang Yurineko",
       "type": "comic",
       "locale": "vi_VN"
+    },
+    {
+      "name": "Chuangshi QQ",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://m.chuangshi.qq.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/m.chuangshi.qq.com/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/m.chuangshi.qq.com/icon.png?v=1",
+      "description": "Doc truyen chu tren Chuangshi QQ",
+      "type": "novel",
+      "locale": "zh_CN"
     }
   ]
 }
