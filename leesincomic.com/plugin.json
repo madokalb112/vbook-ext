@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "Leesin Comic",
+    "author": "madokalb112",
+    "version": 1,
+    "source": "https://leesincomic.com",
+    "regexp": "(www\\.)?leesincomic\\.com(?:/(?:truyen-tranh/[^/?#]+(?:/[^/?#]+)?\\.html|the-loai/[^/?#]+\\.html|tim-kiem\\.html(?:\\?[^#]*)?|page/[^/?#]+\\.html))?/?(?:[?#].*)?$",
+    "description": "Doc truyen tranh tren Leesin Comic",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

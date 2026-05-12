@@ -275,6 +275,17 @@
       "locale": "vi_VN"
     },
     {
+      "name": "Leesin Comic",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://leesincomic.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/leesincomic.com/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/leesincomic.com/icon.png?v=1",
+      "description": "Doc truyen tranh tren Leesin Comic",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
       "name": "Chuangshi QQ",
       "author": "madokalb112",
       "version": 1,
