@@ -286,6 +286,17 @@
       "locale": "vi_VN"
     },
     {
+      "name": "69ShuBa",
+      "author": "madokalb112",
+      "version": 3,
+      "source": "https://69shuba.tw",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/icon.png?v=3",
+      "description": "Read Chinese novels on 69ShuBa",
+      "type": "novel",
+      "locale": "zh_CN"
+    },
+    {
       "name": "Chuangshi QQ",
       "author": "madokalb112",
       "version": 1,
