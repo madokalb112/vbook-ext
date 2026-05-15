@@ -8,7 +8,7 @@
     "description": "阅读八零奇书网 TXT 小说",
     "locale": "zh_CN",
     "language": "javascript",
-    "type": "novel"
+    "type": "chinese_novel"
   },
   "script": {
     "home": "home.js",
