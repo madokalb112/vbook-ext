@@ -350,20 +350,145 @@ function chineseNumber(text) {
     return total + section + number;
 }
 
-function chapterOrdinal(title) {
-    let match = /(?:\u6b63\u6587\s*)?\u7b2c\s*([0-9\u96f6\u3007\u4e00\u4e8c\u4e24\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u5341\u767e\u5343\u4e07]+)\s*[\u7ae0\u8282\u56de\u5377\u90e8\u96c6]/.exec(title || "");
-    if (match) return chineseNumber(match[1]);
-    match = /chapter\s+(\d+)/i.exec(title || "");
-    return match ? parseInt(match[1]) : 0;
+function isChapterNumberChar(ch) {
+    return /[0-9\u96f6\u3007\u4e00\u4e8c\u4e24\u4e09\u56db\u4e94\u516d\u4e03\u516b\u4e5d\u5341\u767e\u5343\u4e07]/.test(ch || "");
 }
 
-function chapterTitleRegex() {
-    return new RegExp("^\\s*(?:(?:\\u6b63\\u6587\\s*)?\\u7b2c\\s*[0-9\\u96f6\\u3007\\u4e00\\u4e8c\\u4e24\\u4e09\\u56db\\u4e94\\u516d\\u4e03\\u516b\\u4e5d\\u5341\\u767e\\u5343\\u4e07]+\\s*[\\u7ae0\\u8282\\u56de\\u5377\\u90e8\\u96c6][^\\n]{0,80}|Chapter\\s+\\d+[^\\n]{0,80})\\s*$", "gmi");
+function parseDirectChapterLine(line) {
+    line = cleanText(line);
+    if (!line || line.charAt(0) !== "\u7b2c") return null;
+
+    let i = 1;
+    while (i < line.length && /\s/.test(line.charAt(i))) i++;
+    let start = i;
+    while (i < line.length && isChapterNumberChar(line.charAt(i))) i++;
+    if (i === start) return null;
+
+    while (i < line.length && /\s/.test(line.charAt(i))) i++;
+    if (i >= line.length || "\u7ae0\u8282\u56de\u5377\u90e8\u96c6".indexOf(line.charAt(i)) < 0) return null;
+
+    let raw = chineseNumber(line.substring(start, i));
+    if (!raw) return null;
+    return {
+        raw: raw,
+        suffix: cleanText(line.substring(i + 1)),
+        source: line,
+        kind: "direct"
+    };
 }
 
-function lineEnd(text, index) {
-    let end = text.indexOf("\n", index);
-    return end >= 0 ? end + 1 : text.length;
+function parsePipeChapterLine(line) {
+    line = cleanText(line);
+    let match = /^(\d{1,3})\|(\d{2})$/.exec(line);
+    if (!match) return null;
+    return {
+        raw: parseInt(match[1]),
+        suffix: match[2],
+        source: line,
+        kind: "pipe"
+    };
+}
+
+function chapterDisplayTitle(order, suffix) {
+    let title = "\u7b2c" + order + "\u7ae0";
+    suffix = cleanText(suffix || "").replace(/^[\s:：|]+/, "");
+    if (!suffix || /^[0-9~\uff5e|._=-]+$/.test(suffix)) return title;
+    return title + (/^[\(\[\u3010\uff08]/.test(suffix) ? "" : " ") + suffix;
+}
+
+function chapterCandidates(text) {
+    let lines = text.split("\n");
+    let offsets = [];
+    let cursor = 0;
+    for (let i = 0; i < lines.length; i++) {
+        offsets.push(cursor);
+        cursor += lines[i].length + 1;
+    }
+
+    let data = [];
+    for (let j = 0; j < lines.length; j++) {
+        let line = cleanText(lines[j]);
+        if (!line) continue;
+
+        let direct = parseDirectChapterLine(line);
+        if (direct) {
+            let item = {
+                index: offsets[j],
+                bodyStart: j + 1 < offsets.length ? offsets[j + 1] : text.length,
+                lineIndex: j,
+                raw: direct.raw,
+                suffix: direct.suffix,
+                source: direct.source,
+                kind: direct.kind
+            };
+            if (data.length > 0) {
+                let prev = data[data.length - 1];
+                if (prev.kind === "pipe" && prev.raw === item.raw && item.lineIndex - prev.lineIndex <= 3) {
+                    data[data.length - 1] = item;
+                    continue;
+                }
+            }
+            data.push(item);
+            continue;
+        }
+
+        let pipe = parsePipeChapterLine(line);
+        if (pipe) {
+            data.push({
+                index: offsets[j],
+                bodyStart: j + 1 < offsets.length ? offsets[j + 1] : text.length,
+                lineIndex: j,
+                raw: pipe.raw,
+                suffix: pipe.suffix,
+                source: pipe.source,
+                kind: pipe.kind
+            });
+        }
+    }
+    return data;
+}
+
+function resolveChapterCandidates(candidates) {
+    let resolved = [];
+    let previous = 0;
+    for (let i = 0; i < candidates.length;) {
+        let current = candidates[i];
+        if (current.raw === previous + 1) {
+            current.order = current.raw;
+            resolved.push(current);
+            previous = current.order;
+            i++;
+            continue;
+        }
+
+        let anchor = -1;
+        for (let j = i + 1; j < candidates.length; j++) {
+            let next = candidates[j];
+            if (next.raw <= previous) continue;
+            let gap = next.raw - previous - 1;
+            let count = j - i;
+            if (gap === count) {
+                anchor = j;
+                break;
+            }
+        }
+
+        if (anchor >= 0) {
+            for (let k = i; k < anchor; k++) {
+                candidates[k].order = previous + (k - i) + 1;
+                resolved.push(candidates[k]);
+            }
+            previous = resolved[resolved.length - 1].order;
+            i = anchor;
+            continue;
+        }
+
+        current.order = current.raw > previous ? current.raw : previous + 1;
+        resolved.push(current);
+        previous = current.order;
+        i++;
+    }
+    return resolved;
 }
 
 function splitChapters(text) {
@@ -432,6 +557,48 @@ function textToHtml(text) {
         html.push("<p>" + htmlEscape(line) + "</p>");
     }
     return html.join("\n");
+}
+
+function splitChapters(text) {
+    text = normalizeNovelText(text);
+    let matches = resolveChapterCandidates(chapterCandidates(text));
+    if (matches.length === 0) return [{title: "\u5168\u6587", order: 1, body: text}];
+
+    let chapters = [];
+    for (let j = 0; j < matches.length; j++) {
+        let next = j + 1 < matches.length ? matches[j + 1].index : text.length;
+        let body = text.substring(matches[j].bodyStart, next);
+        chapters.push({
+            title: chapterDisplayTitle(matches[j].order, matches[j].suffix),
+            order: matches[j].order || (chapters.length + 1),
+            body: body
+        });
+    }
+    return chapters;
+}
+
+function tocName(chapter, index) {
+    let title = cleanText(chapter.title);
+    if (title) return title;
+    return "\u7b2c" + (index + 1) + "\u7ae0";
+}
+
+function isJunkLine(line) {
+    line = cleanText(line);
+    if (!line) return true;
+    return line.indexOf("QiShu") >= 0 ||
+        line.indexOf("80qishu") >= 0 ||
+        line.indexOf("www.") >= 0 ||
+        /^\d{1,3}\|\d{2}$/.test(line) ||
+        /^123\u8a00\u60c5/.test(line) ||
+        /^\u5185\u5bb9\u63d0\u8981[:\uff1a]/.test(line) ||
+        /^\u8c22\u7edd\u8f6c\u8f7d/.test(line) ||
+        /^[~\uff5e]{1,}$/.test(line) ||
+        line.indexOf("\u58f0\u660e\uff1a") === 0 ||
+        line.indexOf("\u7528\u6237\u4e0a\u4f20\u4e4b\u5185\u5bb9") >= 0 ||
+        line.indexOf("\u672c\u4e66\u6765\u81ea") >= 0 ||
+        line.indexOf("\u66f4\u591a\u7cbe\u6821") >= 0 ||
+        /^[-_=]{6,}$/.test(line);
 }
 
 function execute() {

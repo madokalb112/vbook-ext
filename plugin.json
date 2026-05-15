@@ -40,7 +40,7 @@
     {
       "name": "MangaFire",
       "author": "madokalb112",
-      "version": 3,
+      "version": 4,
       "source": "https://mangafire.to",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/icon.png",
@@ -164,10 +164,10 @@
     {
       "name": "80QiShu",
       "author": "madokalb112",
-      "version": 3,
+      "version": 4,
       "source": "https://www.80qishu.com/",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/plugin-v3.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/icon.png?v=3",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/plugin-v4.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/icon.png?v=4",
       "description": "阅读八零奇书网 TXT 小说",
       "type": "novel",
       "locale": "zh_CN"
