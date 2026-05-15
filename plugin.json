@@ -288,23 +288,23 @@
     {
       "name": "69ShuBa",
       "author": "madokalb112",
-      "version": 5,
+      "version": 6,
       "source": "https://69shuba.tw",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/plugin-v5.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/icon.png?v=5",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/plugin-v6.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/icon.png?v=6",
       "description": "Read Chinese novels on 69ShuBa",
-      "type": "novel",
+      "type": "chinese_novel",
       "locale": "zh_CN"
     },
     {
       "name": "Chuangshi QQ",
       "author": "madokalb112",
-      "version": 1,
+      "version": 2,
       "source": "https://m.chuangshi.qq.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/m.chuangshi.qq.com/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/m.chuangshi.qq.com/icon.png?v=1",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/m.chuangshi.qq.com/icon.png?v=2",
       "description": "Doc truyen chu tren Chuangshi QQ",
-      "type": "novel",
+      "type": "chinese_novel",
       "locale": "zh_CN"
     }
   ]

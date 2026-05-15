@@ -2,13 +2,13 @@
   "metadata": {
     "name": "69ShuBa",
     "author": "madokalb112",
-    "version": 5,
+    "version": 6,
     "source": "https://69shuba.tw",
     "regexp": "(?:www\\.)?69shuba\\.tw(?:/.*)?",
     "description": "Read Chinese novels on 69ShuBa",
     "locale": "zh_CN",
     "language": "javascript",
-    "type": "novel"
+    "type": "chinese_novel"
   },
   "script": {
     "home": "home.js",
