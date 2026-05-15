@@ -2,15 +2,15 @@ load('config.js');
 
 function execute() {
     return Response.success([
-        {title: "Latest", input: "/new/", script: "gen.js"},
-        {title: "Library", input: "/all/", script: "gen.js"},
-        {title: "Hot", input: "/hot/", script: "gen.js"},
-        {title: "Recommended", input: "/recommendall/", script: "gen.js"},
-        {title: "Male", input: "/nansheng/", script: "gen.js"},
-        {title: "Female Romance", input: "/yanqing/", script: "gen.js"},
-        {title: "Fantasy", input: "/xuanhuan/", script: "gen.js"},
-        {title: "Urban", input: "/dushi/", script: "gen.js"},
-        {title: "History", input: "/lishi/", script: "gen.js"},
-        {title: "Sci-Fi", input: "/kehuan/", script: "gen.js"}
+        {title: "最新", input: "/new/", script: "gen.js"},
+        {title: "书库", input: "/all/", script: "gen.js"},
+        {title: "排行", input: "/hot/", script: "gen.js"},
+        {title: "推荐", input: "/recommendall/", script: "gen.js"},
+        {title: "男生小说", input: "/nansheng/", script: "gen.js"},
+        {title: "女生言情", input: "/yanqing/", script: "gen.js"},
+        {title: "玄幻奇幻", input: "/xuanhuan/", script: "gen.js"},
+        {title: "都市小说", input: "/dushi/", script: "gen.js"},
+        {title: "历史军事", input: "/lishi/", script: "gen.js"},
+        {title: "科幻灵异", input: "/kehuan/", script: "gen.js"}
     ]);
 }

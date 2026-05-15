@@ -1,0 +1,858 @@
+https://69shuba.tw/indexlist/344710/2/
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>《我咋就天下無敵了》章節目錄_第2頁_69書吧</title>
+    <meta name="keywords" content="我咋就天下無敵了章節目錄,我咋就天下無敵了 69書吧,我咋就天下無敵了 繁體"/>
+    <meta name="description" content="我咋就天下無敵了 繁體由大神新豐所著，69書吧提供免費閱讀txt下載"/>
+
+
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="MobileOptimized" content="240" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="//p.69shuba.tw/js/favicon.ico" media="screen">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" defer></script>
+<script src="//p.69shuba.tw/js/common.js" defer></script>
+<script src="//p.69shuba.tw/js/gg.js"></script>
+
+</head>
+<style>
+body, ul, li, p, span, h1, h2, h3, h4, h5, h6, dl, dt, dd { margin: 0; padding: 0; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+ul, li { list-style: none; }
+a { color: #000; text-decoration: none; }
+.cc { height: 0; clear: both; }
+.page-head {
+    height: 45px;
+    line-height: 45px;
+    background: #007BB1;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+}
+.page-head .home, .page-head .bookcase {
+    display: block;
+    float: right;
+    padding: 0 10px;
+    height: 28px;
+    margin: 8px 10px;
+    line-height: 28px;
+    font-size: 14px;
+    background-color: #65bbec;
+    border-radius: 3px;
+    color: #fff;
+}
+.page-head .home { float: left; margin-left: 5px; }
+.page-head .bookcase { margin-right: 5px; }
+.bookinfo { line-height: 22px; padding: 5px; font-size: 14px; color: #888; }
+.bookinfo table { width: 100%; border-collapse: collapse; }
+.bookinfo table:first-child td:first-child { 
+    width: 100px; 
+    height: 130px; 
+    vertical-align: top;
+    background: #f5f5f5;
+}
+.bookinfo table:first-child td:first-child img { 
+    width: 100px; 
+    height: 130px; 
+    display: block;
+    object-fit: cover;
+}
+.bookinfo .info { padding-left: 10px; }
+.bookinfo .info a { color: #0065B5; font-weight: bold; }
+.bookinfo h1 { color: #333; font-size: 16px; display: block; margin: 0 0 2px 0; font-weight: bold; }
+.bookinfo strong { color: #333; font-size: 16px; display: block; margin-bottom: 2px; }
+.bookinfo p { height: 22px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.book-op { width: 100%; margin-top: 5px; }
+.book-op a {
+    background: #65bbec;
+    border-radius: 3px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    display: block;
+    color: #fff;
+}
+.book-op tr td { padding: 5px 3px 0; }
+.book-tags a { display: inline-block; padding: 2px 8px; margin: 2px; background: #f0f0f0; border-radius: 3px; color: #666; font-size: 12px; }
+.book-itemtitle { background: #ECF0F0; color: #222; font-size: 15px; font-weight: bold; border-bottom: 2px solid #007BB1; padding: 8px 10px; }
+.intro { color: #888; padding: 10px 5px; line-height: 1.6; }
+.last9 li { padding: 5px 0; border-bottom: 1px solid #DDD; }
+.last9 li.even { background-color: #F4F4F4; }
+.last9 li a { display: block; padding: 5px 7px; color: #666; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.last9 li.more { text-align: right; }
+.last9 li.more a { color: #ff0000; padding-right: 30px; }
+.foot {
+    text-align: center;
+    margin: 10px 0 0 0;
+    padding: 10px 0;
+    height: 30px;
+    border-top: 1px dashed #e5e5e5;
+    background: #ECF0F0;
+}
+.foot a {
+    color: #0065B5;
+    font-size: 18px;
+    margin: 0 10px;
+}
+</style>
+<!-- /header -->
+
+
+<style>
+        body, ul, li, p, span, h1, h2, h3, h4, h5, h6, dl, dt, dd { margin: 0; padding: 0; }
+        body { margin: 0; font-family: -apple-system, sans-serif; background: #fff; }
+        ul, li { list-style: none; }
+        a { color: #000; text-decoration: none; }
+        .page-head { height: 45px; line-height: 45px; background: #007BB1; color: #fff; text-align: center; overflow: hidden; }
+        .page-head .home, .page-head .bookcase { 
+            display: block; float: right; padding: 0 10px; height: 28px; margin: 8px 10px; 
+            line-height: 28px; font-size: 14px; background-color: #65bbec; border-radius: 3px; color: #fff; 
+        }
+        .page-head .home { float: left; margin-left: 5px; }
+        .lb_mulu { background: #fff; }
+        .last9 li { border-bottom: 1px solid #DDD; line-height: 24px; }
+        .last9 li.title { background: #ECF0F0; border-top: 1px solid #ddd; border-bottom: 2px solid #007BB1; }
+        .last9 li.title a { display: block; padding: 10px; color: #007BB1; font-weight: bold; font-size: 15px; }
+        .last9 li.even { background-color: #F4F4F4; }
+        .last9 li a, .last9 li span { display: block; padding: 12px 10px; color: #666; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+        .index-container { display: flex; justify-content: space-between; padding: 15px 10px; background: #f9f9f9; }
+        #indexselect-top { 
+            width: 45%; height: 34px; border: 1px solid #65bbec; border-radius: 3px; 
+            background: #fff; outline: none; color: #007BB1; 
+        }
+        .index-container-btn { 
+            background: #65bbec; border-radius: 3px; height: 34px; line-height: 34px; 
+            text-align: center; display: block; color: #fff; width: 25%; font-size: 14px; 
+        }
+        .index-container-btn.disabled-btn { background: #ccc; cursor: not-allowed; }
+        .foot { text-align: center; margin-top: 10px; padding: 15px 0; border-top: 1px dashed #e5e5e5; background: #ECF0F0; }
+        .foot a { color: #0065B5; font-size: 18px; margin: 0 10px; }
+        .js-generated-link { color: #666 !important; text-decoration: none !important; }
+        .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+    </style>
+
+<nav class="page-head" aria-label="上方導航">
+    <a href="/" class="home">首頁</a>
+    <a href="/bookcase/" rel="nofollow" class="bookcase">我的書架</a>
+</nav>
+<div class="lb_mulu" id="alllist">
+<main id="alllist">
+    <div class="lb_mulu">
+        <ul class="last9">
+            <li class="title">
+                <a href="/book/344710/" class="back">返回《我咋就天下無敵了》簡介</a>
+            </li>
+<script>loadAdv(1, 1);</script>
+            
+            <li class="">
+                
+                    <a href="/read/344710/1384800" title="我咋就天下無敵了 第101章 總府嘉獎，震驚眾人，我林凡深刻感">第101章 總府嘉獎，震驚眾人，我林凡深刻感</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <span class="protected-chapter-link" 
+                          data-cid-url="/read/344710/1386357" 
+                          data-title="我咋就天下無敵了 第102章 巡按御史：草，現在外面的官員都這">
+                        第102章 巡按御史：草，現在外面的官員都這
+                    </span>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/1578157" title="我咋就天下無敵了 第103章 踏馬的，大不了直接跟他爆了">第103章 踏馬的，大不了直接跟他爆了</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/1662904" title="我咋就天下無敵了 第104章 進京，沒想到竟然有這樣為立大功的">第104章 進京，沒想到竟然有這樣為立大功的</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/1662905" title="我咋就天下無敵了 第105章 天下第一！！！">第105章 天下第一！！！</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/1687884" title="我咋就天下無敵了 第106章 太師，我來羞辱你了，你可以隨意發">第106章 太師，我來羞辱你了，你可以隨意發</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/1709521" title="我咋就天下無敵了 第107章 神武大將軍，榮歸安州">第107章 神武大將軍，榮歸安州</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/1719889" title="我咋就天下無敵了 第108章 衣錦還鄉，眾人大驚，悲喜不斷">第108章 衣錦還鄉，眾人大驚，悲喜不斷</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/1729586" title="我咋就天下無敵了 第109章 八百里加急，邊關軍報">第109章 八百里加急，邊關軍報</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/1740944" title="我咋就天下無敵了 第110章 笑你媽的笑，老子不要一兵一卒，親">第110章 笑你媽的笑，老子不要一兵一卒，親</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/1843677" title="我咋就天下無敵了 第111章 一人退萬軍，單騎懾王師">第111章 一人退萬軍，單騎懾王師</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/2062472" title="我咋就天下無敵了 第112章 朝堂之上，為何無一人叫囂啊！！！">第112章 朝堂之上，為何無一人叫囂啊！！！</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/2159410" title="我咋就天下無敵了 第113章 殺，一個不留，本將軍不想數百年後">第113章 殺，一個不留，本將軍不想數百年後</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/2247085" title="我咋就天下無敵了 第114章 神武大將軍之勇，一頁史書難以寫全">第114章 神武大將軍之勇，一頁史書難以寫全</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/2247086" title="我咋就天下無敵了 第115章 秦禮，本將軍說的話，你最好牢牢記">第115章 秦禮，本將軍說的話，你最好牢牢記</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/2260567" title="我咋就天下無敵了 第116章 父皇，這皇位你別給我們，你留給你">第116章 父皇，這皇位你別給我們，你留給你</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3254321" title="我咋就天下無敵了 第117章 賜死！！！皇后你糊塗啊，你孃家拿">第117章 賜死！！！皇后你糊塗啊，你孃家拿</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3254322" title="我咋就天下無敵了 第118章 兵法有云：奇襲制勝，你們這麼多人">第118章 兵法有云：奇襲制勝，你們這麼多人</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3254323" title="我咋就天下無敵了 第119章 一騎入城，兵卒讓道，誰敢動手？">第119章 一騎入城，兵卒讓道，誰敢動手？</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3260224" title="我咋就天下無敵了 第120章 達光王，你太沒待客之道了，滾下來">第120章 達光王，你太沒待客之道了，滾下來</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3260225" title="我咋就天下無敵了 第121章 朕信愛卿，朕就信愛卿啊">第121章 朕信愛卿，朕就信愛卿啊</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3264263" title="我咋就天下無敵了 第122章 本將軍都在規則裡玩，你們算什麼東">第122章 本將軍都在規則裡玩，你們算什麼東</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3275979" title="我咋就天下無敵了 第123章 陛下，你就不想當千古一帝嗎？朕：">第123章 陛下，你就不想當千古一帝嗎？朕：</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3275980" title="我咋就天下無敵了 第124章 本將軍辦事往往會留一線生機，但抓">第124章 本將軍辦事往往會留一線生機，但抓</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3295185" title="我咋就天下無敵了 第125章 受命於天，既壽永昌，誰能擋得住？">第125章 受命於天，既壽永昌，誰能擋得住？</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3295186" title="我咋就天下無敵了 第126章 父皇，兒臣願意為國做出犧牲，迎娶">第126章 父皇，兒臣願意為國做出犧牲，迎娶</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3296604" title="我咋就天下無敵了 第127章 宋濤：我在渭河將神武司分部負責人">第127章 宋濤：我在渭河將神武司分部負責人</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3296605" title="我咋就天下無敵了 第128章 我此次親自前來，不是來聽你們解釋">第128章 我此次親自前來，不是來聽你們解釋</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3296606" title="我咋就天下無敵了 第129章 便是太祖復生，我也要問他一句，是">第129章 便是太祖復生，我也要問他一句，是</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3296607" title="我咋就天下無敵了 第130章 你知道大皇子是怎麼死的嘛？他是被">第130章 你知道大皇子是怎麼死的嘛？他是被</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3296608" title="我咋就天下無敵了 第131章 公主，你回家吧。為什麼？因為我要">第131章 公主，你回家吧。為什麼？因為我要</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3296609" title="我咋就天下無敵了 第132章 半日不到，城破">第132章 半日不到，城破</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3296610" title="我咋就天下無敵了 第133章 啥？我率二十萬大軍，你竟然說要當">第133章 啥？我率二十萬大軍，你竟然說要當</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3298023" title="我咋就天下無敵了 第134章 封王！唯一一位異姓王！">第134章 封王！唯一一位異姓王！</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3308578" title="我咋就天下無敵了 第135章 等我回來">第135章 等我回來</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3314928" title="我咋就天下無敵了 第136章 華夏山河之勢，融入掌中，所謂山河掌，一掌天下">第136章 華夏山河之勢，融入掌中，所謂山河掌，一掌天下</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578891" title="我咋就天下無敵了 第137章 你他奶奶的，在我面前裝你媽呢">第137章 你他奶奶的，在我面前裝你媽呢</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578892" title="我咋就天下無敵了 第138章 我林凡從不低調，既然走了這路，自當恐怖如斯">第138章 我林凡從不低調，既然走了這路，自當恐怖如斯</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578893" title="我咋就天下無敵了 第139章 什麼？飛仙門竟然有修人皇法一脈，既然如此，那豈不是說……">第139章 什麼？飛仙門竟然有修人皇法一脈，既然如此，那豈不是說……</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578894" title="我咋就天下無敵了 第140章 不給老子吃，你們都踏馬別想吃了">第140章 不給老子吃，你們都踏馬別想吃了</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578895" title="我咋就天下無敵了 第141章 名揚飛仙門，武峰神武師兄，當真是霸道無比">第141章 名揚飛仙門，武峰神武師兄，當真是霸道無比</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578896" title="我咋就天下無敵了 第142章 飛仙門不相信眼淚，武峰大師兄不能是懦夫">第142章 飛仙門不相信眼淚，武峰大師兄不能是懦夫</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578897" title="我咋就天下無敵了 第143章 若天下鼠輩皆頌我名，我反倒要反省自己是否過於寬仁了">第143章 若天下鼠輩皆頌我名，我反倒要反省自己是否過於寬仁了</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578898" title="我咋就天下無敵了 第144章 我神武王要將林凡碎屍萬段">第144章 我神武王要將林凡碎屍萬段</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578899" title="我咋就天下無敵了 第145章 有本事就一起上吧，我有何懼之。">第145章 有本事就一起上吧，我有何懼之。</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578900" title="我咋就天下無敵了 第146章 你最好保佑他們沒有事，否則等他們師兄回來，我看你死不死">第146章 你最好保佑他們沒有事，否則等他們師兄回來，我看你死不死</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578901" title="我咋就天下無敵了 第147章 我林凡說把你腦袋擰下來，就是擰下來，說一不二">第147章 我林凡說把你腦袋擰下來，就是擰下來，說一不二</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578902" title="我咋就天下無敵了 第148章 你再裝逼，我就零幀起手，你被暴揍，別說自己狀態不好">第148章 你再裝逼，我就零幀起手，你被暴揍，別說自己狀態不好</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578903" title="我咋就天下無敵了 第149章 我的傳承有些副作用，就是容易失去記憶">第149章 我的傳承有些副作用，就是容易失去記憶</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578904" title="我咋就天下無敵了 第150章 二皇子深夜篡位，請父皇下詔退位，我林凡回來啦！！！">第150章 二皇子深夜篡位，請父皇下詔退位，我林凡回來啦！！！</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578905" title="我咋就天下無敵了 第151章 邊境交戰，城破之時，天空一聲炸響，神武王閃亮登場">第151章 邊境交戰，城破之時，天空一聲炸響，神武王閃亮登場</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578906" title="我咋就天下無敵了 第152章 禁衛軍：不是，你要我們拿下神武王？">第152章 禁衛軍：不是，你要我們拿下神武王？</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578907" title="我咋就天下無敵了 第153章 啥？你說的賊人是神武王？你想死，別害我們啊">第153章 啥？你說的賊人是神武王？你想死，別害我們啊</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578908" title="我咋就天下無敵了 第154章 今日不處理此事，都各自回去吧">第154章 今日不處理此事，都各自回去吧</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578909" title="我咋就天下無敵了 第155章 讓各地官府首官，進京當面跟本王說清楚">第155章 讓各地官府首官，進京當面跟本王說清楚</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3578910" title="我咋就天下無敵了 第156章 鑄就人皇戰體">第156章 鑄就人皇戰體</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3578911" title="我咋就天下無敵了 第157章 竟然欺負我人族小輩，莫非真當我人族無人不成？">第157章 竟然欺負我人族小輩，莫非真當我人族無人不成？</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3591779" title="我咋就天下無敵了 第158章 你就說這通緝令跟我有幾分相似？">第158章 你就說這通緝令跟我有幾分相似？</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3699897" title="我咋就天下無敵了 第159章 跟叛徒哪有那麼多廢話可說的">第159章 跟叛徒哪有那麼多廢話可說的</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3702250" title="我咋就天下無敵了 第160章 你再過來，我可要自爆了啊">第160章 你再過來，我可要自爆了啊</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3707601" title="我咋就天下無敵了 第161章 榜首之爭">第161章 榜首之爭</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3713617" title="我咋就天下無敵了 第162章 別說我欺負你們，我讓你們雙手，都一起上">第162章 別說我欺負你們，我讓你們雙手，都一起上</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3724748" title="我咋就天下無敵了 第163章 你這弟子怎麼這麼沒規矩，見到人不知道叫的">第163章 你這弟子怎麼這麼沒規矩，見到人不知道叫的</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3724756" title="我咋就天下無敵了 第164章 拜師後，遇事別怕，好滴，那我要開始搞事了">第164章 拜師後，遇事別怕，好滴，那我要開始搞事了</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3724774" title="我咋就天下無敵了 第165章 林凡：我重整人心，去，上去給我揍他">第165章 林凡：我重整人心，去，上去給我揍他</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3724776" title="我咋就天下無敵了 第166章 道友，你是不是要出貨，來路不正的，我都有門路">第166章 道友，你是不是要出貨，來路不正的，我都有門路</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3724949" title="我咋就天下無敵了 第167章 我一拳，一腳，一套組合拳，打的他眼冒金星">第167章 我一拳，一腳，一套組合拳，打的他眼冒金星</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3724966" title="我咋就天下無敵了 第168章 玄果我想要，靈珠我也不想付，你說怎麼辦">第168章 玄果我想要，靈珠我也不想付，你說怎麼辦</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3724981" title="我咋就天下無敵了 第169章 都這個時候了，你還護著你的東西，我直接扯了你的手臂">第169章 都這個時候了，你還護著你的東西，我直接扯了你的手臂</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3728311" title="我咋就天下無敵了 第170章 臭不要臉的，為師給你們報仇去">第170章 臭不要臉的，為師給你們報仇去</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3730551" title="我咋就天下無敵了 第171章 前輩，我想要這經文，做夢都想啊">第171章 前輩，我想要這經文，做夢都想啊</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3738443" title="我咋就天下無敵了 第172章 嘴裡叼著草，我這一刀很快">第172章 嘴裡叼著草，我這一刀很快</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3749182" title="我咋就天下無敵了 第173章 回中原王朝">第173章 回中原王朝</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3749192" title="我咋就天下無敵了 第174章 寧玉：師傅放心，在我的管理下，好的很">第174章 寧玉：師傅放心，在我的管理下，好的很</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3762941" title="我咋就天下無敵了 第175章 師傅，只要我動腦子，我就能想到辦法">第175章 師傅，只要我動腦子，我就能想到辦法</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3769618" title="我咋就天下無敵了 第176章 人皇鼎">第176章 人皇鼎</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3773401" title="我咋就天下無敵了 第177章 開戰">第177章 開戰</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3783371" title="我咋就天下無敵了 第178章 你們來打生打死，我帶著大夥來進貨">第178章 你們來打生打死，我帶著大夥來進貨</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3799383" title="我咋就天下無敵了 第179章 這玩意不錯，我就收下了">第179章 這玩意不錯，我就收下了</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3803846" title="我咋就天下無敵了 第180章 師兄快跑，師妹快跑">第180章 師兄快跑，師妹快跑</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3809540" title="我咋就天下無敵了 第181章 別打壞了，打壞了就不值錢了">第181章 別打壞了，打壞了就不值錢了</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3815664" title="我咋就天下無敵了 第182章 那徒兒去將那幾個俘虜給弄死了啊">第182章 那徒兒去將那幾個俘虜給弄死了啊</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3818245" title="我咋就天下無敵了 第183章 你說我這樣會上萬仙門必殺名單嗎？">第183章 你說我這樣會上萬仙門必殺名單嗎？</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3823363" title="我咋就天下無敵了 第184章 沒用的，就算他林凡出現，也是無法跟仙神司的人相比的">第184章 沒用的，就算他林凡出現，也是無法跟仙神司的人相比的</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3829013" title="我咋就天下無敵了 第185章 你上什麼上，咱們上就是累贅">第185章 你上什麼上，咱們上就是累贅</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3837439" title="我咋就天下無敵了 第186章 你們的道行不怎麼樣啊">第186章 你們的道行不怎麼樣啊</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3839963" title="我咋就天下無敵了 第187章 那林凡就是師弟？">第187章 那林凡就是師弟？</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3847572" title="我咋就天下無敵了 第188章 你聽說過我的名字？">第188章 你聽說過我的名字？</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3848095" title="我咋就天下無敵了 第189章 我拿你的鼎砸你很合理">第189章 我拿你的鼎砸你很合理</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3850674" title="我咋就天下無敵了 第190章 啥，我林凡這名字成為化名了？">第190章 啥，我林凡這名字成為化名了？</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3853749" title="我咋就天下無敵了 第191章你就是敲詐勒索萬仙門的傢伙">第191章你就是敲詐勒索萬仙門的傢伙</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3856469" title="我咋就天下無敵了 第192章 你們既然知道我的故事，那麼你們該知道怎麼做">第192章 你們既然知道我的故事，那麼你們該知道怎麼做</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3858740" title="我咋就天下無敵了 第193章 我要燒死你，我要燒死你……">第193章 我要燒死你，我要燒死你……</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3863801" title="我咋就天下無敵了 第194章 一切都是師尊教的好">第194章 一切都是師尊教的好</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3868132" title="我咋就天下無敵了 第195章 好好努力，下次也讓我徒兒吃大虧">第195章 好好努力，下次也讓我徒兒吃大虧</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3872315" title="我咋就天下無敵了 第196章 師妹，你要想清楚，別到時候後悔">第196章 師妹，你要想清楚，別到時候後悔</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <a href="/read/344710/3877200" title="我咋就天下無敵了 第197章 我緊張了嗎？">第197章 我緊張了嗎？</a>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3879419" title="我咋就天下無敵了 第198章 這是要出事">第198章 這是要出事</a>
+                
+            </li>
+            
+            <li class="">
+                
+                    <span class="protected-chapter-link" 
+                          data-cid-url="/read/344710/3882017" 
+                          data-title="我咋就天下無敵了 第199章 前輩，那我們往哪裡跑啊">
+                        第199章 前輩，那我們往哪裡跑啊
+                    </span>
+                
+            </li>
+            
+            <li class="even">
+                
+                    <a href="/read/344710/3885360" title="我咋就天下無敵了 第200章 你敢殺我坐騎">第200章 你敢殺我坐騎</a>
+                
+            </li>
+            
+        </ul>
+    </div>
+
+    <div class="index-container">
+        <label for="indexselect-top" class="sr-only">章節目錄選擇</label>
+        <a class="index-container-btn" id="index-prev-top" href="/indexlist/344710/">上一页</a><select id="indexselect-top" aria-label="章節目錄選擇" onchange="self.location.href=options[selectedIndex].value"><option value="/indexlist/344710/">1 - 100章</option><option value="/indexlist/344710/2/" selected="selected">101 - 200章</option><option value="/indexlist/344710/3/">201 - 278章</option></select><a class="index-container-btn" id="index-next-top" href="/indexlist/344710/3/">下一页</a>
+    </div>
+</main>
+
+
+
+<div id="foot" class="foot">
+    <a href="https://69shuba.tw" target="_blank">69書吧</a>
+    <a href="/bookcase/" rel="nofollow">書架</a>
+    
+    <button type="button" 
+            id="appDownloadBtn" 
+            style="display: none; background: none; border: none; padding: 0; margin-left: 15px; color: #555; cursor: pointer; font-size: inherit; font-family: inherit; text-decoration: none; outline: none; vertical-align: baseline;">
+        App下載
+    </button>
+
+    <a href="/DMCA.html" rel="nofollow" style="font-size: 0.7em; color: #b3b2b5; margin-left: 15px;">DMCA</a>
+</div>
+
+<script>
+(function() {
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = /android|adr/i.test(ua);
+    var isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    
+    var appBtn = document.getElementById('appDownloadBtn');
+
+    if (appBtn && (isAndroid || isIOS)) {
+        appBtn.style.display = 'inline-block';
+
+        appBtn.addEventListener('click', function() {
+            if (isAndroid) {
+                var msg = "是否下載APP？";
+                if (confirm(msg)) {
+                    window.location.href = "https://app.cs76.com/book.apk";
+                }
+            } else if (isIOS) {
+                window.open("https://apps.apple.com/app/id6761373048", '_blank');
+            }
+        });
+    }
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XFWYJK9EGS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XFWYJK9EGS');
+</script>
+</body>
+</html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sel = document.querySelector('#indexselect-top');
+    if (sel && !sel.hasAttribute('aria-label')) {
+        sel.setAttribute('aria-label', '章節目錄選擇');
+    }
+
+    const protectedChapterSpans = document.querySelectorAll('.protected-chapter-link');
+    protectedChapterSpans.forEach(function(span) {
+        const cidUrl = span.getAttribute('data-cid-url');
+        const title = span.getAttribute('data-title');
+        const chapterName = span.textContent;
+
+        if (cidUrl) {
+            const a = document.createElement('a');
+            a.href = cidUrl;
+            a.title = title;
+            a.textContent = chapterName;
+            a.classList.add('js-generated-link');
+            span.parentNode.replaceChild(a, span);
+        }
+    });
+});
+</script>

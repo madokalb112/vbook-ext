@@ -168,6 +168,34 @@ function closeBrowserSession(session) {
     }
 }
 
+function browserNavigateDoc(session, url) {
+    let browser = session && session.browser ? session.browser : session;
+    if (!browser) return null;
+
+    let target = normalizeUrl(url || BASE_URL + "/");
+    try {
+        let doc = browser.launch(target, 60000);
+        for (let i = 0; i < 18 && isChallengeDoc(doc); i++) {
+            sleep(3000);
+            try {
+                doc = browser.html();
+            } catch (htmlError) {
+            }
+        }
+        if (!isChallengeDoc(doc)) {
+            if (session && session.browser) {
+                session.doc = doc;
+                session.url = target;
+            }
+            return doc;
+        }
+        LAST_ERROR = "69ShuBa can xac minh. Hay tick captcha trong cua so trinh duyet ext.";
+    } catch (error) {
+        LAST_ERROR = "Khong mo duoc trang 69ShuBa: " + error;
+    }
+    return null;
+}
+
 function browserFetchResult(session, url, options) {
     let browser = session && session.browser ? session.browser : session;
     if (!browser) return null;
@@ -203,9 +231,14 @@ function browserFetchResult(session, url, options) {
 
 function browserFetchDoc(session, url, options) {
     let result = browserFetchResult(session, url, options);
-    if (!result) return null;
+    let method = cleanText(options && options.method ? options.method : "GET").toUpperCase() || "GET";
+    if (!result) {
+        if (method === "GET") return browserNavigateDoc(session, url);
+        return null;
+    }
     if (result.error) {
         LAST_ERROR = result.error;
+        if (method === "GET") return browserNavigateDoc(session, url);
         return null;
     }
     let doc = Html.parse(result.text || "");
@@ -215,6 +248,7 @@ function browserFetchDoc(session, url, options) {
     } else {
         LAST_ERROR = "HTTP " + result.status;
     }
+    if (method === "GET") return browserNavigateDoc(session, url);
     return null;
 }
 

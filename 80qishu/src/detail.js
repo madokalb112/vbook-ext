@@ -6,7 +6,7 @@ function execute(url) {
     if (!doc) return loadError();
 
     let name = stripBookMarks(firstText(doc, [".bookcover h1.title", "h1.title", "h1"]) || metaContent(doc, "meta[property=og:title]"));
-    if (!name) return Response.error("Khong tim thay thong tin truyen.");
+    if (!name) return Response.error("未找到小说信息。");
 
     let cover = imageFromNode(doc.select(".bookcover .pic img, .bookcover img").first()) || metaImage(doc);
     let author = textByPrefix(doc.select(".bookcover").first() || doc, "\u4f5c\u8005");
@@ -17,10 +17,10 @@ function execute(url) {
 
     let detail = [];
     let category = textByPrefix(doc.select(".bookcover").first() || doc, "\u5206\u7c7b");
-    if (category) detail.push("<b>Category:</b> " + category);
-    if (size) detail.push("<b>Size:</b> " + size);
-    if (status) detail.push("<b>Status:</b> " + status);
-    if (update) detail.push("<b>Update:</b> " + update);
+    if (category) detail.push("<b>分类：</b> " + category);
+    if (size) detail.push("<b>大小：</b> " + size);
+    if (status) detail.push("<b>进度：</b> " + status);
+    if (update) detail.push("<b>更新：</b> " + update);
 
     return Response.success({
         name: name,

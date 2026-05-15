@@ -109,7 +109,7 @@
     {
       "name": "LuvEvaLands2",
       "author": "madokalb112",
-      "version": 2,
+      "version": 3,
       "source": "https://luvevalands2.co",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luvevalands2/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luvevalands2/icon.png",
@@ -168,7 +168,7 @@
       "source": "https://www.80qishu.com/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/icon.png",
-      "description": "Read TXT novels on 80QiShu",
+      "description": "阅读八零奇书网 TXT 小说",
       "type": "novel",
       "locale": "zh_CN"
     },
@@ -288,10 +288,10 @@
     {
       "name": "69ShuBa",
       "author": "madokalb112",
-      "version": 3,
+      "version": 5,
       "source": "https://69shuba.tw",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/icon.png?v=3",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/plugin-v5.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/69shuba.tw/icon.png?v=5",
       "description": "Read Chinese novels on 69ShuBa",
       "type": "novel",
       "locale": "zh_CN"

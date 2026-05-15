@@ -2,10 +2,10 @@
   "metadata": {
     "name": "80QiShu",
     "author": "madokalb112",
-    "version": 2,
+    "version": 3,
     "source": "https://www.80qishu.com/",
     "regexp": "(?:www\\.|d\\.|t\\.)?80qishu\\.com(?:/.*)?",
-    "description": "Read TXT novels on 80QiShu",
+    "description": "阅读八零奇书网 TXT 小说",
     "locale": "zh_CN",
     "language": "javascript",
     "type": "novel"

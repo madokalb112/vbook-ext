@@ -3,7 +3,7 @@ load('config.js');
 function execute(url) {
     let storyUrl = storyUrlFromAny(url);
     let txtUrls = resolveTxtUrls(storyUrl);
-    if (txtUrls.length === 0) return Response.error("Khong tim thay link TXT.");
+    if (txtUrls.length === 0) return Response.error("未找到 TXT 下载链接。");
 
     let text = "";
     let txtUrl = "";

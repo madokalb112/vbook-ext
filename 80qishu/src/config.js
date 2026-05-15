@@ -55,7 +55,7 @@ function getDoc(url) {
         if (response && response.ok) return response.html();
         LAST_ERROR = "HTTP " + (response ? response.status : "");
     } catch (error) {
-        LAST_ERROR = "Khong tai duoc trang 80qishu: " + error;
+        LAST_ERROR = "无法加载 80qishu 页面：" + error;
     }
     return null;
 }
@@ -72,7 +72,7 @@ function getText(url, referer) {
         if (response && response.ok) return response.text() || "";
         LAST_ERROR = "HTTP " + (response ? response.status : "");
     } catch (error) {
-        LAST_ERROR = "Khong tai duoc TXT 80qishu: " + error;
+        LAST_ERROR = "无法下载 80qishu TXT：" + error;
     }
     return "";
 }
@@ -94,13 +94,13 @@ function postSearchDoc(key) {
         if (response && response.ok) return response.html();
         LAST_ERROR = "HTTP " + (response ? response.status : "");
     } catch (error) {
-        LAST_ERROR = "Khong tim kiem duoc 80qishu: " + error;
+        LAST_ERROR = "无法搜索 80qishu：" + error;
     }
     return null;
 }
 
 function loadError() {
-    return Response.error(LAST_ERROR || "Khong tai duoc 80qishu.");
+    return Response.error(LAST_ERROR || "无法加载 80qishu。");
 }
 
 function pathOf(url) {
@@ -263,9 +263,9 @@ function parseListItems(doc) {
         let size = textByPrefix(e, "\u5927\u5c0f");
         let intro = textByPrefix(e, "\u7b80\u4ecb");
         let desc = [];
-        if (author) desc.push("Tac gia: " + author);
-        if (update) desc.push("Update: " + update);
-        if (size) desc.push("Size: " + size);
+        if (author) desc.push("作者：" + author);
+        if (update) desc.push("更新：" + update);
+        if (size) desc.push("大小：" + size);
         if (intro) desc.push(intro);
         seen[link] = true;
         data.push({name: name, link: link, cover: cover, description: desc.join(" - "), host: BASE_URL});
@@ -377,7 +377,7 @@ function splitChapters(text) {
         matches.push({index: m.index, bodyStart: lineEnd(text, m.index), title: title, order: chapterOrdinal(title)});
     }
     if (matches.length === 0) {
-        return [{title: "Full Text", order: 1, body: text}];
+        return [{title: "全文", order: 1, body: text}];
     }
 
     let start = 0;
@@ -400,10 +400,9 @@ function splitChapters(text) {
 }
 
 function tocName(chapter, index) {
-    let title = cleanText(chapter.title) || ("Chapter " + (index + 1));
-    let order = index + 1;
-    if (order > 0 && title.indexOf("Chuong [" + order + "]") !== 0) return "Chuong [" + order + "] - " + title;
-    return title;
+    let title = cleanText(chapter.title);
+    if (title) return title;
+    return "第" + (index + 1) + "章";
 }
 
 function htmlEscape(text) {
