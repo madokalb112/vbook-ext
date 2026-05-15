@@ -164,10 +164,10 @@
     {
       "name": "80QiShu",
       "author": "madokalb112",
-      "version": 2,
+      "version": 3,
       "source": "https://www.80qishu.com/",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/icon.png",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/plugin-v3.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/icon.png?v=3",
       "description": "阅读八零奇书网 TXT 小说",
       "type": "novel",
       "locale": "zh_CN"
