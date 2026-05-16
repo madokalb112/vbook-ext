@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "NewToki",
+    "author": "madokalb112",
+    "version": 8,
+    "source": "https://sbxh1.com",
+    "regexp": "(?:www\\.)?sbxh1\\.com(?:/.*)?",
+    "description": "Read webtoon, manhwa and novel on NewToki",
+    "locale": "ko_KR",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

@@ -5,6 +5,17 @@
   },
   "data": [
     {
+      "name": "NewToki",
+      "author": "madokalb112",
+      "version": 8,
+      "source": "https://sbxh1.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sbxh1.com/plugin-v8.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/sbxh1.com/icon.png?v=8",
+      "description": "Read webtoon, manhwa and novel on NewToki",
+      "type": "comic",
+      "locale": "ko_KR"
+    },
+    {
       "name": "Otakusic",
       "author": "madokalb112",
       "version": 13,

@@ -5,6 +5,7 @@
 
 # Backup, keep local only
 /1backup/
+/1data/
 
 # Local repo helpers, keep local only
 /.gitignore

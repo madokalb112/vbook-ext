@@ -2,9 +2,18 @@ load('config.js');
 
 function rowValue(row) {
     if (!row) return "";
-    let value = row.select("p").last();
+    let value = row.select("p.col-xs-10").first();
+    if (!value) value = row.select("p").last();
     if (!value) return "";
     return value.html().replace(/\s+/g, " ").trim();
+}
+
+function rowText(row) {
+    if (!row) return "";
+    let value = row.select("p.col-xs-10").first();
+    if (!value) value = row.select("p").last();
+    if (!value) return "";
+    return value.text().replace(/\s+/g, " ").trim();
 }
 
 function buildDetail(doc) {
@@ -14,12 +23,12 @@ function buildDetail(doc) {
         lines.push("<b>Lượt xem:</b> " + view);
     }
 
-    let author = rowValue(doc.select(".list-info .author").first());
+    let author = rowText(doc.select(".list-info .author").first());
     if (author) {
         lines.push("<b>Tác giả:</b> " + author);
     }
 
-    let status = rowValue(doc.select(".list-info .status").first());
+    let status = rowText(doc.select(".list-info .status").first());
     if (status) {
         lines.push("<b>Tình trạng:</b> " + status);
     }
@@ -52,6 +61,9 @@ function execute(url) {
         let doc = response.html();
         let name = doc.select("h1.title-detail").first();
         if (!name) {
+            name = doc.select("h1").first();
+        }
+        if (!name) {
             return Response.error("Không tìm thấy thông tin truyện.");
         }
 
@@ -63,8 +75,8 @@ function execute(url) {
             }
         }
 
-        let author = rowValue(doc.select(".list-info .author").first());
-        let status = rowValue(doc.select(".list-info .status").first());
+        let author = rowText(doc.select(".list-info .author").first());
+        let status = rowText(doc.select(".list-info .status").first());
         let description = doc.select("#summary").html();
         if (!description) {
             description = doc.select(".detail-content p").html();
