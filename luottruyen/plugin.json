@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "name": "Lượt Truyện",
+    "name": "Luot Truyen",
     "author": "madokalb112",
-    "version": 2,
+    "version": 3,
     "source": "https://luottruyen5.com",
     "regexp": "(www\\.)?luottruyen[0-9]*\\.com/truyen-tranh/[^/]+-\\d+/?$",
-    "description": "Đọc truyện trên trang Lượt Truyện",
+    "description": "Doc truyen tren trang Luot Truyen",
     "locale": "vi_VN",
     "language": "javascript",
     "type": "comic"

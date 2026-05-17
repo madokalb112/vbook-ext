@@ -20,17 +20,17 @@ function buildDetail(doc) {
     let lines = [];
     let view = doc.select(".avatar .view").text().replace(/\s+/g, " ").trim();
     if (view) {
-        lines.push("<b>Lượt xem:</b> " + view);
+        lines.push("<b>Luot xem:</b> " + view);
     }
 
     let author = rowText(doc.select(".list-info .author").first());
     if (author) {
-        lines.push("<b>Tác giả:</b> " + author);
+        lines.push("<b>Tac gia:</b> " + author);
     }
 
     let status = rowText(doc.select(".list-info .status").first());
     if (status) {
-        lines.push("<b>Tình trạng:</b> " + status);
+        lines.push("<b>Tinh trang:</b> " + status);
     }
 
     return lines.join("<br>");
@@ -50,11 +50,13 @@ function getGenres(doc) {
 
 function execute(url) {
     url = normalizeUrl(url);
+    let headers = {
+        "Referer": BASE_URL + "/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    };
+
     let response = fetch(url, {
-        headers: {
-            "Referer": BASE_URL + "/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
-        }
+        headers: headers
     });
 
     if (response.ok) {
@@ -64,7 +66,7 @@ function execute(url) {
             name = doc.select("h1").first();
         }
         if (!name) {
-            return Response.error("Không tìm thấy thông tin truyện.");
+            return Response.error("Khong tim thay thong tin truyen.");
         }
 
         let cover = doc.select("#AvatarComic").attr("value");
@@ -88,7 +90,7 @@ function execute(url) {
             author: author,
             description: description,
             detail: buildDetail(doc),
-            ongoing: status.indexOf("Hoàn thành") < 0 && status.indexOf("Hoàn Thành") < 0,
+            ongoing: status.indexOf("Hoan thanh") < 0 && status.indexOf("Hoan Thanh") < 0 && status.indexOf("Ho\u00e0n th\u00e0nh") < 0 && status.indexOf("Ho\u00e0n Th\u00e0nh") < 0,
             genres: getGenres(doc),
             host: BASE_URL
         });

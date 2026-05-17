@@ -4,8 +4,14 @@ function execute(url, page) {
     if (!page) page = '1';
     url = normalizeUrl(url);
 
+    let headers = {
+        "Referer": BASE_URL + "/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    };
+
     let response = fetch(url, {
         method: "GET",
+        headers: headers,
         queries: {
             page: page
         }
@@ -25,7 +31,7 @@ function execute(url, page) {
             let imgNode = e.select(".image img").first();
             let cover = "";
             if (imgNode) {
-                cover = imgNode.attr("data-original") || imgNode.attr("data-src") || imgNode.attr("src");
+                cover = imgNode.attr("src") || imgNode.attr("data-original") || imgNode.attr("data-src");
             }
 
             data.push({

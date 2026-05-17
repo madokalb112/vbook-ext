@@ -19,3 +19,15 @@ function normalizeImage(url) {
     if (url.startsWith("/")) return BASE_URL + url;
     return url;
 }
+
+function sourceCookie() {
+    let cookie = "";
+    try { cookie = localCookie.getCookie(BASE_URL); } catch (error) {}
+    if (!cookie) {
+        try { cookie = localCookie.getCookie(BASE_URL + "/"); } catch (error) {}
+    }
+    if (!cookie) {
+        try { cookie = localCookie.getCookie(); } catch (error) {}
+    }
+    return cookie || "";
+}

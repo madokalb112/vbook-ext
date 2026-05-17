@@ -3,8 +3,14 @@ load('config.js');
 function execute(key, page) {
     if (!page) page = '1';
 
+    let headers = {
+        "Referer": BASE_URL + "/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    };
+
     let response = fetch(BASE_URL + "/tim-truyen", {
         method: "GET",
+        headers: headers,
         queries: {
             keyword: key,
             page: page
@@ -25,7 +31,7 @@ function execute(key, page) {
             let imgNode = e.select(".image img").first();
             let cover = "";
             if (imgNode) {
-                cover = imgNode.attr("data-original") || imgNode.attr("data-src") || imgNode.attr("src");
+                cover = imgNode.attr("src") || imgNode.attr("data-original") || imgNode.attr("data-src");
             }
 
             data.push({

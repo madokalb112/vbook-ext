@@ -179,7 +179,7 @@
       "source": "https://www.80qishu.com/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/80qishu/icon.png",
-      "description": "阅读八零奇书网 TXT 小说",
+      "description": "????????????????????? TXT ??????",
       "type": "chinese_novel",
       "locale": "zh_CN"
     },
@@ -196,13 +196,13 @@
       "tag": "nsfw"
     },
     {
-      "name": "Lướt Truyện",
+      "name": "Luot Truyen",
       "author": "madokalb112",
-      "version": 1,
+      "version": 3,
       "source": "https://luottruyen5.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png",
-      "description": "Đọc truyện trên trang Lướt Truyện",
+      "description": "Doc truyen tren trang Luot Truyen",
       "type": "comic",
       "locale": "vi_VN"
     },
@@ -281,7 +281,7 @@
       "source": "https://yurineko.org",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png",
-      "description": "Đọc truyện trên trang Yurineko",
+      "description": "?????c truy???n tr??n trang Yurineko",
       "type": "comic",
       "locale": "vi_VN"
     },

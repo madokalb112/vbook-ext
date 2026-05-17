@@ -2,7 +2,7 @@
   "metadata": {
     "name": "MangaFire",
     "author": "madokalb112",
-    "version": 3,
+    "version": 4,
     "source": "https://mangafire.to",
     "regexp": "(www\\.)?mangafire\\.to/(?:home|manga/[^/?#]+|read/[^/?#]+/[^/?#]+/(?:chapter|volume)-[^/?#]+)/?(?:[?#].*)?$",
     "description": "Doc truyen tranh tren MangaFire",
