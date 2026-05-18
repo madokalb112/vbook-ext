@@ -7,7 +7,9 @@ function validImage(url) {
     if (url.indexOf("/images/credit") >= 0) return false;
     if (url.indexOf("/storage/site/") >= 0) return false;
     if (url.indexOf("/storage/story_avatars/") >= 0) return false;
-    return url.indexOf("/uploads/") >= 0 || url.indexOf("sv2.loppytoon.com") >= 0 || url.indexOf("storage.loppytoon.com") >= 0;
+    return url.indexOf("/uploads/") >= 0
+        || url.indexOf("loppytoon.com") >= 0
+        || url.indexOf("loppytoonn.com") >= 0;
 }
 
 function execute(url) {

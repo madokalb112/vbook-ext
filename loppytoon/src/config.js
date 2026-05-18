@@ -1,4 +1,4 @@
-let BASE_URL = 'https://loppytoon.com';
+let BASE_URL = 'https://loppytoonn.com';
 try {
     if (CONFIG_URL) {
         BASE_URL = CONFIG_URL;
@@ -15,7 +15,7 @@ function normalizeUrl(url) {
     if (!url) return url;
     if (url.startsWith("//")) return "https:" + url;
     if (url.startsWith("/")) return BASE_URL + url;
-    return url.replace(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img, BASE_URL);
+    return url.replace(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?(?:loppytoon|loppytoonn)\.com/img, BASE_URL);
 }
 
 function normalizeImage(url) {

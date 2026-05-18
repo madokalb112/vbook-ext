@@ -2,9 +2,9 @@
   "metadata": {
     "name": "LoppyToon",
     "author": "madokalb112",
-    "version": 2,
-    "source": "https://loppytoon.com",
-    "regexp": "(www\\.)?loppytoon\\.com(?:/(?:danh-sach-truyen/[^/?#]+|the-loai/[^/?#]+|truyen/[^/?#]+(?:/[^/?#]+)?|api/search-story)?)?/?(?:[?#].*)?$",
+    "version": 3,
+    "source": "https://loppytoonn.com",
+    "regexp": "(www\\.)?loppytoonn?\\.com(?:/(?:danh-sach-truyen/[^/?#]+|the-loai/[^/?#]+|truyen/[^/?#]+(?:/[^/?#]+)?|api/search-story|load-more-chapters|story/[^/?#]+/chapters)?)?/?(?:[?#].*)?$",
     "description": "Doc truyen tren LoppyToon",
     "locale": "vi_VN",
     "language": "javascript",

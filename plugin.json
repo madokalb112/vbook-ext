@@ -186,10 +186,10 @@
     {
       "name": "LoppyToon",
       "author": "madokalb112",
-      "version": 2,
-      "source": "https://loppytoon.com",
+      "version": 3,
+      "source": "https://loppytoonn.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/loppytoon/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/loppytoon/icon.png",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/loppytoon/icon.png?v=3",
       "description": "Doc truyen tren LoppyToon",
       "type": "comic",
       "locale": "vi_VN",
