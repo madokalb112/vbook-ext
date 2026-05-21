@@ -33,3 +33,6 @@ _push_otakusic*/
 luottruyen/cookie.txt
 otakusic/Cookie header string.txt
 otakusic/src/cookie.js
+
+# Local-only extensions, do not publish
+/mangago.zone/
