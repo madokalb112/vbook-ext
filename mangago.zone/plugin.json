@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "Mangago",
+    "author": "madokalb112",
+    "version": 1,
+    "source": "https://www.mangago.zone",
+    "regexp": "(www\\.)?mangago\\.zone(?:/(?:work/\\d+|chapter/\\d+/\\d+(?:/\\d+)?|genre/[^/?#]+(?:/\\d+)?|list/[^/?#]+(?:/[^/?#]+)?(?:/\\d+)?|topmanga|r/l_search))?/?(?:[?#].*)?$",
+    "description": "Read manga on Mangago",
+    "locale": "en_US",
+    "language": "javascript",
+    "type": "comic"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "gen": "gen.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

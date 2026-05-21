@@ -198,8 +198,8 @@
     {
       "name": "Luot Truyen",
       "author": "madokalb112",
-      "version": 3,
-      "source": "https://luottruyen5.com",
+      "version": 4,
+      "source": "https://luottruyen6.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png",
       "description": "Doc truyen tren trang Luot Truyen",
@@ -317,6 +317,17 @@
       "description": "Doc truyen chu tren Chuangshi QQ",
       "type": "chinese_novel",
       "locale": "zh_CN"
+    },
+    {
+      "name": "Mangago",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://www.mangago.zone",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangago.zone/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangago.zone/icon.png",
+      "description": "Read manga on Mangago",
+      "type": "comic",
+      "locale": "en_US"
     }
   ]
 }
