@@ -22,7 +22,7 @@ function execute(url) {
     url = normalizeUrl(url);
     let UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36";
 
-    let detailResponse = fetch(url, {
+    let detailResponse = request(url, {
         headers: {
             "Referer": BASE_URL + "/",
             "User-Agent": UA
@@ -39,7 +39,7 @@ function execute(url) {
         return Response.error("Khong tim thay storyID tren trang truyen.");
     }
 
-    let response = fetch(BASE_URL + "/Story/ListChapterByStoryID", {
+    let response = request(BASE_URL + "/Story/ListChapterByStoryID", {
         method: "POST",
         headers: {
             "User-Agent": UA,

@@ -61,7 +61,7 @@ function execute(url) {
         headers["Cookie"] = cookie;
     }
 
-    let response = fetch(url, {
+    let response = request(url, {
         headers: headers
     });
 

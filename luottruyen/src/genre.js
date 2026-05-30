@@ -6,11 +6,10 @@ function execute() {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
     };
 
-    let response = fetch(BASE_URL + "/tim-truyen", {
+    let doc = getDoc(BASE_URL + "/tim-truyen", {
         headers: headers
     });
-    if (response.ok) {
-        let doc = response.html();
+    if (doc) {
         let genres = [{
             title: "Toan bo",
             input: BASE_URL + "/tim-truyen",

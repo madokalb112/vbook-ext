@@ -1,6 +1,7 @@
 load('config.js');
 
 function execute() {
+    resolveBaseUrl();
     return Response.success([
         {title: "Mới cập nhật", input: BASE_URL + "/tim-truyen", script: "gen.js"},
         {title: "Truyện mới", input: BASE_URL + "/tim-truyen?status=-1&sort=15", script: "gen.js"},
