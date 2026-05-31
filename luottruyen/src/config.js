@@ -283,6 +283,29 @@ function ajaxHeaders(referer) {
     };
 }
 
+function addQuery(url, key, value) {
+    url = normalizeUrl(url);
+    if (value === null || value === undefined || value === "") return url;
+    let hash = "";
+    let hashIndex = url.indexOf("#");
+    if (hashIndex >= 0) {
+        hash = url.substring(hashIndex);
+        url = url.substring(0, hashIndex);
+    }
+    let parts = url.split("?");
+    let base = parts[0];
+    let query = parts.length > 1 && parts[1] ? parts[1].split("&") : [];
+    let found = false;
+    for (let i = 0; i < query.length; i++) {
+        if (query[i].split("=")[0] === key) {
+            query[i] = key + "=" + encodeURIComponent(value);
+            found = true;
+        }
+    }
+    if (!found) query.push(key + "=" + encodeURIComponent(value));
+    return base + "?" + query.join("&") + hash;
+}
+
 function execute() {
     return Response.success({baseUrl: BASE_URL, sourceUrl: SOURCE_URL, ok: true});
 }

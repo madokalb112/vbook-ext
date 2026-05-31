@@ -58,8 +58,15 @@ function parseList(doc) {
     return data;
 }
 
-function nextPage(doc, page) {
-    let current = parseInt(page || "1");
+function currentPageFrom(urlOrPage) {
+    let text = "" + (urlOrPage || "1");
+    let match = /[?&]page=(\d+)/i.exec(text);
+    if (match) return parseInt(match[1]);
+    return /^\d+$/.test(text) ? parseInt(text) : 1;
+}
+
+function nextPage(doc, urlOrPage) {
+    let current = currentPageFrom(urlOrPage);
     let activeNext = doc.select(".pagination li.active + li a, .pagination .active + li a").first();
     if (activeNext) {
         let text = cleanText(activeNext.text());
@@ -67,7 +74,7 @@ function nextPage(doc, page) {
         if (href && href !== "#") return normalizeUrl(href);
         if (/^\d+$/.test(text) && parseInt(text) > current) return text;
     }
-    let links = doc.select(".pagination a[href], ul.pagination a[href]");
+    let links = doc.select(".pagination a[href], ul.pagination a[href], .page_redirect a[href]");
     let best = 0;
     let bestHref = "";
     for (let i = 0; i < links.size(); i++) {
@@ -87,11 +94,9 @@ function nextPage(doc, page) {
 }
 
 function execute(url, page) {
-    if (!page) page = "1";
     let requestUrl = page && ("" + page).indexOf("http") === 0 ? page : normalizeUrl(url || BASE_URL + "/tim-truyen");
-    let options = {method: "GET"};
-    if (/^\d+$/.test("" + page)) options.queries = {page: page};
-    let doc = getDoc(requestUrl, options);
+    if (page && /^\d+$/.test("" + page)) requestUrl = addQuery(requestUrl, "page", page);
+    let doc = getDoc(requestUrl);
     if (!doc) return null;
-    return Response.success(parseList(doc), nextPage(doc, page));
+    return Response.success(parseList(doc), nextPage(doc, requestUrl));
 }

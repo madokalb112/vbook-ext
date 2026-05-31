@@ -2,6 +2,8 @@ load("config.js");
 
 let CDN_DOMAINS = [
     "img3.dichvucdn.com",
+    "img2.dichvucdn.com",
+    "img.dichvucdn.com",
     "img.luottruyen.com",
     "img2.luottruyen.com"
 ];
@@ -60,7 +62,7 @@ function collectImages(doc, referer) {
 
 function browserImages(url) {
     let doc = browserDoc(url);
-    if (!doc) return [];
+    if (!doc || isLoginDoc(doc)) return [];
     return collectImages(doc, url);
 }
 
@@ -71,7 +73,11 @@ function execute(url) {
     if (cookie) headers["Cookie"] = cookie;
 
     let response = request(url, {headers: headers});
-    if (!response.ok) return null;
+    if (!response.ok) {
+        let data = browserImages(url);
+        if (data.length > 0) return Response.success(data);
+        return null;
+    }
 
     let doc = response.html();
     if (isLoginDoc(doc)) {

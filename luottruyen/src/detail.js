@@ -12,11 +12,6 @@ function rowText(row) {
     return node ? cleanText(node.text()) : "";
 }
 
-function rowHtml(row) {
-    let node = rowNode(row);
-    return node ? cleanText(node.html()) : "";
-}
-
 function detailLines(doc) {
     let lines = [];
     let view = cleanText(doc.select(".avatar .view").text());
