@@ -1,7 +1,7 @@
 let BASE_URL = 'https://luottruyen7.com';
 try {
     if (CONFIG_URL) {
-        BASE_URL = stripTrailingSlash(CONFIG_URL);
+        BASE_URL = sourceBaseUrl(CONFIG_URL);
     }
 } catch (error) {
 }
@@ -12,6 +12,11 @@ let SOURCE_HOST_RE = /^https?:\/\/(?:www\.)?luottruyen\d*\.com/i;
 function stripTrailingSlash(url) {
     if (!url) return "";
     return ("" + url).replace(/\/+$/, "");
+}
+
+function sourceBaseUrl(url) {
+    let match = /^(https?:\/\/[^/?#]+)/i.exec(url || "");
+    return match ? stripTrailingSlash(match[1]) : stripTrailingSlash(url || BASE_URL);
 }
 
 function cleanText(text) {
@@ -172,7 +177,10 @@ function resolveBaseUrl() {
 
 function sourceCookie() {
     let cookie = "";
-    try { cookie = localCookie.getCookie(BASE_URL); } catch (error) {}
+    try { if (CONFIG_URL) cookie = localCookie.getCookie(CONFIG_URL); } catch (error) {}
+    if (!cookie) {
+        try { cookie = localCookie.getCookie(BASE_URL); } catch (error) {}
+    }
     if (!cookie) {
         try { cookie = localCookie.getCookie(BASE_URL + "/"); } catch (error) {}
     }
