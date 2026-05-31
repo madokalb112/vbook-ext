@@ -187,9 +187,9 @@
     {
       "name": "Luot Truyen",
       "author": "madokalb112",
-      "version": 8,
-      "source": "https://luottruyen7.com/Account/Login",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v8.zip",
+      "version": 9,
+      "source": "https://luottruyen7.com/tim-truyen",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v9.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png",
       "description": "Doc truyen tren trang Luot Truyen",
       "type": "comic",

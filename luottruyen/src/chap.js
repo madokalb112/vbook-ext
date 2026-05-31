@@ -1,103 +1,88 @@
-load('config.js');
+load("config.js");
 
-var CDN_DOMAINS = [
+let CDN_DOMAINS = [
     "img3.dichvucdn.com",
     "img.luottruyen.com",
     "img2.luottruyen.com"
 ];
 
-function isValidImage(url) {
-    if (!url) return false;
-    if (url.indexOf("data:image") === 0) return false;
-    if (url.indexOf("/Content/images/logo/") >= 0) return false;
-    if (url.indexOf("/favicon") >= 0) return false;
-    if (url.indexOf("/Scripts/") >= 0) return false;
-    if (url.indexOf("/logo") >= 0) return false;
-    return true;
-}
-
-function buildFallbacks(link) {
-    let fallback = [];
+function cdnFallbacks(link) {
+    let data = [];
     for (let i = 0; i < CDN_DOMAINS.length; i++) {
-        let domain = CDN_DOMAINS[i];
-        if (link.indexOf(domain) < 0) {
-            for (let j = 0; j < CDN_DOMAINS.length; j++) {
-                if (link.indexOf(CDN_DOMAINS[j]) >= 0) {
-                    let alt = normalizeImage(link.replace(CDN_DOMAINS[j], domain));
-                    if (fallback.indexOf(alt) < 0) {
-                        fallback.push(alt);
-                    }
-                    break;
-                }
-            }
+        let current = CDN_DOMAINS[i];
+        if (link.indexOf(current) >= 0) continue;
+        for (let j = 0; j < CDN_DOMAINS.length; j++) {
+            let source = CDN_DOMAINS[j];
+            if (link.indexOf(source) < 0) continue;
+            let alt = normalizeImage(link.replace(source, current));
+            if (validImage(alt) && data.indexOf(alt) < 0) data.push(alt);
+            break;
         }
     }
-    return fallback;
+    return data;
 }
 
-function addImage(data, seen, link, fallback) {
+function addImage(data, seen, link, referer, fallback) {
     link = normalizeImage(link);
-    if (!isValidImage(link) || seen[link]) {
-        return;
-    }
-
-    let item = {link: link};
-    if (fallback && fallback.length > 0) {
-        item.fallback = fallback;
-    }
-
+    if (!validImage(link) || seen[link]) return;
     seen[link] = true;
+    let headers = imageHeaders(referer);
+    let item = {link: link, headers: headers, header: headers};
+    fallback = fallback || [];
+    if (fallback.length > 0) item.fallback = fallback;
     data.push(item);
+}
+
+function isLoginDoc(doc) {
+    if (!doc) return false;
+    let title = cleanText(doc.select("title").text());
+    let text = foldText(doc.text ? doc.text() : "");
+    return title.indexOf("Login") >= 0 ||
+        title.indexOf("login") >= 0 ||
+        text.indexOf("dang nhap") >= 0 ||
+        doc.select(".login-page-wrapper").size() > 0;
+}
+
+function collectImages(doc, referer) {
+    let data = [];
+    let seen = {};
+    let nodes = doc.select(".reading-detail .page-chapter img, .page-chapter img, .reading-detail img");
+    if (nodes.size() === 0) nodes = doc.select("img[src], img[data-src], img[data-original], img[data-lazy-src], img[data-cdn]");
+    nodes.forEach(function(img) {
+        let link = imageAttr(img);
+        let fallback = cdnFallbacks(normalizeImage(link));
+        let cdn = normalizeImage(img.attr("data-cdn"));
+        if (validImage(cdn) && fallback.indexOf(cdn) < 0) fallback.push(cdn);
+        addImage(data, seen, link, referer, fallback);
+    });
+    return data;
+}
+
+function browserImages(url) {
+    let doc = browserDoc(url);
+    if (!doc) return [];
+    return collectImages(doc, url);
 }
 
 function execute(url) {
     url = normalizeUrl(url);
-    let headers = {
-        "Referer": BASE_URL + "/",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-    };
+    let headers = requestOptions({headers: {"Referer": BASE_URL + "/"}}, BASE_URL).headers;
     let cookie = sourceCookie();
-    if (cookie) {
-        headers["Cookie"] = cookie;
-    }
+    if (cookie) headers["Cookie"] = cookie;
 
-    let response = request(url, {
-        headers: headers
-    });
-
-    if (!response.ok) {
-        return null;
-    }
+    let response = request(url, {headers: headers});
+    if (!response.ok) return null;
 
     let doc = response.html();
-    let title = doc.select("title").text();
-    if (title.indexOf("Login") >= 0 || title.indexOf("login") >= 0 || title.indexOf("Object moved") >= 0 || doc.select(".login-page-wrapper").size() > 0) {
-        return Response.error("Chapter yeu cau dang nhap tren LuotTruyen. Hay dang nhap qua WebView (Trang nguon) roi tai lai.");
+    if (isLoginDoc(doc)) {
+        return Response.error("Chapter yeu cau dang nhap. Mo Trang nguon va dang nhap LuotTruyen roi tai lai.");
     }
     if (doc.select(".btn-unlockChapter").size() > 0) {
         return Response.error("Chapter dang bi khoa tren LuotTruyen.");
     }
 
-    let data = [];
-    let seen = {};
-
-    doc.select(".reading-detail .page-chapter img, .page-chapter img, .reading-detail img").forEach(e => {
-        let link = e.attr("src") || e.attr("data-original") || e.attr("data-src") || e.attr("data-lazy-src");
-        if (!link) return;
-
-        let fallback = buildFallbacks(link);
-
-        let dataCdn = normalizeImage(e.attr("data-cdn"));
-        if (isValidImage(dataCdn) && fallback.indexOf(dataCdn) < 0) {
-            fallback.push(dataCdn);
-        }
-
-        addImage(data, seen, link, fallback);
-    });
-
-    if (data.length === 0) {
-        return Response.error("Khong tim thay anh chapter.");
-    }
-
+    let data = collectImages(doc, url);
+    if (data.length === 0) data = browserImages(url);
+    if (data.length === 0) return Response.error("Khong tim thay anh chapter.");
     return Response.success(data);
 }

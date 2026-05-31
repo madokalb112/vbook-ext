@@ -1,84 +1,62 @@
-load('config.js');
+load("config.js");
 
-function storySlug(url) {
-    let part = url.replace(/\/$/, "").split("/").pop();
-    return part.replace(/-\d+$/, "");
+function chapterSlugFromName(name) {
+    name = foldText(name || "").replace(/[^a-z0-9.]+/g, "-").replace(/^-+|-+$/g, "");
+    if (name.indexOf("chapter") < 0 && name.indexOf("chap") < 0) name = "chapter-" + name.replace(/^chuong-/, "");
+    return name || "chapter";
 }
 
 function fixedChapterUrl(detailUrl, chapterHref, chapterName) {
     chapterHref = normalizeUrl(chapterHref);
-    let parts = chapterHref.replace(/\/$/, "").split("/");
-    let chapterId = parts[parts.length - 1];
-    let chapterSlug = parts[parts.length - 2];
-
-    if (!chapterSlug || chapterSlug.indexOf("chapter") < 0) {
-        chapterSlug = (chapterName || "").toLowerCase().replace(/\s+/g, "-");
-    }
-
+    let path = pathOf(chapterHref).replace(/\/+$/, "");
+    let parts = path.split("/");
+    let chapterId = parts[parts.length - 1] || "";
+    let chapterSlug = parts[parts.length - 2] || "";
+    if (!chapterSlug || chapterSlug.indexOf("chapter") < 0) chapterSlug = chapterSlugFromName(chapterName);
     return BASE_URL + "/truyen-tranh/" + storySlug(detailUrl) + "/" + chapterSlug + "/" + chapterId;
+}
+
+function addChapter(data, seen, detailUrl, href, name) {
+    if (!href) return;
+    name = cleanText(name) || "Chapter " + (data.length + 1);
+    let url = fixedChapterUrl(detailUrl, href, name);
+    if (seen[url]) return;
+    seen[url] = true;
+    data.push({name: name, url: url, host: BASE_URL});
+}
+
+function chaptersFromNodes(nodes, detailUrl) {
+    let data = [];
+    let seen = {};
+    for (let i = nodes.size() - 1; i >= 0; i--) {
+        let a = nodes.get(i);
+        addChapter(data, seen, detailUrl, a.attr("href"), a.text() || a.attr("title"));
+    }
+    return data;
 }
 
 function execute(url) {
     url = normalizeUrl(url);
-    let UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36";
+    let doc = getDoc(url);
+    if (!doc) return null;
 
-    let detailResponse = request(url, {
-        headers: {
-            "Referer": BASE_URL + "/",
-            "User-Agent": UA
-        }
-    });
-
-    if (!detailResponse.ok) {
-        return Response.error("Khong tai duoc trang chi tiet truyen.");
-    }
-
-    let detailDoc = detailResponse.html();
-    let storyID = detailDoc.select("#storyID").attr("value");
-    if (!storyID) {
-        return Response.error("Khong tim thay storyID tren trang truyen.");
-    }
-
-    let response = request(BASE_URL + "/Story/ListChapterByStoryID", {
-        method: "POST",
-        headers: {
-            "User-Agent": UA,
-            "Accept": "*/*",
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "X-Requested-With": "XMLHttpRequest",
-            "Origin": BASE_URL,
-            "Referer": url,
-            "Cache-Control": "no-cache"
-        },
-        body: "StoryID=" + encodeURIComponent(storyID)
-    });
-
-    if (!response.ok) {
-        return Response.error("Khong tai duoc danh sach chuong (HTTP " + response.status + ").");
-    }
-
-    let doc = response.html();
-    let nodes = doc.select("nav ul li .chapter a");
-    if (nodes.size() === 0) {
-        nodes = doc.select("li .chapter a");
-    }
-    if (nodes.size() === 0) {
-        nodes = doc.select(".chapter a");
-    }
-
-    if (nodes.size() === 0) {
-        return Response.error("Khong tim thay chuong nao trong danh sach.");
-    }
-
-    let data = [];
-    for (let i = nodes.size() - 1; i >= 0; i--) {
-        let e = nodes.get(i);
-        data.push({
-            name: e.text(),
-            url: fixedChapterUrl(url, e.attr("href"), e.text()),
-            host: BASE_URL
+    let storyID = doc.select("#storyID").attr("value");
+    if (storyID) {
+        let response = request(BASE_URL + "/Story/ListChapterByStoryID", {
+            method: "POST",
+            headers: ajaxHeaders(url),
+            body: "StoryID=" + encodeURIComponent(storyID)
         });
+        if (response.ok) {
+            let chapterDoc = response.html();
+            let nodes = chapterDoc.select("nav ul li .chapter a[href], li .chapter a[href], .chapter a[href], a[href*='chapter']");
+            let data = chaptersFromNodes(nodes, url);
+            if (data.length > 0) return Response.success(data);
+        }
     }
 
-    return Response.success(data);
+    let nodes = doc.select("a[href*='chapter']");
+    let fallback = chaptersFromNodes(nodes, url);
+    if (fallback.length > 0) return Response.success(fallback);
+    return Response.error("Khong tim thay danh sach chuong.");
 }

@@ -1,45 +1,29 @@
-load('config.js');
+load("config.js");
+
+function genreTitle(node) {
+    let title = cleanText(node.attr("title") || node.attr("data-title") || node.text());
+    title = title.replace(/^Truyen\s+/i, "");
+    title = title.replace(/\s+\d+\s*$/, "");
+    return cleanText(title);
+}
 
 function execute() {
-    let headers = {
-        "Referer": BASE_URL + "/",
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
-    };
+    let doc = getDoc(BASE_URL + "/tim-truyen");
+    if (!doc) return null;
 
-    let doc = getDoc(BASE_URL + "/tim-truyen", {
-        headers: headers
+    let data = [{title: "Toan bo", input: BASE_URL + "/tim-truyen", script: "gen.js"}];
+    let seen = {};
+    seen[BASE_URL + "/tim-truyen"] = true;
+
+    doc.select("a[href*='/tim-truyen/']").forEach(function(a) {
+        let href = normalizeUrl(a.attr("href"));
+        if (!href || seen[href]) return;
+        if (href.indexOf("?") >= 0) return;
+        let title = genreTitle(a);
+        if (!title || title.length > 60) return;
+        seen[href] = true;
+        data.push({title: title, input: href, script: "gen.js"});
     });
-    if (doc) {
-        let genres = [{
-            title: "Toan bo",
-            input: BASE_URL + "/tim-truyen",
-            script: "gen.js"
-        }];
-        let seen = {};
-        seen[BASE_URL + "/tim-truyen"] = true;
 
-        doc.select("a[href*=tim-truyen]").forEach(e => {
-            let href = normalizeUrl(e.attr("href"));
-            if (!href || href.indexOf("/tim-truyen/") < 0 || seen[href]) {
-                return;
-            }
-
-            let title = e.attr("title") || e.attr("data-title") || e.text();
-            title = title.replace(/^Truyen\s+/i, "").trim();
-            if (!title) {
-                return;
-            }
-
-            seen[href] = true;
-            genres.push({
-                title: title,
-                input: href,
-                script: "gen.js"
-            });
-        });
-
-        return Response.success(genres);
-    }
-
-    return null;
+    return Response.success(data);
 }
