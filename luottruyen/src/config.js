@@ -1,4 +1,4 @@
-let BASE_URL = "https://luottruyen7.com";
+let BASE_URL = "https://luottruyen8.com";
 let SOURCE_URL = BASE_URL + "/tim-truyen";
 
 try {
@@ -77,7 +77,7 @@ function hostBase(url) {
 
 function sourceNumber() {
     let match = /luottruyen(\d*)\.com/i.exec(BASE_URL || "");
-    if (!match || !match[1]) return 7;
+    if (!match || !match[1]) return 8;
     return parseInt(match[1]);
 }
 

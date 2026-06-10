@@ -187,10 +187,10 @@
     {
       "name": "Luot Truyen",
       "author": "madokalb112",
-      "version": 10,
-      "source": "https://luottruyen7.com/tim-truyen",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v10.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png?v=10",
+      "version": 11,
+      "source": "https://luottruyen8.com/tim-truyen",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v11.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png?v=11",
       "description": "Doc truyen tren trang Luot Truyen",
       "type": "comic",
       "locale": "vi_VN"
