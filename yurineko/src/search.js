@@ -1,51 +1,20 @@
-load('config.js');
+load('gen.js');
 
 function execute(key, page) {
-    let requestUrl = page && page.indexOf("http") === 0 ? page : BASE_URL + "/tim-kiem-nang-cao";
-    let options = {
-        headers: {
-            "Referer": BASE_URL + "/",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
-        }
-    };
+    let api = BASE_URL + '/api/v1/mangas?limit=24&sort=latest';
+    api = addQuery(api, 'search', key || '');
+    if (page && ('' + page).indexOf('http') === 0) api = page;
+    else if (page && /^\d+$/.test('' + page)) api = addQuery(api, 'page', page);
+    return executeGen(api);
+}
 
-    if (!page || page.indexOf("http") !== 0) {
-        options.queries = {
-            keyword: key,
-            page: page ? page : "1"
-        };
+function executeGen(api) {
+    let json = requestJson(api, BASE_URL + '/search');
+    let rows = jsonRows(json);
+    let data = [];
+    for (let i = 0; i < rows.length; i++) {
+        let item = mangaItem(rows[i]);
+        if (item.name && item.link) data.push(item);
     }
-
-    let response = fetch(requestUrl, options);
-    if (response.ok) {
-        let doc = response.html();
-        let data = [];
-
-        doc.select(".comic-list .comic-item").forEach(function(e) {
-            let linkNode = e.select(".comic-title-link a[href]").first();
-            if (!linkNode) {
-                linkNode = e.select(".comic-img a[href]").first();
-            }
-
-            let imgNode = e.select(".comic-img img").first();
-            let cover = "";
-            if (imgNode) {
-                cover = imgNode.attr("data-src") || imgNode.attr("data-original") || imgNode.attr("src");
-            }
-
-            if (linkNode) {
-                data.push({
-                    name: linkNode.text().replace(/\s+/g, " ").trim(),
-                    link: linkNode.attr("href"),
-                    cover: normalizeImage(cover),
-                    description: e.select(".comic-chapter").first().text(),
-                    host: BASE_URL
-                });
-            }
-        });
-
-        return Response.success(data, nextPage(doc));
-    }
-
-    return null;
+    return Response.success(data, nextPageUrl(api, json));
 }

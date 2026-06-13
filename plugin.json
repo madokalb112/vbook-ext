@@ -187,10 +187,10 @@
     {
       "name": "Luot Truyen",
       "author": "madokalb112",
-      "version": 11,
+      "version": 12,
       "source": "https://luottruyen8.com/tim-truyen",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v11.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png?v=11",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v12.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png?v=12",
       "description": "Doc truyen tren trang Luot Truyen",
       "type": "comic",
       "locale": "vi_VN"
@@ -266,11 +266,11 @@
     {
       "name": "Yurineko",
       "author": "madokalb112",
-      "version": 1,
-      "source": "https://yurineko.org",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png",
-      "description": "?????c truy???n tr??n trang Yurineko",
+      "version": 2,
+      "source": "https://yurinekoz.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin-v2.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png?v=2",
+      "description": "Doc truyen tren trang Yurineko",
       "type": "comic",
       "locale": "vi_VN"
     },

@@ -1,63 +1,50 @@
 load('config.js');
 
-function infoValue(doc, label) {
-    let html = doc.select(".comic-intro-text").html();
-    if (!html) return "";
-    let reg = new RegExp("<strong>\\s*" + label + "\\s*:?\\s*<\\/strong>\\s*<span[^>]*>([\\s\\S]*?)<\\/span>", "i");
-    let match = reg.exec(html);
-    if (!match) return "";
-    return Html.parse("<div>" + match[1] + "</div>").text().replace(/\s+/g, " ").trim();
+function names(rows) {
+    let data = [];
+    rows = rows || [];
+    for (let i = 0; i < rows.length; i++) {
+        let name = cleanText(rows[i].name || rows[i].title || '');
+        if (name && data.indexOf(name) < 0) data.push(name);
+    }
+    return data.join(', ');
+}
+
+function tagGenres(row) {
+    let data = [];
+    let tags = row.tags || row.genres || [];
+    for (let i = 0; i < tags.length; i++) {
+        let slug = cleanText(tags[i].slug || '');
+        let title = cleanText(tags[i].name || tags[i].title || '');
+        if (!slug || !title) continue;
+        let api = BASE_URL + '/api/v1/mangas?limit=24&sort=latest&tags=' + encodeURIComponent(slug);
+        data.push({title: title, input: api, script: 'gen.js'});
+    }
+    return data;
 }
 
 function execute(url) {
-    url = normalizeUrl(url);
-    let response = request(url);
-    if (response.ok) {
-        let doc = response.html();
-        let nameNode = doc.select(".comic-info .info-title").first();
-        if (!nameNode) {
-            return Response.error("Không tìm thấy thông tin truyện.");
-        }
+    let slug = mangaSlugFromUrl(url);
+    if (!slug) return Response.error('URL truyen khong hop le.');
+    let api = BASE_URL + '/api/v1/mangas/slug/' + encodeURIComponent(slug);
+    let row = requestJson(api, normalizeUrl(url));
+    if (!row || !row.id) return Response.error('Khong tim thay thong tin truyen.');
 
-        let coverNode = doc.select(".comic-intro img.img-thumbnail").first();
-        let cover = coverNode ? coverNode.attr("data-src") || coverNode.attr("src") : "";
-        let author = infoValue(doc, "Tác giả");
-        let status = infoValue(doc, "Tình trạng");
-        let views = infoValue(doc, "Tổng lượt đọc");
-        let otherName = infoValue(doc, "Tên khác");
+    let detail = [];
+    let alt = row.alternativeTitles && row.alternativeTitles.length ? row.alternativeTitles.join(', ') : '';
+    if (alt) detail.push('<b>Ten khac:</b> ' + alt);
+    if (row.status) detail.push('<b>Tinh trang:</b> ' + row.status);
+    if (row.views || row.views === 0) detail.push('<b>Luot xem:</b> ' + row.views);
+    if (row.group && row.group.name) detail.push('<b>Nhom:</b> ' + row.group.name);
 
-        let detail = "";
-        if (otherName) detail += "<b>Tên khác:</b> " + otherName;
-        if (status) detail += (detail ? "<br>" : "") + "<b>Tình trạng:</b> " + status;
-        if (views) detail += (detail ? "<br>" : "") + "<b>Tổng lượt đọc:</b> " + views;
-
-        let genres = [];
-        doc.select(".comic-info .tags a[href*=/the-loai/]").forEach(function(e) {
-            genres.push({
-                title: e.text().replace(/\s+/g, " ").trim(),
-                input: e.attr("href"),
-                script: "gen.js"
-            });
-        });
-
-        let descNode = doc.select(".intro-container .hide-long-text").first();
-        let description = descNode ? descNode.html() : "";
-        let descText = descNode ? descNode.text().replace("— Xem Thêm —", "").replace(/\s+/g, " ").trim() : "";
-        if (!description || !descText) {
-            description = doc.select("meta[name=description]").attr("content");
-        }
-
-        return Response.success({
-            name: nameNode.text().replace(/\s+/g, " ").trim(),
-            cover: normalizeImage(cover),
-            author: author,
-            description: description,
-            detail: detail,
-            ongoing: status.indexOf("Hoàn thành") < 0 && status.indexOf("Hoàn Thành") < 0,
-            genres: genres,
-            host: BASE_URL
-        });
-    }
-
-    return null;
+    return Response.success({
+        name: cleanText(row.title || row.name || ''),
+        cover: normalizeImage(row.thumbnailUrl || row.bgImage || ''),
+        author: names(row.linkedAuthors || row.linkedArtists || []),
+        description: row.description || '',
+        detail: detail.join('<br>'),
+        ongoing: row.status !== 'COMPLETED',
+        genres: tagGenres(row),
+        host: BASE_URL
+    });
 }

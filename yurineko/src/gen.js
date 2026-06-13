@@ -1,46 +1,40 @@
 load('config.js');
 
-function comicItem(e) {
-    let linkNode = e.select(".comic-title-link a[href]").first();
-    if (!linkNode) {
-        linkNode = e.select(".comic-img a[href]").first();
-    }
+function itemDescription(row) {
+    let chapter = row.chapters && row.chapters.length ? row.chapters[0] : null;
+    if (!chapter) return '';
+    return chapterName(chapter);
+}
 
-    let imgNode = e.select(".comic-img img").first();
-    let cover = "";
-    if (imgNode) {
-        cover = imgNode.attr("data-src") || imgNode.attr("data-original") || imgNode.attr("src");
-    }
-
+function mangaItem(row) {
     return {
-        name: linkNode ? linkNode.text().replace(/\s+/g, " ").trim() : "",
-        link: linkNode ? linkNode.attr("href") : "",
-        cover: normalizeImage(cover),
-        description: e.select(".comic-chapter").first().text(),
+        name: cleanText(row.title || row.name || ''),
+        link: mangaUrl(row),
+        cover: normalizeImage(row.thumbnailUrl || row.cover || row.image || ''),
+        description: itemDescription(row),
         host: BASE_URL
     };
 }
 
+function nextPageUrl(api, json) {
+    let page = parseInt(json && json.page ? json.page : 1);
+    let last = parseInt(json && json.lastPage ? json.lastPage : 0);
+    if (!last || page >= last) return '';
+    return addQuery(api, 'page', page + 1);
+}
+
 function execute(url, page) {
-    let requestUrl = page && page.indexOf("http") === 0 ? page : normalizeUrl(url);
-    if (page && page.indexOf("http") !== 0) {
-        requestUrl = requestUrl + (requestUrl.indexOf("?") >= 0 ? "&" : "?") + "page=" + page;
+    let api = normalizeUrl(url || apiMangaListUrl());
+    if (page && ('' + page).indexOf('http') === 0) api = normalizeUrl(page);
+    else if (page && /^\d+$/.test('' + page)) api = addQuery(api, 'page', page);
+    if (api.indexOf('/api/v1/mangas') < 0) api = apiMangaListUrl();
+
+    let json = requestJson(api, BASE_URL + '/');
+    let rows = jsonRows(json);
+    let data = [];
+    for (let i = 0; i < rows.length; i++) {
+        let item = mangaItem(rows[i]);
+        if (item.name && item.link) data.push(item);
     }
-
-    let response = request(requestUrl);
-    if (response.ok) {
-        let doc = response.html();
-        let data = [];
-
-        doc.select(".comic-list .comic-item").forEach(function(e) {
-            let item = comicItem(e);
-            if (item.name && item.link) {
-                data.push(item);
-            }
-        });
-
-        return Response.success(data, nextPage(doc));
-    }
-
-    return null;
+    return Response.success(data, nextPageUrl(api, json));
 }

@@ -1,29 +1,17 @@
 load('config.js');
 
 function execute() {
-    let response = request(BASE_URL + "/");
-    if (response.ok) {
-        let doc = response.html();
-        let genres = [];
-        let seen = {};
-
-        doc.select("a[href*=/the-loai/]").forEach(function(e) {
-            let href = normalizeUrl(e.attr("href"));
-            let title = e.text().replace(/\s+/g, " ").trim();
-            if (!href || !title || seen[href]) {
-                return;
-            }
-
-            seen[href] = true;
-            genres.push({
-                title: title,
-                input: href,
-                script: "gen.js"
-            });
-        });
-
-        return Response.success(genres);
+    let json = requestJson(BASE_URL + '/api/v1/tags', BASE_URL + '/categories');
+    let rows = jsonRows(json);
+    let data = [{title: 'Tat ca', input: apiMangaListUrl(), script: 'gen.js'}];
+    let seen = {};
+    for (let i = 0; i < rows.length; i++) {
+        let slug = cleanText(rows[i].slug || '');
+        let title = cleanText(rows[i].name || '');
+        if (!slug || !title || seen[slug]) continue;
+        seen[slug] = true;
+        let api = BASE_URL + '/api/v1/mangas?limit=24&sort=latest&tags=' + encodeURIComponent(slug);
+        data.push({title: title, input: api, script: 'gen.js'});
     }
-
-    return null;
+    return Response.success(data);
 }

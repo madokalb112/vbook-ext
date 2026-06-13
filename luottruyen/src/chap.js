@@ -28,11 +28,25 @@ function addImage(data, seen, link, referer, fallback) {
     link = normalizeImage(link);
     if (!validImage(link) || seen[link]) return;
     seen[link] = true;
-    let headers = imageHeaders(referer);
+    let headers = imageHeaders(imageReferer(link, referer));
     let item = {link: link, headers: headers, header: headers};
     fallback = fallback || [];
     if (fallback.length > 0) item.fallback = fallback;
     data.push(item);
+}
+
+function imageReferer(link, referer) {
+    let low = (link || '').toLowerCase();
+    if (low.indexOf('dichvucdn.com') >= 0 || low.indexOf('luottruyen.com') >= 0) return BASE_URL + '/';
+    return referer || BASE_URL + '/';
+}
+
+function isChapterImage(link) {
+    link = normalizeImage(link || '').toLowerCase();
+    if (!validImage(link)) return false;
+    return link.indexOf('/imagecontent/') >= 0 ||
+        link.indexOf('/upload') >= 0 ||
+        link.indexOf('/chapter') >= 0;
 }
 
 function isLoginDoc(doc) {
@@ -50,10 +64,16 @@ function collectImages(doc, referer) {
     let seen = {};
     let nodes = doc.select(".reading-detail .page-chapter img, .page-chapter img, .reading-detail img");
     if (nodes.size() === 0) nodes = doc.select("img[src], img[data-src], img[data-original], img[data-lazy-src], img[data-cdn]");
+    let hasChapterImage = false;
+    nodes.forEach(function(img) {
+        if (isChapterImage(imageAttr(img)) || isChapterImage(img.attr('data-cdn'))) hasChapterImage = true;
+    });
     nodes.forEach(function(img) {
         let link = imageAttr(img);
+        let cdn = normalizeImage(img.attr('data-cdn'));
+        if (hasChapterImage && !isChapterImage(link) && isChapterImage(cdn)) link = cdn;
+        if (hasChapterImage && !isChapterImage(link)) return;
         let fallback = cdnFallbacks(normalizeImage(link));
-        let cdn = normalizeImage(img.attr("data-cdn"));
         if (validImage(cdn) && fallback.indexOf(cdn) < 0) fallback.push(cdn);
         addImage(data, seen, link, referer, fallback);
     });
@@ -81,6 +101,8 @@ function execute(url) {
 
     let doc = response.html();
     if (isLoginDoc(doc)) {
+        let data = browserImages(url);
+        if (data.length > 0) return Response.success(data);
         return Response.error("Chapter yeu cau dang nhap. Mo Trang nguon va dang nhap LuotTruyen roi tai lai.");
     }
     if (doc.select(".btn-unlockChapter").size() > 0) {
