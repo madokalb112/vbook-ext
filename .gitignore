@@ -22,6 +22,21 @@ __pycache__/
 # Local temp
 /temp/
 *test.json
+# Root CDP/test helpers, keep local only
+/test_*.py
+/_survey.py
+/_click.py
+/hentaicube_curl.html
+/hentaicube/chrome-win/
+/hentaicube/chrome-win.zip
+/hentaicube/chrome-profile/
+/hentaicube/BYPASS CLOUDFLARE TINO_V2/
+/hentaicube/*.py
+/hentaicube/test.json
+/hentaicube/plugin-v3.zip
+/hentaicube/plugin-v4.zip
+/hentaicube/plugin-v5.zip
+/hentaicube/plugin-v6.zip
 data.json
 error.md
 skill.md

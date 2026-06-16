@@ -16,6 +16,18 @@
       "locale": "vi_VN"
     },
     {
+      "name": "HentaiCube",
+      "author": "madokalb112",
+      "version": 7,
+      "source": "https://hentaicube.xyz",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/plugin-v7.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=7",
+      "description": "Doc truyen tranh tren HentaiCube",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw"
+    },
+    {
       "name": "ChickenManga",
       "author": "madokalb112",
       "version": 1,
