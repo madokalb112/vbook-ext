@@ -1,251 +1,154 @@
-let BASE_URL = "https://luottruyen8.com";
+// LuotTruyen (ASP.NET MVC). Site rotates domain luottruyenN.com periodically.
+// Chapters need the .truyen_AUTH login cookie; everything else is public.
+
+let BASE_URL = "https://luottruyen9.com";
 let SOURCE_URL = BASE_URL + "/tim-truyen";
 
 try {
     if (CONFIG_URL) {
-        SOURCE_URL = stripTrailingSlash("" + CONFIG_URL);
-        BASE_URL = sourceBaseUrl(SOURCE_URL);
+        SOURCE_URL = ("" + CONFIG_URL).replace(/\/+$/, "");
+        let m = /^(https?:\/\/[^/?#]+)/i.exec(SOURCE_URL);
+        BASE_URL = m ? m[1] : BASE_URL;
     }
-} catch (error) {
+} catch (e) {}
+
+let HOST_RE = /^https?:\/\/(?:www\.)?luottruyen\d*\.com/i;
+
+// Mobile UA: modern Chrome, no "; wv" — avoids embedded-WebView blocks.
+let USER_AGENT = "Mozilla/5.0 (Linux; Android 13; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36 Edg/146.0.0.0";
+
+function stripSlash(url) { return url ? ("" + url).replace(/\/+$/, "") : ""; }
+
+function cleanText(t) { return t ? ("" + t).replace(/\s+/g, " ").trim() : ""; }
+
+function decodeHtml(t) {
+    if (!t) return "";
+    return ("" + t).replace(/&amp;/g, "&").replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'").replace(/&apos;/g, "'")
+        .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&nbsp;/g, " ");
 }
 
-let DESKTOP_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36";
-let ANDROID_UA = "Mozilla/5.0 (Linux; Android 12; Pixel 5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Mobile Safari/537.36";
-let SOURCE_HOST_RE = /^https?:\/\/(?:www\.)?luottruyen\d*\.com/i;
-
-function stripTrailingSlash(url) {
-    if (!url) return "";
-    return ("" + url).replace(/\/+$/, "");
-}
-
-function sourceBaseUrl(url) {
-    let match = /^(https?:\/\/[^/?#]+)/i.exec(url || "");
-    return match ? stripTrailingSlash(match[1]) : stripTrailingSlash(url || BASE_URL);
-}
-
-function cleanText(text) {
-    if (!text) return "";
-    return ("" + text).replace(/\s+/g, " ").trim();
-}
-
-function decodeHtml(text) {
-    if (!text) return "";
-    return ("" + text)
-        .replace(/&amp;/g, "&")
-        .replace(/&quot;/g, "\"")
-        .replace(/&#039;/g, "'")
-        .replace(/&apos;/g, "'")
-        .replace(/&lt;/g, "<")
-        .replace(/&gt;/g, ">")
-        .replace(/&nbsp;/g, " ");
-}
-
-function foldText(text) {
-    text = cleanText(decodeHtml(text)).toLowerCase();
-    try {
-        text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    } catch (error) {
-    }
-    return text.replace(/\u0111/g, "d").replace(/\u0110/g, "d");
+function foldText(t) {
+    t = cleanText(decodeHtml(t)).toLowerCase();
+    try { t = t.normalize("NFD").replace(/[̀-ͯ]/g, ""); } catch (e) {}
+    return t.replace(/đ/g, "d").replace(/Đ/g, "d");
 }
 
 function absoluteUrl(url) {
     if (!url) return "";
     url = decodeHtml(url).trim();
     if (/^(data|javascript|mailto|tel):/i.test(url)) return url;
-    if (url.startsWith("//")) return "https:" + url;
-    if (url.startsWith("/")) return stripTrailingSlash(BASE_URL) + url;
-    if (!/^https?:\/\//i.test(url)) return stripTrailingSlash(BASE_URL) + "/" + url.replace(/^\/+/, "");
+    if (url.indexOf("//") === 0) return "https:" + url;
+    if (url.indexOf("/") === 0) return stripSlash(BASE_URL) + url;
+    if (!/^https?:\/\//i.test(url)) return stripSlash(BASE_URL) + "/" + url.replace(/^\/+/, "");
     return url;
 }
 
-function normalizeUrl(url) {
-    url = absoluteUrl(url);
-    return url.replace(SOURCE_HOST_RE, stripTrailingSlash(BASE_URL));
+function normalizeUrl(url) { return absoluteUrl(url).replace(HOST_RE, stripSlash(BASE_URL)); }
+function normalizeImage(url) { return normalizeUrl(url); }
+
+function setBaseUrl(url) {
+    let m = HOST_RE.exec(url || "");
+    if (m) { BASE_URL = stripSlash(m[0]); SOURCE_URL = BASE_URL + "/tim-truyen"; }
 }
 
-function normalizeImage(url) {
-    if (!url) return "";
-    url = absoluteUrl(url);
-    return url.replace(SOURCE_HOST_RE, stripTrailingSlash(BASE_URL));
-}
-
-function hostBase(url) {
-    let match = /^(https?:\/\/(?:www\.)?luottruyen\d*\.com)/i.exec(url || "");
-    return match ? stripTrailingSlash(match[1]) : "";
-}
-
-function sourceNumber() {
-    let match = /luottruyen(\d*)\.com/i.exec(BASE_URL || "");
-    if (!match || !match[1]) return 8;
-    return parseInt(match[1]);
-}
-
-function setBaseUrl(baseUrl) {
-    if (!baseUrl) return;
-    BASE_URL = stripTrailingSlash(baseUrl);
-    SOURCE_URL = BASE_URL + "/tim-truyen";
-}
-
-function responseBase(response, fallback) {
-    try {
-        let base = hostBase(response.url);
-        if (base) return base;
-    } catch (error) {
-    }
-    return fallback;
-}
-
+// Domain rotation: if the current number is dead, try the next few.
 function candidateUrls(url) {
-    let normalized = normalizeUrl(url);
-    let urls = [normalized];
-    if (!SOURCE_HOST_RE.test(normalized)) return urls;
-
-    let start = sourceNumber();
-    for (let i = start; i <= 99; i++) {
-        let next = normalized.replace(SOURCE_HOST_RE, "https://luottruyen" + i + ".com");
+    let norm = normalizeUrl(url);
+    let urls = [norm];
+    if (!HOST_RE.test(norm)) return urls;
+    let cur = parseInt((/luottruyen(\d*)\.com/i.exec(BASE_URL) || [])[1] || "9") || 9;
+    for (let i = cur; i <= cur + 15; i++) {
+        let next = norm.replace(HOST_RE, "https://luottruyen" + i + ".com");
         if (urls.indexOf(next) < 0) urls.push(next);
     }
     return urls;
 }
 
-function cloneOptions(options) {
-    let copy = {};
-    options = options || {};
-    for (let key in options) copy[key] = options[key];
-    if (options.headers) {
-        copy.headers = {};
-        for (let header in options.headers) copy.headers[header] = options.headers[header];
-    }
-    return copy;
+function baseHeaders(extra) {
+    let h = {
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
+        "User-Agent": USER_AGENT,
+        "Referer": stripSlash(BASE_URL) + "/"
+    };
+    if (extra) for (let k in extra) h[k] = extra[k];
+    return h;
 }
 
-function sameSourceUrl(url, baseUrl) {
-    if (!url) return url;
-    return absoluteUrl(url).replace(SOURCE_HOST_RE, stripTrailingSlash(baseUrl || BASE_URL));
-}
-
-function requestOptions(options, baseUrl) {
-    options = cloneOptions(options);
-    let headers = options.headers || {};
-    let targetBase = stripTrailingSlash(baseUrl || BASE_URL);
-    headers["Accept"] = headers["Accept"] || "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
-    headers["Accept-Language"] = headers["Accept-Language"] || "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7";
-    headers["User-Agent"] = headers["User-Agent"] || DESKTOP_UA;
-    headers["Referer"] = headers["Referer"] ? sameSourceUrl(headers["Referer"], targetBase) : targetBase + "/";
-    if (headers["Origin"]) headers["Origin"] = targetBase;
-    options.headers = headers;
-    return options;
-}
-
+// GET with domain rotation. Returns a response or the last failing one.
 function request(url, options) {
+    options = options || {};
+    options.headers = baseHeaders(options.headers);
     let urls = candidateUrls(url);
-    let lastResponse = null;
+    let last = null;
     for (let i = 0; i < urls.length; i++) {
-        let target = urls[i];
-        let base = hostBase(target) || BASE_URL;
         try {
-            let response = fetch(target, requestOptions(options, base));
-            lastResponse = response;
-            if (response.ok) {
-                if (hostBase(target)) setBaseUrl(responseBase(response, base));
-                return response;
-            }
-        } catch (error) {
-        }
+            let res = fetch(urls[i], options);
+            last = res;
+            if (res.ok) { setBaseUrl(urls[i]); return res; }
+        } catch (e) {}
     }
-    if (lastResponse) return lastResponse;
-    return fetch(normalizeUrl(url), requestOptions(options, BASE_URL));
+    return last || fetch(normalizeUrl(url), options);
+}
+
+function getDoc(url, options) {
+    let res = request(url, options);
+    if (!res || !res.ok) return null;
+    let doc = res.html();
+    return isChallenge(doc) ? browserDoc(url) : doc;
 }
 
 function isChallenge(doc) {
     if (!doc) return true;
-    let html = doc.html ? doc.html() : "";
     let title = cleanText(doc.select("title").text());
+    let html = doc.html ? doc.html() : "";
     return title.indexOf("Just a moment") >= 0 ||
-        html.indexOf("cf-chl") >= 0 ||
-        html.indexOf("__cf_chl_") >= 0 ||
-        html.indexOf("Enable JavaScript and cookies") >= 0;
-}
-
-function getDoc(url, options) {
-    let urls = candidateUrls(url);
-    for (let i = 0; i < urls.length; i++) {
-        let target = urls[i];
-        let base = hostBase(target) || BASE_URL;
-        try {
-            let response = fetch(target, requestOptions(options, base));
-            if (!response.ok) continue;
-            let doc = response.html();
-            if (isChallenge(doc)) continue;
-            if (hostBase(target)) setBaseUrl(responseBase(response, base));
-            return doc;
-        } catch (error) {
-        }
-    }
-    return browserDoc(url);
+        html.indexOf("cf-chl") >= 0 || html.indexOf("__cf_chl_") >= 0;
 }
 
 function browserDoc(url) {
     let browser = null;
     try {
+        if (typeof Engine === "undefined") return null;
         browser = Engine.newBrowser();
-        try { browser.setUserAgent(ANDROID_UA); } catch (uaError) {
-            try { browser.setUserAgent(UserAgent.android()); } catch (error) {}
-        }
+        try { browser.setUserAgent(USER_AGENT); } catch (e) {}
         let doc = browser.launch(normalizeUrl(url), 45000);
-        for (let i = 0; i < 5 && isChallenge(doc); i++) {
-            sleep(3000);
-            doc = browser.html();
-        }
+        for (let i = 0; i < 5 && isChallenge(doc); i++) { sleep(3000); doc = browser.html(); }
         return isChallenge(doc) ? null : doc;
-    } catch (error) {
+    } catch (e) {
         return null;
     } finally {
-        try { if (browser) browser.close(); } catch (closeError) {}
+        try { if (browser) browser.close(); } catch (e) {}
     }
 }
 
+// Login session cookie from the WebView (set after user logs in via "Trang nguồn").
 function sourceCookie() {
-    let cookie = "";
-    try { if (CONFIG_URL) cookie = localCookie.getCookie(CONFIG_URL); } catch (error) {}
-    if (!cookie) try { cookie = localCookie.getCookie(SOURCE_URL); } catch (error) {}
-    if (!cookie) try { cookie = localCookie.getCookie(BASE_URL); } catch (error) {}
-    if (!cookie) try { cookie = localCookie.getCookie(BASE_URL + "/"); } catch (error) {}
-    if (!cookie) try { cookie = localCookie.getCookie(); } catch (error) {}
-    return cookie || "";
+    let c = "";
+    try { if (CONFIG_URL) c = localCookie.getCookie(CONFIG_URL); } catch (e) {}
+    if (!c) try { c = localCookie.getCookie(BASE_URL); } catch (e) {}
+    if (!c) try { c = localCookie.getCookie(BASE_URL + "/"); } catch (e) {}
+    if (!c) try { c = localCookie.getCookie(); } catch (e) {}
+    return c || "";
 }
 
 function pathOf(url) {
-    url = normalizeUrl(url || "");
-    let match = /^https?:\/\/[^/]+(\/[^?#]*)?/i.exec(url);
-    return match && match[1] ? match[1] : "/";
+    let m = /^https?:\/\/[^/]+(\/[^?#]*)?/i.exec(normalizeUrl(url || ""));
+    return m && m[1] ? m[1] : "/";
 }
 
 function storySlug(url) {
-    let path = pathOf(url).replace(/\/+$/, "");
-    let match = /^\/truyen-tranh\/([^/?#]+)/i.exec(path);
-    if (!match) return "";
-    return match[1].replace(/-\d+$/, "");
-}
-
-function chapterNumber(text) {
-    text = foldText(text || "").replace(/_/g, "-");
-    let match = /(?:chuong|chapter|chap|ch\.?)\s*-?\s*(\d+(?:[.-]\d+)?)/i.exec(text);
-    if (!match) match = /(\d+(?:[.-]\d+)?)/.exec(text);
-    return match ? parseFloat(match[1].replace("-", ".")) : 0;
+    let m = /^\/truyen-tranh\/([^/?#]+)/i.exec(pathOf(url).replace(/\/+$/, ""));
+    return m ? m[1].replace(/-\d+$/, "") : "";
 }
 
 function imageAttr(e) {
     if (!e) return "";
     let srcset = e.attr("data-srcset") || e.attr("srcset");
     if (srcset) return cleanText(srcset.split(",")[0].split(" ")[0]);
-    return e.attr("data-original") ||
-        e.attr("data-src") ||
-        e.attr("data-lazy-src") ||
-        e.attr("data-cdn") ||
-        e.attr("src") ||
-        "";
+    return e.attr("data-original") || e.attr("data-src") ||
+        e.attr("data-lazy-src") || e.attr("data-cdn") || e.attr("src") || "";
 }
 
 function validImage(url) {
@@ -253,20 +156,16 @@ function validImage(url) {
     if (!url || url.indexOf("data:image") === 0) return false;
     if (!/\.(jpg|jpeg|png|webp|gif)(?:[?#].*)?$/i.test(url)) return false;
     let low = url.toLowerCase();
-    return low.indexOf("/favicon") < 0 &&
-        low.indexOf("/logo") < 0 &&
-        low.indexOf("/scripts/") < 0 &&
-        low.indexOf("/content/images/logo") < 0 &&
-        low.indexOf("/content/images/avata") < 0 &&
-        low.indexOf("banner") < 0 &&
-        low.indexOf("loading") < 0;
+    return low.indexOf("/favicon") < 0 && low.indexOf("/logo") < 0 &&
+        low.indexOf("/scripts/") < 0 && low.indexOf("/content/images/") < 0 &&
+        low.indexOf("banner") < 0 && low.indexOf("loading") < 0;
 }
 
 function imageHeaders(referer) {
     return {
         "Referer": normalizeUrl(referer || BASE_URL + "/"),
         "Origin": BASE_URL,
-        "User-Agent": DESKTOP_UA,
+        "User-Agent": USER_AGENT,
         "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
         "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8"
     };
@@ -279,33 +178,103 @@ function ajaxHeaders(referer) {
         "X-Requested-With": "XMLHttpRequest",
         "Origin": BASE_URL,
         "Referer": normalizeUrl(referer || BASE_URL + "/"),
-        "User-Agent": DESKTOP_UA
+        "User-Agent": USER_AGENT
     };
 }
 
 function addQuery(url, key, value) {
     url = normalizeUrl(url);
     if (value === null || value === undefined || value === "") return url;
-    let hash = "";
-    let hashIndex = url.indexOf("#");
-    if (hashIndex >= 0) {
-        hash = url.substring(hashIndex);
-        url = url.substring(0, hashIndex);
-    }
-    let parts = url.split("?");
-    let base = parts[0];
-    let query = parts.length > 1 && parts[1] ? parts[1].split("&") : [];
+    let parts = url.split("#");
+    let hash = parts.length > 1 ? "#" + parts[1] : "";
+    let qp = parts[0].split("?");
+    let query = qp.length > 1 && qp[1] ? qp[1].split("&") : [];
     let found = false;
     for (let i = 0; i < query.length; i++) {
-        if (query[i].split("=")[0] === key) {
-            query[i] = key + "=" + encodeURIComponent(value);
-            found = true;
-        }
+        if (query[i].split("=")[0] === key) { query[i] = key + "=" + encodeURIComponent(value); found = true; }
     }
     if (!found) query.push(key + "=" + encodeURIComponent(value));
-    return base + "?" + query.join("&") + hash;
+    return qp[0] + "?" + query.join("&") + hash;
 }
 
-function execute() {
-    return Response.success({baseUrl: BASE_URL, sourceUrl: SOURCE_URL, ok: true});
+// ---- Shared list parsing (used by gen.js + search.js; kept here so each
+// consumer only needs load("config.js") — nested load() fails in test mode) ----
+
+function storyLink(node) {
+    let links = node.select("h3 a[href*='/truyen-tranh/'], a[href*='/truyen-tranh/']");
+    for (let i = 0; i < links.size(); i++) {
+        let href = normalizeUrl(links.get(i).attr("href"));
+        if (/\/truyen-tranh\/[^/?#]+-\d+\/?(?:[?#].*)?$/i.test(href)) return links.get(i);
+    }
+    return links.first();
+}
+
+function itemFromNode(node) {
+    let linkNode = storyLink(node);
+    if (!linkNode) return null;
+    let link = normalizeUrl(linkNode.attr("href"));
+    let name = cleanText(linkNode.attr("title") || linkNode.text());
+    if (!name) {
+        let img = node.select("img").first();
+        name = cleanText(img ? (img.attr("alt") || img.attr("title")) : "");
+    }
+    if (!name || !link) return null;
+
+    let img = node.select(".image img, img").first();
+    let cover = normalizeImage(imageAttr(img));
+    let chapNode = node.select(".chapter a, a[href*='chapter']").first();
+    return {
+        name: name,
+        link: link,
+        cover: validImage(cover) ? cover : "",
+        description: chapNode ? cleanText(chapNode.text()) : "",
+        host: BASE_URL
+    };
+}
+
+function parseList(doc) {
+    let data = [];
+    let seen = {};
+    let nodes = doc.select(".items .item");
+    if (nodes.size() === 0) nodes = doc.select(".item");
+    nodes.forEach(function(node) {
+        let item = itemFromNode(node);
+        if (!item || seen[item.link]) return;
+        seen[item.link] = true;
+        data.push(item);
+    });
+    if (data.length > 0) return data;
+
+    doc.select("a[href*='/truyen-tranh/']").forEach(function(a) {
+        let href = normalizeUrl(a.attr("href"));
+        if (!/\/truyen-tranh\/[^/?#]+-\d+\/?(?:[?#].*)?$/i.test(href) || seen[href]) return;
+        let name = cleanText(a.attr("title") || a.text());
+        if (!name || /^chapter\s/i.test(name)) return;
+        seen[href] = true;
+        data.push({name: name, link: href, cover: "", description: "", host: BASE_URL});
+    });
+    return data;
+}
+
+function currentPage(urlOrPage) {
+    let text = "" + (urlOrPage || "1");
+    let m = /[?&]page=(\d+)/i.exec(text);
+    if (m) return parseInt(m[1]);
+    return /^\d+$/.test(text) ? parseInt(text) : 1;
+}
+
+function nextPage(doc, urlOrPage) {
+    let current = currentPage(urlOrPage);
+    let links = doc.select(".pagination a[href], ul.pagination a[href], .page_redirect a[href]");
+    let best = 0, bestHref = "";
+    for (let i = 0; i < links.size(); i++) {
+        let a = links.get(i);
+        let text = cleanText(a.text());
+        let href = normalizeUrl(a.attr("href"));
+        let p = /^\d+$/.test(text) ? parseInt(text) : 0;
+        let m = /[?&]page=(\d+)/i.exec(href);
+        if (!p && m) p = parseInt(m[1]);
+        if (p > current && (!best || p < best)) { best = p; bestHref = href || ("" + p); }
+    }
+    return bestHref;
 }

@@ -16,18 +16,6 @@
       "locale": "vi_VN"
     },
     {
-      "name": "HentaiCube",
-      "author": "madokalb112",
-      "version": 7,
-      "source": "https://hentaicube.xyz",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/plugin-v7.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=7",
-      "description": "Doc truyen tranh tren HentaiCube",
-      "type": "comic",
-      "locale": "vi_VN",
-      "tag": "nsfw"
-    },
-    {
       "name": "ChickenManga",
       "author": "madokalb112",
       "version": 1,
@@ -199,10 +187,10 @@
     {
       "name": "Luot Truyen",
       "author": "madokalb112",
-      "version": 12,
-      "source": "https://luottruyen8.com/tim-truyen",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v12.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png?v=12",
+      "version": 14,
+      "source": "https://luottruyen9.com/tim-truyen",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/plugin-v14.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/luottruyen/icon.png?v=14",
       "description": "Doc truyen tren trang Luot Truyen",
       "type": "comic",
       "locale": "vi_VN"

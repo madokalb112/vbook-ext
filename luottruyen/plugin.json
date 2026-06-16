@@ -2,8 +2,8 @@
   "metadata": {
     "name": "Luot Truyen",
     "author": "madokalb112",
-    "version": 12,
-    "source": "https://luottruyen8.com/tim-truyen",
+    "version": 14,
+    "source": "https://luottruyen9.com/tim-truyen",
     "regexp": "(www\\.)?luottruyen\\d*\\.com(?:/(?:tim-truyen(?:/[^/?#]+)?|truyen-tranh/[^/?#]+(?:/[^/?#]+/\\d+)?|tim-truyen-nang-cao))?/?(?:[?#].*)?$",
     "description": "Doc truyen tren trang Luot Truyen",
     "locale": "vi_VN",

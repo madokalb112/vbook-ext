@@ -17,15 +17,16 @@ __pycache__/
 /push_project.py
 /package_extension.py
 /package_extension_gui.py
+/vbook_maker.py
 /user_agent.txt
 
 # Local temp
 /temp/
 *test.json
-# Root CDP/test helpers, keep local only
+# Root CDP/test/probe helpers, keep local only
 /test_*.py
-/_survey.py
-/_click.py
+/_*.py
+/_*.txt
 /hentaicube_curl.html
 /hentaicube/chrome-win/
 /hentaicube/chrome-win.zip
