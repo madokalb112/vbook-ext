@@ -63,10 +63,10 @@
     {
       "name": "KhoManhwa",
       "author": "madokalb112",
-      "version": 1,
+      "version": 2,
       "source": "https://khomanhwa.com/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/icon.png",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/khomanhwa/icon.png?v=2",
       "description": "Doc truyen seg KhoManhwa",
       "type": "comic",
       "locale": "vi_VN",
@@ -306,6 +306,17 @@
       "description": "Doc truyen chu tren Chuangshi QQ",
       "type": "chinese_novel",
       "locale": "zh_CN"
+    },
+    {
+      "name": "Góc Truyện Tranh",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://goctruyentranhvui30.com/",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui/icon.png",
+      "description": "Xem truyen tai Goc truyen tranh",
+      "type": "comic",
+      "locale": "vi_VN"
     }
   ]
 }

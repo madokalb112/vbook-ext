@@ -168,7 +168,7 @@ function imageAttr(e) {
 function validImage(url) {
     url = normalizeImage(url);
     if (!url || url.indexOf("data:image") === 0) return false;
-    if (!/\.(jpg|jpeg|png|webp)(?:[?#].*)?$/i.test(url)) return false;
+    if (!/\.(jpg|jpeg|png|webp|gif|avif)(?:[?#].*)?$/i.test(url)) return false;
     let low = url.toLowerCase();
     return low.indexOf("/assets/") < 0 &&
         low.indexOf("favicon") < 0 &&

@@ -6,8 +6,9 @@ try {
 } catch (error) {
 }
 
-let DESKTOP_UA = 'Mozilla/5.0 Chrome/142 Safari/537.36';
-let ANDROID_UA = 'Mozilla/5.0 Android Chrome/125 Mobile Safari/537.36';
+let USER_AGENT = 'Mozilla/5.0 (Linux; Android 13; SM-G981B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Mobile Safari/537.36 Edg/146.0.0.0';
+let DESKTOP_UA = USER_AGENT;
+let ANDROID_UA = USER_AGENT;
 let SOURCE_HOST_RE = new RegExp('^https?://(?:www\\.)?yurineko(?:z)?\\.(?:com|org)', 'i');
 
 function stripTrailingSlash(url) {
@@ -67,7 +68,7 @@ function requestOptions(options, referer) {
     headers['Accept'] = headers['Accept'] || 'text/html,application/json,*/*';
     headers['Accept-Language'] = headers['Accept-Language'] || 'vi-VN,vi;q=0.9,en;q=0.8';
     headers['Referer'] = headers['Referer'] || normalizeUrl(referer || BASE_URL + '/');
-    headers['User-Agent'] = headers['User-Agent'] || DESKTOP_UA;
+    if (!headers['user-agent'] && !headers['User-Agent']) headers['user-agent'] = USER_AGENT;
     options.headers = headers;
     return options;
 }

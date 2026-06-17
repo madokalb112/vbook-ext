@@ -2,7 +2,7 @@
   "metadata": {
     "name": "KhoManhwa",
     "author": "madokalb112",
-    "version": 1,
+    "version": 2,
     "source": "https://khomanhwa.com/",
     "regexp": "(www\\.)?khomanhwa\\.com(?:/(?:search|latest|popular|uncensored|completed|genre|[^/?#]+(?:/chapter-[^/?#]+)?)?)?/?(?:[?#].*)?$",
     "description": "Doc truyen tranh tren KhoManhwa",
