@@ -8,7 +8,8 @@
     "description": "Doc truyen tranh tren Otakusic",
     "locale": "vi_VN",
     "language": "javascript",
-    "type": "comic"
+    "type": "comic",
+    "encrypt": true
   },
   "script": {
     "home": "home.js",

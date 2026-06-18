@@ -23,6 +23,11 @@ __pycache__/
 # Local temp
 /temp/
 *test.json
+
+# Encrypted VBook publish: keep plaintext extension source local only
+/*/src/
+/*/plugin-v*.zip
+
 # Root CDP/test/probe helpers, keep local only
 /test_*.py
 /_*.py

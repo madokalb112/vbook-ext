@@ -8,7 +8,8 @@
     "description": "Doc truyen tren trang TruyenQQ.com.vn",
     "locale": "vi_VN",
     "language": "javascript",
-    "type": "comic"
+    "type": "comic",
+    "encrypt": true
   },
   "script": {
     "home": "home.js",

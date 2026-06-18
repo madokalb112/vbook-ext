@@ -9,7 +9,8 @@
     "locale": "vi_VN",
     "language": "javascript",
     "type": "comic",
-    "tag": "nsfw"
+    "tag": "nsfw",
+    "encrypt": true
   },
   "script": {
     "home": "home.js",

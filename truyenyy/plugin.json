@@ -8,7 +8,8 @@
     "description": "Doc truyen chu tren TruyenYY",
     "locale": "vi_VN",
     "language": "javascript",
-    "type": "novel"
+    "type": "novel",
+    "encrypt": true
   },
   "script": {
     "home": "home.js",

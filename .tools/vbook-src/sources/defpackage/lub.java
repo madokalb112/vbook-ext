@@ -1,0 +1,25 @@
+package defpackage;
+
+import android.os.Bundle;
+
+/* JADX INFO: compiled from: r8-map-id-6d4a6fea4a678d318bae670e8b98ae0a8798384e7d56dd89fbb5b2340ff4b0eb */
+/* JADX INFO: loaded from: D:\Tool\vbook-ext\.tools\vbook-dex\classes3.dex */
+public final class lub {
+    public final cub a;
+    public final Long b;
+    public final Bundle c;
+    public final w02 d;
+    public final xtb e;
+    public final d6a f;
+
+    public lub(eub eubVar, Long l, Bundle bundle, w02 w02Var, xtb xtbVar) {
+        w02Var.getClass();
+        xtbVar.getClass();
+        this.a = eubVar.f();
+        this.b = l;
+        this.c = bundle;
+        this.d = w02Var;
+        this.e = xtbVar;
+        this.f = new d6a(new iub(this, 0));
+    }
+}
