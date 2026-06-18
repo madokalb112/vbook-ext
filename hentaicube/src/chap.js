@@ -13,9 +13,11 @@ function addImage(data, seen, link) {
     link = normalizeImage(link);
     if (!validImage(link) || seen[link]) return;
     seen[link] = true;
+    let headers = link.indexOf("cdn.hentaicube.xyz") >= 0 ? cdnImageHeaders() : imageHeaders(BASE_URL + "/");
     data.push({
         link: link,
-        headers: link.indexOf("cdn.hentaicube.xyz") >= 0 ? cdnImageHeaders() : imageHeaders(BASE_URL + "/")
+        headers: headers,
+        header: headers
     });
 }
 

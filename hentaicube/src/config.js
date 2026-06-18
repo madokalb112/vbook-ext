@@ -219,6 +219,7 @@ function imageFromNode(e) {
 
 function imageHeaders(referer) {
     return {
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
         Referer: referer || BASE_URL + "/",
         "User-Agent": MOBILE_UA
     };
@@ -226,6 +227,7 @@ function imageHeaders(referer) {
 
 function cdnImageHeaders() {
     return {
+        "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
         Referer: BASE_URL + "/",
         "User-Agent": MOBILE_UA
     };

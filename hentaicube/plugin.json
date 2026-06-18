@@ -2,7 +2,7 @@
   "metadata": {
     "name": "HentaiCB",
     "author": "hoanghunglb",
-    "version": 2,
+    "version": 3,
     "source": "https://hentaicube.xyz/",
     "regexp": "(www\\.)?hentaicube\\.xyz(?:/read(?:/[^/?#]+(?:/[^/?#]+)?)?|/theloai/[^/?#]+|/hot|/the-loai-genres|/phan-loai)?/?(?:[?#].*)?$",
     "description": "Đọc truyện tại HentaiCB (hentaicube.xyz)",

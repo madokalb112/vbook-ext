@@ -321,10 +321,10 @@
     {
       "name": "HentaiCB",
       "author": "hoanghunglb",
-      "version": 2,
+      "version": 3,
       "source": "https://hentaicube.xyz/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=2",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=3",
       "description": "Doc truyen tai HentaiCB (hentaicube.xyz)",
       "type": "comic",
       "locale": "vi_VN",
