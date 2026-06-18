@@ -3,6 +3,7 @@
 *.iml
 .DS_Store
 .claude/
+.tools/
 __pycache__/
 *.pyc
 
