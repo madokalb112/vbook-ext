@@ -266,10 +266,10 @@
     {
       "name": "Yurineko",
       "author": "madokalb112",
-      "version": 8,
+      "version": 9,
       "source": "https://yurinekoz.com",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png?v=8",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin-v9.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png?v=9",
       "description": "Doc truyen tren trang Yurineko",
       "type": "comic",
       "locale": "vi_VN"
