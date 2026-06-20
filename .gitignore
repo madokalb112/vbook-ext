@@ -12,8 +12,6 @@ __pycache__/
 /1data/
 
 # Local repo helpers, keep local only
-/.gitignore
-/.gitattributes
 /7zr.exe
 /push_project.py
 /package_extension.py
@@ -24,6 +22,14 @@ __pycache__/
 # Local temp
 /temp/
 *test.json
+*.log
+
+# Local build/test artifacts
+/*/_zip/
+/*/plugin-test.zip
+/_deploy_php/
+/yurineko_proxy.py
+/run_yurineko_proxy.bat
 
 # Encrypted VBook publish: keep plaintext extension source local only
 /*/src/
