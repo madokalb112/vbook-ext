@@ -34,7 +34,6 @@ __pycache__/
 # Encrypted VBook publish: keep plaintext extension source local only
 /*/src/
 /*/plugin-v*.zip
-!/yurineko/plugin-v*.zip
 
 # Root CDP/test/probe helpers, keep local only
 /test_*.py
