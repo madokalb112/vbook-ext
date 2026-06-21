@@ -2,8 +2,8 @@
   "metadata": {
     "name": "Yurineko",
     "author": "madokalb112",
-    "version": 5,
-    "source": "https://yurinekoz.com",
+    "version": 6,
+    "source": "https://yurinekoz.com/",
     "regexp": "(www\\.)?yurinekoz\\.com(?:/(?:manga/[^/?#]+(?:/[^/?#]+)?|search|categories))?/?(?:[?#].*)?$",
     "description": "Doc truyen tren trang Yurineko",
     "locale": "vi_VN",
