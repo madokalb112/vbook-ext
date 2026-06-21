@@ -10,6 +10,7 @@ __pycache__/
 # Backup, keep local only
 /1backup/
 /1data/
+/backups/
 
 # Local repo helpers, keep local only
 /7zr.exe

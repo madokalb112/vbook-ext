@@ -7,7 +7,7 @@
     {
       "name": "Otakusic",
       "author": "madokalb112",
-      "version": 13,
+      "version": 14,
       "source": "https://otakusic.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/icon.png?v=13",
@@ -264,17 +264,6 @@
       "locale": "vi_VN"
     },
     {
-      "name": "Yurineko",
-      "author": "madokalb112",
-      "version": 11,
-      "source": "https://yurinekoz.com",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png?v=11",
-      "description": "Doc truyen tren trang Yurineko",
-      "type": "comic",
-      "locale": "vi_VN"
-    },
-    {
       "name": "Leesin Comic",
       "author": "madokalb112",
       "version": 1,
@@ -321,7 +310,7 @@
     {
       "name": "HentaiCB",
       "author": "madokalb112",
-      "version": 12,
+      "version": 1,
       "source": "https://hentaicube.xyz/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=12",
