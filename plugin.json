@@ -18,10 +18,10 @@
     {
       "name": "Yurineko",
       "author": "madokalb112",
-      "version": 3,
+      "version": 4,
       "source": "https://yurinekoz.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png?v=3",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/yurineko/icon.png?v=4",
       "description": "Doc truyen tren trang Yurineko",
       "type": "comic",
       "locale": "vi_VN"
