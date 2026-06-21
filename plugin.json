@@ -10,7 +10,7 @@
       "version": 14,
       "source": "https://otakusic.com",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/icon.png?v=13",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/otakusic/icon.png?v=14",
       "description": "Doc truyen tranh tren Otakusic",
       "type": "comic",
       "locale": "vi_VN"
