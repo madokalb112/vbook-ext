@@ -13,12 +13,16 @@ __pycache__/
 /backups/
 
 # Local repo helpers, keep local only
+/.gitattributes
 /7zr.exe
 /push_project.py
 /package_extension.py
 /package_extension_gui.py
 /vbook_maker.py
 /user_agent.txt
+/README.md
+/encrypt.md
+/robots.txt
 
 # Local temp
 /temp/
@@ -61,6 +65,7 @@ _push_otakusic*/
 luottruyen/cookie.txt
 otakusic/Cookie header string.txt
 otakusic/src/cookie.js
+mangafire/note.txt
 
 # Local-only extensions, do not publish
 /mangago.zone/
