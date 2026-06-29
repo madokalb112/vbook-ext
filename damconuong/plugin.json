@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "name": "DamConuong",
+    "author": "madokalb112",
+    "version": 1,
+    "source": "https://damconuong.shop",
+    "regexp": "(www\\.)?damconuong\\.shop/truyen/[^/?#]+/?$",
+    "description": "Doc truyen tren Dam Co Nuong",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "tag": "nsfw",
+    "type": "comic",
+    "encrypt": true
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

@@ -5,6 +5,30 @@
   },
   "data": [
     {
+      "name": "DongHentai",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://donghentai.net",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/donghentai/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/donghentai/icon.png?v=1",
+      "description": "Doc truyen tren DongHentai",
+      "type": "comic",
+      "locale": "vi_VN",
+      "encrypt": true
+    },
+    {
+      "name": "DamConuong",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://damconuong.shop",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/damconuong/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/damconuong/icon.png?v=1",
+      "description": "Doc truyen tren Dam Co Nuong",
+      "type": "comic",
+      "locale": "vi_VN",
+      "encrypt": true
+    },
+    {
       "name": "Otakusic",
       "author": "madokalb112",
       "version": 14,

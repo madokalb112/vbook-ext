@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "name": "DongHentai",
+    "author": "madokalb112",
+    "version": 1,
+    "source": "https://donghentai.net",
+    "regexp": "(www\\.)?donghentai\\.net/manga/[^/?#]+/?$",
+    "description": "Doc truyen tren DongHentai",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "tag": "nsfw",
+    "type": "comic",
+    "encrypt": true
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "search": "search.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}
