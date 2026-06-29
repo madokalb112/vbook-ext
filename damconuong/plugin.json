@@ -2,7 +2,7 @@
   "metadata": {
     "name": "DamConuong",
     "author": "madokalb112",
-    "version": 1,
+    "version": 2,
     "source": "https://damconuong.shop",
     "regexp": "(www\\.)?damconuong\\.shop/truyen/[^/?#]+/?$",
     "description": "Doc truyen tren Dam Co Nuong",

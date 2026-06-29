@@ -2,7 +2,7 @@
   "metadata": {
     "name": "DongHentai",
     "author": "madokalb112",
-    "version": 1,
+    "version": 2,
     "source": "https://donghentai.net",
     "regexp": "(www\\.)?donghentai\\.net/manga/[^/?#]+/?$",
     "description": "Doc truyen tren DongHentai",
