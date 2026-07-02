@@ -2,9 +2,9 @@
   "metadata": {
     "name": "DongHentai",
     "author": "madokalb112",
-    "version": 2,
+    "version": 3,
     "source": "https://donghentai.net",
-    "regexp": "(www\\.)?donghentai\\.net/manga/[^/?#]+/?$",
+    "regexp": "(https?://)?((www\\.)?donghentai\\.net/manga/[^/?#]+(/[^/?#]+)?/?|api\\.damconuong\\.cx/api/v1/mangas/[^/?#]+(/chapters/[^/?#]+)?(/images)?/?)([?#].*)?$",
     "description": "Doc truyen tren DongHentai",
     "locale": "vi_VN",
     "language": "javascript",

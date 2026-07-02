@@ -2,9 +2,9 @@
   "metadata": {
     "name": "DamConuong",
     "author": "madokalb112",
-    "version": 2,
+    "version": 3,
     "source": "https://damconuong.shop",
-    "regexp": "(www\\.)?damconuong\\.shop/truyen/[^/?#]+/?$",
+    "regexp": "(https?://)?((www\\.)?damconuong\\.shop/truyen/[^/?#]+(/[^/?#]+)?/?|api\\.damconuong\\.cx/api/v1/mangas/[^/?#]+(/chapters/[^/?#]+)?(/images)?/?)([?#].*)?$",
     "description": "Doc truyen tren Dam Co Nuong",
     "locale": "vi_VN",
     "language": "javascript",
