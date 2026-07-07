@@ -333,13 +333,24 @@
       "locale": "zh_CN"
     },
     {
-      "name": "Góc Truyện Tranh",
+      "name": "Góc Truyện Tranh (Proxy)",
       "author": "madokalb112",
       "version": 1,
       "source": "https://goctruyentranhvui30.com/",
-      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui/icon.png",
-      "description": "Xem truyen tai Goc truyen tranh",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui-proxy/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui-proxy/icon.png",
+      "description": "Xem truyen tai Goc truyen tranh (proxy tach anh)",
+      "type": "comic",
+      "locale": "vi_VN"
+    },
+    {
+      "name": "Góc Truyện Tranh (No Proxy)",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://goctruyentranhvui30.com/",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui-noproxy/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui-noproxy/icon.png",
+      "description": "Xem truyen tai Goc truyen tranh (khong proxy)",
       "type": "comic",
       "locale": "vi_VN"
     },
