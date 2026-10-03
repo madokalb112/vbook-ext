@@ -5,6 +5,56 @@
   },
   "data": [
     {
+      "name": "Lau Dai Tinh Ai",
+      "author": "madokalb112",
+      "version": 2,
+      "source": "https://ninahehe.pages.dev",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/ninahehe.pages.dev/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/ninahehe.pages.dev/icon.png?v=1",
+      "description": "Doc truyen chu tren Lau Dai Tinh Ai (ninahehe)",
+      "type": "novel",
+      "locale": "vi_VN",
+      "encrypt": true
+    },
+    {
+      "name": "HentaiVnX",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://www.hentaivnx.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaivnx.com/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaivnx.com/icon.png?v=1",
+      "description": "Đọc truyện tại HentaiVnX",
+      "type": "comic",
+      "locale": "vi_VN",
+      "encrypt": true
+    },
+    {
+      "name": "DuaLeoTruyenCW",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://dualeotruyencw.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/dualeotruyencw.com/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/dualeotruyencw.com/icon.png?v=1",
+      "description": "Doc truyen tranh tren DuaLeoTruyenCW",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw",
+      "encrypt": true
+    },
+    {
+      "name": "NavyTeam",
+      "author": "madokalb112",
+      "version": 2,
+      "source": "https://navyteam.org",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/navyteam.org/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/navyteam.org/icon.png?v=2",
+      "description": "Doc truyen tranh tren NavyTeam",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw",
+      "encrypt": true
+    },
+    {
       "name": "DongHentai",
       "author": "madokalb112",
       "version": 3,
@@ -152,6 +202,30 @@
       "description": "Doc truyen tranh tren LuvEvaLands2",
       "type": "comic",
       "locale": "vi_VN"
+    },
+    {
+      "name": "Dammy.cc",
+      "author": "madokalb112",
+      "version": 3,
+      "source": "https://dammy.cc",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/dammy.cc/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/dammy.cc/icon.png?v=3",
+      "description": "Doc truyen chu tren Dammy.cc",
+      "type": "novel",
+      "locale": "vi_VN",
+      "encrypt": true
+    },
+    {
+      "name": "Gia Toc Vuong Tai",
+      "author": "madokalb112",
+      "version": 5,
+      "source": "https://giatocvuongtai.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/giatocvuongtai.com/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/giatocvuongtai.com/icon.png?v=5",
+      "description": "Doc truyen chu tren Gia Toc Vuong Tai",
+      "type": "novel",
+      "locale": "vi_VN",
+      "encrypt": true
     },
     {
       "name": "Stellar Stories",
@@ -365,6 +439,44 @@
       "type": "comic",
       "locale": "vi_VN",
       "tag": "nsfw"
+    },
+    {
+      "name": "SayManhwa",
+      "author": "madokalb112",
+      "version": 4,
+      "source": "https://saymanhwa.com/vi",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/saymanhwa/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/saymanhwa/icon.png?v=4",
+      "description": "Đọc truyện tranh trên SayManhwa",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw",
+      "encrypt": true
+    },
+    {
+       "name": "NHentai",
+       "author": "madokalb112",
+      "version": 4,
+       "source": "https://nhentai.net",
+       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/nhentai.net/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/nhentai.net/icon.png?v=4",
+       "description": "Doc gallery nhentai voi thumbnail trang truyen va reader mot chapter",
+      "type": "comic",
+      "locale": "vi_VN",
+      "tag": "nsfw",
+      "encrypt": true
+    },
+    {
+      "name": "WTR-LAB",
+      "author": "madokalb112",
+      "version": 1,
+      "source": "https://wtr-lab.com",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/wtr-lab.com/plugin.zip",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/wtr-lab.com/icon.png?v=1",
+      "description": "Read English MTL light novels on WTR-LAB",
+      "type": "novel",
+      "locale": "en_US",
+      "encrypt": true
     }
   ]
 }
