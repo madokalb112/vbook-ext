@@ -126,25 +126,27 @@
     {
       "name": "MangaFire",
       "author": "madokalb112",
-      "version": 4,
+      "version": 5,
       "source": "https://mangafire.to",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/icon.png",
       "description": "Doc truyen tranh tren MangaFire",
       "type": "comic",
-      "locale": "en_US"
+      "locale": "en_US",
+      "encrypt": true
     },
     {
       "name": "ThienThaiTruyen",
       "author": "madokalb112",
-      "version": 5,
-      "source": "https://thienthaitruyen8.com/official",
+      "version": 6,
+      "source": "https://thienthaitruyen14.com/official",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/icon.png?v=5",
-      "description": "Doc truyen seg ThienThaiTruyen",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/thienthaitruyen/icon.png?v=6",
+      "description": "Đọc truyện tranh trên ThienThaiTruyen",
       "type": "comic",
       "locale": "vi_VN",
-      "tag": "nsfw"
+      "tag": "nsfw",
+      "encrypt": true
     },
     {
       "name": "KhoManhwa",
@@ -420,25 +422,27 @@
     {
       "name": "Góc Truyện Tranh (No Proxy)",
       "author": "madokalb112",
-      "version": 1,
+      "version": 2,
       "source": "https://goctruyentranhvui30.com/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui-noproxy/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/goctruyentranhvui-noproxy/icon.png",
-      "description": "Xem truyen tai Goc truyen tranh (khong proxy)",
+      "description": "Xem truyện tại Góc truyện tranh",
       "type": "comic",
-      "locale": "vi_VN"
+      "locale": "vi-VN",
+      "encrypt": true
     },
     {
       "name": "HentaiCB",
       "author": "madokalb112",
-      "version": 1,
+      "version": 4,
       "source": "https://hentaicube.xyz/",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=12",
-      "description": "Doc truyen tai HentaiCB (hentaicube.xyz)",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/hentaicube/icon.png?v=4",
+      "description": "Đọc truyện tại HentaiCB (hentaicube.xyz)",
       "type": "comic",
       "locale": "vi_VN",
-      "tag": "nsfw"
+      "tag": "nsfw",
+      "encrypt": true
     },
     {
       "name": "SayManhwa",
@@ -454,13 +458,13 @@
       "encrypt": true
     },
     {
-       "name": "NHentai",
-       "author": "madokalb112",
+      "name": "NHentai",
+      "author": "madokalb112",
       "version": 4,
-       "source": "https://nhentai.net",
-       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/nhentai.net/plugin.zip",
+      "source": "https://nhentai.net",
+      "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/nhentai.net/plugin.zip",
       "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/nhentai.net/icon.png?v=4",
-       "description": "Doc gallery nhentai voi thumbnail trang truyen va reader mot chapter",
+      "description": "Doc gallery nhentai voi thumbnail trang truyen va reader mot chapter",
       "type": "comic",
       "locale": "vi_VN",
       "tag": "nsfw",
