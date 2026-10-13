@@ -57,10 +57,10 @@
     {
       "name": "DongHentai",
       "author": "madokalb112",
-      "version": 3,
+      "version": 5,
       "source": "https://donghentai.net",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/donghentai/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/donghentai/icon.png?v=3",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/donghentai/icon.png?v=5",
       "description": "Doc truyen tren DongHentai",
       "type": "comic",
       "locale": "vi_VN",
@@ -69,14 +69,15 @@
     {
       "name": "DamConuong",
       "author": "madokalb112",
-      "version": 3,
+      "version": 5,
       "source": "https://damconuong.shop",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/damconuong/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/damconuong/icon.png?v=3",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/damconuong/icon.png?v=5",
       "description": "Doc truyen tren Dam Co Nuong",
       "type": "comic",
       "locale": "vi_VN",
-      "encrypt": true
+      "encrypt": true,
+      "tag": "nsfw"
     },
     {
       "name": "Otakusic",
@@ -126,10 +127,10 @@
     {
       "name": "MangaFire",
       "author": "madokalb112",
-      "version": 5,
+      "version": 7,
       "source": "https://mangafire.to",
       "path": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/plugin.zip",
-      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/icon.png",
+      "icon": "https://raw.githubusercontent.com/madokalb112/vbook-ext/main/mangafire/icon.png?v=7",
       "description": "Doc truyen tranh tren MangaFire",
       "type": "comic",
       "locale": "en_US",
