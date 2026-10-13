@@ -2,11 +2,11 @@
   "metadata": {
     "name": "MangaFire",
     "author": "madokalb112",
-    "version": 7,
+    "version": 8,
     "source": "https://mangafire.to",
-    "regexp": "(www\\.)?mangafire\\.to/(?:home|browse|title/[^/?#]+(?:/chapter/[^/?#]+)?|manga/[^/?#]+|read/[^/?#]+/[^/?#]+/(?:chapter|volume)-[^/?#]+)/?(?:[?#].*)?$",
+    "regexp": "(?:https?://)?(www\\.)?mangafire\\.to/(?:home|browse|title/[^/?#]+(?:/chapter/[^/?#]+)?|manga/[^/?#]+|read/[^/?#]+/[^/?#]+/(?:chapter|volume)-[^/?#]+)/?(?:[?#].*)?$",
     "description": "Doc truyen tranh tren MangaFire",
-    "locale": "en_US",
+    "locale": "vi_VN",
     "language": "javascript",
     "type": "comic",
     "encrypt": true

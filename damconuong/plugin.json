@@ -2,13 +2,12 @@
   "metadata": {
     "name": "DamConuong",
     "author": "madokalb112",
-    "version": 5,
-    "source": "https://damconuong.shop",
+    "version": 6,
+    "source": "https://damconuong.pet",
     "regexp": "(https?://)?((www\\.)?(damconuong|donghentai)\\.[a-z0-9-]+/(truyen|manga)/[^/?#]+(/[^/?#]+)?/?|api\\.damconuong\\.cx/api/v1/mangas/[^/?#]+(/chapters/[^/?#]+)?(/images)?/?)([?#].*)?$",
     "description": "Doc truyen tren Dam Co Nuong",
     "locale": "vi_VN",
     "language": "javascript",
-    "tag": "nsfw",
     "type": "comic",
     "encrypt": true
   },

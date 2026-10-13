@@ -2,13 +2,12 @@
   "metadata": {
     "name": "DongHentai",
     "author": "madokalb112",
-    "version": 3,
+    "version": 6,
     "source": "https://donghentai.net",
-    "regexp": "(https?://)?((www\\.)?donghentai\\.net/manga/[^/?#]+(/[^/?#]+)?/?|api\\.damconuong\\.cx/api/v1/mangas/[^/?#]+(/chapters/[^/?#]+)?(/images)?/?)([?#].*)?$",
+    "regexp": "(https?://)?((www\\.)?(donghentai|damconuong)\\.[a-z0-9-]+/(truyen|manga)/[^/?#]+(/[^/?#]+)?/?|api\\.damconuong\\.cx/api/v1/mangas/[^/?#]+(/chapters/[^/?#]+)?(/images)?/?)([?#].*)?$",
     "description": "Doc truyen tren DongHentai",
     "locale": "vi_VN",
     "language": "javascript",
-    "tag": "nsfw",
     "type": "comic",
     "encrypt": true
   },
